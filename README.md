@@ -44,7 +44,7 @@ RAG-System liefern soll, nicht nur behauptet.
 
 Zeigt in einem zusammenhaengenden Projekt drei Kernkompetenzen:
 - **Backend-Engineering** - sauber strukturierte FastAPI-Anwendung, getestet, containerisiert, CI.
-- **Such-Spezialisierung** - Elasticsearch-Mapping, BM25, kNN-Vektorsuche, Ranking-Fusion.
+- **Such-Spezialisierung** - Elasticsearch-Mapping, custom Analyzer (Stemming, Stoppwoerter), BM25, kNN-Vektorsuche, Ranking-Fusion.
 - **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, Streaming, versionierte Prompts, RAG).
 
 ## Architektur

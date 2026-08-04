@@ -12,24 +12,94 @@ from hybrid_search_api.search.embeddings import embed_many
 
 SAMPLE_DOCS = [
     {
-        "title": "Elasticsearch Basics",
+        "title": "Elasticsearch Grundlagen",
         "content": (
             "Elasticsearch ist eine verteilte Such- und Analyse-Engine auf Basis von "
-            "Apache Lucene."
+            "Apache Lucene. Sie eignet sich fuer Volltextsuche, strukturierte Suche und "
+            "Analytics nahezu in Echtzeit. Daten werden in Indizes organisiert, die "
+            "intern auf mehrere Shards verteilt werden."
         ),
     },
     {
-        "title": "Vector Search",
+        "title": "Vektorsuche und Embeddings",
         "content": (
-            "kNN-Suche findet semantisch aehnliche Dokumente ueber Embedding-Vektoren "
-            "statt exakter Wortuebereinstimmung."
+            "Bei der Vektorsuche werden Texte als hochdimensionale Zahlenvektoren "
+            "(Embeddings) repraesentiert. Aehnliche Inhalte liegen im Vektorraum nah "
+            "beieinander, wodurch semantisch verwandte Dokumente gefunden werden, auch "
+            "wenn keine woertliche Uebereinstimmung vorliegt."
         ),
     },
     {
-        "title": "Retrieval-Augmented Generation",
+        "title": "Retrieval-Augmented Generation (RAG)",
         "content": (
-            "RAG kombiniert Suchergebnisse mit einem LLM, um Antworten auf Basis "
-            "konkreter Quellen zu generieren."
+            "RAG kombiniert eine Suchkomponente mit einem Sprachmodell: Zunaechst "
+            "werden relevante Dokumente abgerufen, anschliessend generiert das Modell "
+            "eine Antwort auf Basis dieser Quellen. Das reduziert Halluzinationen und "
+            "macht Antworten nachvollziehbar."
+        ),
+    },
+    {
+        "title": "BM25-Ranking",
+        "content": (
+            "BM25 ist eine Ranking-Funktion fuer die klassische Volltextsuche, die "
+            "Termfrequenz, inverse Dokumentfrequenz und Dokumentlaenge beruecksichtigt. "
+            "Sie ist der Standard-Scoring-Algorithmus in Elasticsearch und liefert bei "
+            "exakten Begriffstreffern sehr gute Ergebnisse."
+        ),
+    },
+    {
+        "title": "Reciprocal Rank Fusion (RRF)",
+        "content": (
+            "RRF fusioniert mehrere Ranglisten unterschiedlicher Suchverfahren, ohne "
+            "dass deren Scores auf eine gemeinsame Skala gebracht werden muessen. Jedes "
+            "Dokument erhaelt Punkte basierend auf seinem Rang in jeder Liste, was RRF "
+            "robust gegenueber Ausreissern macht."
+        ),
+    },
+    {
+        "title": "Approximate Nearest Neighbor Search (HNSW)",
+        "content": (
+            "Elasticsearch nutzt fuer die kNN-Suche den HNSW-Algorithmus (Hierarchical "
+            "Navigable Small World), um aehnliche Vektoren approximativ, aber sehr "
+            "schnell zu finden. Der Parameter num_candidates steuert dabei die Balance "
+            "zwischen Suchgeschwindigkeit und Genauigkeit."
+        ),
+    },
+    {
+        "title": "Sentence-Transformer-Modelle",
+        "content": (
+            "Sentence-Transformer-Modelle wie all-MiniLM-L6-v2 wandeln ganze Saetze in "
+            "Embedding-Vektoren um, statt einzelne Woerter isoliert zu betrachten. "
+            "Dadurch erfassen sie Kontext und Bedeutung besser als klassische "
+            "Wort-Embeddings."
+        ),
+    },
+    {
+        "title": "Volltextsuche vs. semantische Suche",
+        "content": (
+            "Volltextsuche findet Dokumente ueber exakte oder fuzzy "
+            "Wortuebereinstimmungen, waehrend semantische Suche auf "
+            "Bedeutungsaehnlichkeit basiert. Hybrid Search kombiniert beide Ansaetze, "
+            "um sowohl praezise Begriffstreffer als auch inhaltlich verwandte "
+            "Ergebnisse zu liefern."
+        ),
+    },
+    {
+        "title": "Analyzer und Tokenisierung",
+        "content": (
+            "Ein Elasticsearch-Analyzer zerlegt Text in Tokens und normalisiert sie, "
+            "etwa durch Kleinschreibung, Stemming oder Stoppwort-Entfernung. "
+            "Sprachspezifische Analyzer wie der German-Analyzer verbessern die "
+            "Trefferquote bei deutschsprachigen Inhalten deutlich."
+        ),
+    },
+    {
+        "title": "Prompt Engineering fuer RAG-Systeme",
+        "content": (
+            "Die Formulierung des System-Prompts entscheidet massgeblich darueber, ob "
+            "ein RAG-System nur auf Basis der gelieferten Quellen antwortet oder zu "
+            "Halluzinationen neigt. Klare Anweisungen, explizite Quellenverweise und "
+            "Versionierung der Prompts erhoehen die Nachvollziehbarkeit."
         ),
     },
 ]

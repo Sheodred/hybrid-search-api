@@ -34,6 +34,21 @@ Query und Dokumente werden mit einem lokalen `sentence-transformers`-Modell
 keine Zusatzkosten pro Suche. Schlaegt das Laden des Modells fehl, faellt
 `/search` automatisch auf reines BM25 zurueck (siehe `api/routes.py`).
 
+## Anpassbare Suchkonfiguration
+
+Zwei Stellen sind bewusst getrennt und unabhaengig voneinander editierbar:
+
+- **`search/index_config.py`** - Analyzer, Filter (Stemming, Stoppwoerter) und
+  Feld-Mappings. Hier stellt man z. B. auf eine andere Sprache um, passt die
+  Embedding-Dimension an oder ergaenzt Synonyme.
+- **`search/queries.py`** - die eigentliche Such-Query-DSL (Feld-Boosts,
+  Fuzziness, Groesse des kNN-Kandidatenpools). Hier wird getunt, *wie*
+  gesucht wird, unabhaengig von der Fusion-Logik in `hybrid_search.py`.
+
+Diese Trennung spiegelt die Trennung bei den Prompts wider (`ai/prompts.py`):
+Konfiguration/Template an einem Ort, Verwendung/Orchestrierung an einem
+anderen.
+
 ## Warum Reciprocal Rank Fusion?
 
 RRF kombiniert zwei Ranglisten, ohne dass man BM25- und Vektor-Scores (die auf

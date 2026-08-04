@@ -1,19 +1,7 @@
 from elasticsearch import Elasticsearch
 
 from hybrid_search_api.config import Settings
-
-INDEX_MAPPING = {
-    "properties": {
-        "title": {"type": "text"},
-        "content": {"type": "text"},
-        "embedding": {
-            "type": "dense_vector",
-            "dims": 384,  # matches search/embeddings.py (all-MiniLM-L6-v2)
-            "index": True,
-            "similarity": "cosine",
-        },
-    }
-}
+from hybrid_search_api.search.index_config import build_index_body
 
 
 def build_client(settings: Settings) -> Elasticsearch:
@@ -25,6 +13,12 @@ def build_client(settings: Settings) -> Elasticsearch:
 
 
 def ensure_index(client: Elasticsearch, index_name: str) -> None:
-    """Create the index with the expected mapping if it doesn't exist yet."""
+    """Create the index with the configured analyzers/mappings if it doesn't exist yet.
+
+    See search/index_config.py to adjust fields, analyzers, or filters.
+    """
     if not client.indices.exists(index=index_name):
-        client.indices.create(index=index_name, mappings=INDEX_MAPPING)
+        body = build_index_body()
+        client.indices.create(
+            index=index_name, settings=body["settings"], mappings=body["mappings"]
+        )

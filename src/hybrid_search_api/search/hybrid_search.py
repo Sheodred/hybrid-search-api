@@ -1,35 +1,27 @@
 """Hybrid search: combines classic BM25 full-text search with kNN vector search
 using Reciprocal Rank Fusion (RRF) - a simple, well-established way to merge two
 ranked lists without needing to hand-tune score weights.
+
+The actual query DSL ("how a search request is phrased") lives in queries.py;
+this module only orchestrates and fuses the results.
 """
 
 from elasticsearch import Elasticsearch
+
+from hybrid_search_api.search.queries import bm25_query, knn_query
 
 RRF_K = 60  # standard constant from the RRF paper; higher = flatter weighting
 
 
 def _bm25_search(client: Elasticsearch, index: str, query: str, size: int) -> list[dict]:
-    resp = client.search(
-        index=index,
-        query={"multi_match": {"query": query, "fields": ["title^2", "content"]}},
-        size=size,
-    )
+    resp = client.search(index=index, query=bm25_query(query), size=size)
     return list(resp["hits"]["hits"])
 
 
 def _knn_search(
     client: Elasticsearch, index: str, query_vector: list[float], size: int
 ) -> list[dict]:
-    resp = client.search(
-        index=index,
-        knn={
-            "field": "embedding",
-            "query_vector": query_vector,
-            "k": size,
-            "num_candidates": size * 5,
-        },
-        size=size,
-    )
+    resp = client.search(index=index, knn=knn_query(query_vector, size), size=size)
     return list(resp["hits"]["hits"])
 
 
