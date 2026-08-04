@@ -29,3 +29,29 @@ class SearchResponse(BaseModel):
     query: str
     hits: list[SearchHit]
     answer: str | None = None
+
+
+class ElasticsearchHealth(BaseModel):
+    status: str
+    cluster_name: str
+    number_of_nodes: int
+    active_shards: int
+    unassigned_shards: int
+
+
+class IndexInfo(BaseModel):
+    index: str
+    exists: bool
+    document_count: int | None = None
+    mapping: dict | None = None
+
+
+class DocumentPreview(BaseModel):
+    id: str
+    title: str
+    content: str
+
+
+class DocumentListResponse(BaseModel):
+    total: int
+    documents: list[DocumentPreview]

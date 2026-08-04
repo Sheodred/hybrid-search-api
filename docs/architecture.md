@@ -12,6 +12,23 @@ FastAPI (/search)
         auf Basis der Top-Suchergebnisse
 ```
 
+## Endpunkte
+
+| Methode | Pfad | Zweck |
+|---|---|---|
+| GET | `/health` | Liveness der API selbst |
+| GET | `/health/elasticsearch` | Cluster-Status von Elasticsearch |
+| POST | `/search` | Hybrid Search + optionale RAG-Antwort |
+| GET | `/index` | Mapping und Dokumentanzahl des Index |
+| GET | `/index/documents` | Indexierte Dokumente durchblaettern (paginiert, `limit`/`offset`) |
+
+Bewusst ohne Authentifizierung (siehe Roadmap in der README) - fuer eine
+Demo-/Portfolio-Instanz ausreichend, fuer echten Produktivbetrieb waeren
+zumindest `/index*` schuetzenswert. Ist Elasticsearch selbst nicht
+erreichbar, liefert jeder Endpunkt (nicht nur die Index-Routen) einen
+klaren 502 statt eines nackten 500ers - siehe den globalen Exception-Handler
+in `main.py`.
+
 ## Ablauf einer Anfrage
 
 1. Client schickt eine natuerlichsprachliche Anfrage an `POST /search`.

@@ -1,6 +1,7 @@
 from unittest.mock import patch
 
 import httpx
+from elasticsearch import ConnectionError as ESConnectionError
 from fastapi.testclient import TestClient
 from openai import APIConnectionError, AuthenticationError, NotFoundError, RateLimitError
 
@@ -115,3 +116,14 @@ def test_search_returns_502_on_connection_error(
     assert response.status_code == 502
     assert "nicht erreichbar" in response.json()["detail"]
 
+
+@patch("hybrid_search_api.api.routes.build_client")
+def test_search_returns_502_when_elasticsearch_unreachable(mock_build_client):
+    # Regression check: the global ES-connection-error handler in main.py covers
+    # /search too, not just the new introspection endpoints - previously this
+    # would have bubbled up as a bare 500.
+    mock_build_client.side_effect = ESConnectionError("connection refused")
+
+    response = client.post("/search", json={"query": "test", "use_llm_answer": False})
+
+    assert response.status_code == 502
