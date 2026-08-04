@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
 import httpx
-from openai import APIConnectionError, AuthenticationError, NotFoundError, RateLimitError
 from fastapi.testclient import TestClient
+from openai import APIConnectionError, AuthenticationError, NotFoundError, RateLimitError
 
 from hybrid_search_api.main import app
 
