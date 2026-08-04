@@ -50,6 +50,30 @@ def test_search_returns_502_on_bad_api_key(
     response = client.post("/search", json={"query": "test", "use_llm_answer": True})
 
     assert response.status_code == 502
+    assert "API key" in response.json()["detail"]
+
+
+@patch("hybrid_search_api.api.routes.LLMClient")
+@patch("hybrid_search_api.api.routes.embed")
+@patch("hybrid_search_api.api.routes.hybrid_search")
+@patch("hybrid_search_api.api.routes.build_client")
+def test_search_returns_german_error_when_lang_de(
+    mock_build_client, mock_hybrid_search, mock_embed, mock_llm_cls
+):
+    mock_embed.return_value = [0.1, 0.2, 0.3]
+    mock_hybrid_search.return_value = [
+        {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
+    ]
+    fake_response = httpx.Response(401, request=httpx.Request("POST", "https://llm.example.com"))
+    mock_llm_cls.return_value.complete.side_effect = AuthenticationError(
+        message="invalid x-api-key", response=fake_response, body=None
+    )
+
+    response = client.post(
+        "/search", json={"query": "test", "use_llm_answer": True, "lang": "de"}
+    )
+
+    assert response.status_code == 502
     assert "API-Key" in response.json()["detail"]
 
 
@@ -72,7 +96,7 @@ def test_search_returns_502_on_unknown_model(
     response = client.post("/search", json={"query": "test", "use_llm_answer": True})
 
     assert response.status_code == 502
-    assert "Modell" in response.json()["detail"]
+    assert "Model" in response.json()["detail"]
 
 
 @patch("hybrid_search_api.api.routes.LLMClient")
@@ -114,7 +138,7 @@ def test_search_returns_502_on_connection_error(
     response = client.post("/search", json={"query": "test", "use_llm_answer": True})
 
     assert response.status_code == 502
-    assert "nicht erreichbar" in response.json()["detail"]
+    assert "not reachable" in response.json()["detail"]
 
 
 @patch("hybrid_search_api.api.routes.build_client")

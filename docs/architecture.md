@@ -1,4 +1,6 @@
-# Architektur
+# Architecture
+
+**Language:** **English** | [Deutsch](architecture.de.md)
 
 ```
 Client
@@ -6,68 +8,68 @@ Client
   v
 FastAPI (/search)
   |
-  +--> Elasticsearch: BM25-Suche + kNN-Suche -> Reciprocal Rank Fusion
+  +--> Elasticsearch: BM25 search + kNN search -> Reciprocal Rank Fusion
   |
-  +--> LLM (OpenAI-kompatibler Endpunkt): Query-Verstaendnis / RAG-Antwortsynthese
-        auf Basis der Top-Suchergebnisse
+  +--> LLM (OpenAI-compatible endpoint): query understanding / RAG answer
+        synthesis based on the top search results
 ```
 
-## Endpunkte
+## Endpoints
 
-| Methode | Pfad | Zweck |
+| Method | Path | Purpose |
 |---|---|---|
-| GET | `/health` | Liveness der API selbst |
-| GET | `/health/elasticsearch` | Cluster-Status von Elasticsearch |
-| POST | `/search` | Hybrid Search + optionale RAG-Antwort |
-| GET | `/index` | Mapping und Dokumentanzahl des Index |
-| GET | `/index/documents` | Indexierte Dokumente durchblaettern (paginiert, `limit`/`offset`) |
+| GET | `/health` | Liveness of the API itself |
+| GET | `/health/elasticsearch` | Elasticsearch cluster status |
+| POST | `/search` | Hybrid search + optional RAG answer |
+| GET | `/index` | Mapping and document count of the index |
+| GET | `/index/documents` | Browse indexed documents (paginated, `limit`/`offset`) |
 
-Bewusst ohne Authentifizierung (siehe Roadmap in der README) - fuer eine
-Demo-/Portfolio-Instanz ausreichend, fuer echten Produktivbetrieb waeren
-zumindest `/index*` schuetzenswert. Ist Elasticsearch selbst nicht
-erreichbar, liefert jeder Endpunkt (nicht nur die Index-Routen) einen
-klaren 502 statt eines nackten 500ers - siehe den globalen Exception-Handler
-in `main.py`.
+Deliberately without authentication (see the roadmap in the README) -
+sufficient for a demo/portfolio instance; for real production use, at least
+`/index*` would need protecting. If Elasticsearch itself is unreachable,
+every endpoint (not just the index routes) returns a clear 502 instead of a
+bare 500 - see the global exception handler in `main.py`.
 
-## Ablauf einer Anfrage
+## Request flow
 
-1. Client schickt eine natuerlichsprachliche Anfrage an `POST /search`.
-2. Der Search-Layer fuehrt immer BM25-Suche aus; kNN-Suche kommt nur hinzu,
-   wenn eine Query-Embedding vorliegt (siehe Abschnitt "Embeddings" fuer den
-   Fallback). Liegen beide Ergebnislisten vor, werden sie per Reciprocal Rank
-   Fusion (RRF) fusioniert - sonst zaehlt allein das BM25-Ranking.
-3. Optional (`use_llm_answer=true` **und** mindestens ein Treffer vorhanden)
-   werden die Top-Treffer als Kontext an den konfigurierten LLM-Endpunkt
-   uebergeben, der daraus eine kurze, quellenbasierte Antwort formuliert
-   (RAG-Pattern). Fehler beim LLM-Call (falscher Key, unbekanntes Modell,
-   Endpunkt nicht erreichbar, ...) werden als aussagekraeftige 502-Antworten
-   durchgereicht statt als nackter 500er - siehe `api/routes.py`.
-4. Die Antwort inkl. der zugrunde liegenden Treffer geht an den Client zurueck.
+1. The client sends a natural-language query to `POST /search`.
+2. The search layer always runs a BM25 search; kNN search is added only when
+   a query embedding is available (see the "Embeddings" section for the
+   fallback). If both result lists are present, they are fused via
+   Reciprocal Rank Fusion (RRF) - otherwise the BM25 ranking alone decides.
+3. Optionally (`use_llm_answer=true` **and** at least one hit present), the
+   top hits are passed as context to the configured LLM endpoint, which
+   synthesizes a short, source-grounded answer (RAG pattern). The `lang`
+   field (`"en"` default or `"de"`) controls both the language of this
+   answer and the language of the error messages below. Errors from the LLM
+   call (wrong key, unknown model, endpoint unreachable, ...) are passed
+   through as meaningful 502 responses instead of a bare 500 - see
+   `api/routes.py`.
+4. The response, including the underlying hits, goes back to the client.
 
 ## Embeddings
 
-Query und Dokumente werden mit einem lokalen `sentence-transformers`-Modell
-(`all-MiniLM-L6-v2`, 384 Dimensionen) eingebettet - kein externer API-Call,
-keine Zusatzkosten pro Suche. Schlaegt das Laden des Modells fehl, faellt
-`/search` automatisch auf reines BM25 zurueck (siehe `api/routes.py`).
+Query and documents are embedded with a local `sentence-transformers` model
+(`all-MiniLM-L6-v2`, 384 dimensions) - no external API call, no extra cost
+per search. If loading the model fails, `/search` automatically falls back
+to BM25-only search (see `api/routes.py`).
 
-## Anpassbare Suchkonfiguration
+## Adjustable search configuration
 
-Zwei Stellen sind bewusst getrennt und unabhaengig voneinander editierbar:
+Two places are deliberately separated and independently editable:
 
-- **`search/index_config.py`** - Analyzer, Filter (Stemming, Stoppwoerter) und
-  Feld-Mappings. Hier stellt man z. B. auf eine andere Sprache um, passt die
-  Embedding-Dimension an oder ergaenzt Synonyme.
-- **`search/queries.py`** - die eigentliche Such-Query-DSL (Feld-Boosts,
-  Fuzziness, Groesse des kNN-Kandidatenpools). Hier wird getunt, *wie*
-  gesucht wird, unabhaengig von der Fusion-Logik in `hybrid_search.py`.
+- **`search/index_config.py`** - analyzers, filters (stemming, stopwords),
+  and field mappings. This is where you switch to a different language,
+  adjust the embedding dimension, or add synonyms.
+- **`search/queries.py`** - the actual search query DSL (field boosts,
+  fuzziness, size of the kNN candidate pool). This is where you tune *how*
+  the search runs, independent of the fusion logic in `hybrid_search.py`.
 
-Diese Trennung spiegelt die Trennung bei den Prompts wider (`ai/prompts.py`):
-Konfiguration/Template an einem Ort, Verwendung/Orchestrierung an einem
-anderen.
+This split mirrors the split in the prompts (`ai/prompts.py`):
+configuration/template in one place, usage/orchestration in another.
 
-## Warum Reciprocal Rank Fusion?
+## Why Reciprocal Rank Fusion?
 
-RRF kombiniert zwei Ranglisten, ohne dass man BM25- und Vektor-Scores (die auf
-komplett unterschiedlichen Skalen liegen) von Hand gegeneinander gewichten
-muss. Das macht es zu einem robusten Standardverfahren fuer Hybrid Search.
+RRF combines two ranked lists without having to manually weigh BM25 and
+vector scores (which live on completely different scales) against each
+other. That makes it a robust default choice for hybrid search.

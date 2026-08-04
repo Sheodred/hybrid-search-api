@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -5,7 +7,7 @@ class SearchRequest(BaseModel):
     model_config = ConfigDict(
         json_schema_extra={
             "examples": [
-                {"query": "Wie funktioniert Vektorsuche?", "top_k": 5, "use_llm_answer": True}
+                {"query": "How does vector search work?", "top_k": 5, "use_llm_answer": True}
             ]
         }
     )
@@ -15,6 +17,10 @@ class SearchRequest(BaseModel):
     use_llm_answer: bool = Field(
         default=True,
         description="If true, synthesize a RAG-style answer from the top results",
+    )
+    lang: Literal["en", "de"] = Field(
+        default="en",
+        description="Language for the RAG answer and error messages: English (default) or German",
     )
 
 

@@ -4,92 +4,96 @@
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-Elasticsearch-Suche (klassisches BM25 **und** Vektor-/kNN-Suche, fusioniert per
-Reciprocal Rank Fusion) kombiniert mit einer LLM-Schicht (jeder OpenAI-kompatible
-Endpunkt - z. B. ein Firmen-Gateway vor Claude, oder OpenAI direkt), die aus
-den Top-Treffern eine kurze, quellenbasierte Antwort formuliert (RAG-Pattern).
+**Language:** **English** | [Deutsch](README.de.md)
+
+Elasticsearch search (classic BM25 **and** vector/kNN search, fused via
+Reciprocal Rank Fusion) combined with an LLM layer (any OpenAI-compatible
+endpoint - e.g. a company gateway in front of Claude, or OpenAI directly)
+that turns the top hits into a short, source-grounded answer (RAG pattern).
 
 ![Swagger UI](docs/images/swagger-ui.jpg)
 
-![Demo: POST /search ueber die Swagger-UI](docs/images/swagger-search-demo.gif)
+![Demo: POST /search via the Swagger UI](docs/images/swagger-search-demo.gif)
 
-## Beispiel (echter Output)
+## Example (real output)
 
-Anfrage:
+Request:
 
 ```bash
 curl -X POST http://localhost:8000/search \
   -H "Content-Type: application/json" \
-  -d '{"query": "Wie funktioniert Vektorsuche?", "top_k": 3}'
+  -d '{"query": "How does vector search work?", "top_k": 3}'
 ```
 
-`answer`-Feld der Antwort:
+`answer` field of the response:
 
-> ## Vektorsuche
+> ## Vector Search
 >
-> Laut **Dokument [1]** funktioniert Vektorsuche folgendermassen:
+> According to **document [1]**, vector search works as follows:
 >
-> - Dokumente werden als **Embedding-Vektoren** repraesentiert
-> - Die Suche verwendet **kNN (k-Nearest-Neighbor)**, um aehnliche Dokumente zu finden
-> - Im Gegensatz zur klassischen Suche wird **keine exakte Wortuebereinstimmung**
->   benoetigt - stattdessen wird **semantische Aehnlichkeit** gemessen
+> - Documents are represented as **embedding vectors**
+> - The search uses **kNN (k-nearest-neighbor)** to find similar documents
+> - Unlike classic search, **no exact word match** is required - instead,
+>   **semantic similarity** is measured
 >
-> Die anderen Suchergebnisse [2] und [3] betreffen verwandte, aber andere Themen
-> und liefern keine weiteren Details zur Vektorsuche selbst.
+> The other search results [2] and [3] cover related but different topics
+> and don't provide further detail on vector search itself.
 
-Bemerkenswert: Das Modell zitiert nur das tatsaechlich relevante Dokument und
-markiert die anderen Treffer explizit als nicht einschlaegig, statt sie
-unreflektiert zu vermischen - das ist das Grounding-Verhalten, das ein
-RAG-System liefern soll, nicht nur behauptet.
+Notably, the model cites only the document that's actually relevant and
+explicitly marks the other hits as not relevant, instead of blending them in
+uncritically - that's the grounding behavior a RAG system is supposed to
+deliver, not just claim to.
 
-## Kosten pro RAG-Antwort
+## Cost per RAG answer
 
-Ueber 10 unterschiedliche, inhaltlich passende Testanfragen (eine pro
-Beispieldokument) ergab sich im Schnitt folgender Tokenverbrauch fuer den
-LLM-Antwortschritt (`use_llm_answer=true`):
+Across 10 different, topically matched test queries (one per sample
+document), the LLM answer step (`use_llm_answer=true`) averaged the
+following token usage:
 
-| Metrik | Durchschnitt |
+| Metric | Average |
 |---|---|
-| Prompt-Tokens (Suchkontext + Frage) | ~417 |
-| Completion-Tokens (generierte Antwort) | ~343 |
-| Gesamt | ~760 |
+| Prompt tokens (search context + question) | ~417 |
+| Completion tokens (generated answer) | ~343 |
+| Total | ~760 |
 
-Bewusst in Tokens statt in Euro/Dollar angegeben: Der tatsaechliche
-Geldbetrag haengt vom gewaehlten LLM-Provider und dessen Preisliste ab -
-die Tokenzahl bleibt davon unabhaengig und laesst sich mit dem Preis pro
-Token des jeweils eingesetzten Modells direkt umrechnen.
+Deliberately given in tokens rather than euros/dollars: the actual cost
+depends on the chosen LLM provider and its pricing - the token count is
+independent of that and converts directly using the per-token price of
+whichever model is in use.
 
-## Warum dieses Projekt
+## Why this project
 
-Zeigt in einem zusammenhaengenden Projekt drei Kernkompetenzen:
-- **Backend-Engineering** - sauber strukturierte FastAPI-Anwendung, getestet, containerisiert, CI.
-- **Such-Spezialisierung** - Elasticsearch-Mapping, custom Analyzer (Stemming, Stoppwoerter), BM25, kNN-Vektorsuche, Ranking-Fusion.
-- **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, Streaming, versionierte Prompts, RAG).
+Demonstrates three core competencies in one coherent project:
+- **Backend engineering** - cleanly structured FastAPI application, tested, containerized, CI.
+- **Search specialization** - Elasticsearch mapping, custom analyzers (stemming, stopwords), BM25, kNN vector search, ranking fusion.
+- **AI integration** - production-style LLM integration (retry logic, streaming, versioned prompts, RAG).
 
-## Architektur
+## Architecture
 
-Siehe [docs/architecture.md](docs/architecture.md).
+See [docs/architecture.md](docs/architecture.md).
 
 ## Setup
 
 ```bash
 git clone https://github.com/Sheodred/hybrid-search-api.git
 cd hybrid-search-api
-cp .env.example .env  # LLM_API_KEY (+ ggf. LLM_BASE_URL) eintragen
+cp .env.example .env  # fill in LLM_API_KEY (+ LLM_BASE_URL if needed)
 
-docker compose up -d  # startet Elasticsearch + API
+docker compose up -d  # starts Elasticsearch + API
 
 pip install -e ".[dev]"
-python scripts/seed_data.py  # Beispieldaten indexieren - laedt beim allerersten
-                              # Lauf einmalig das Embedding-Modell (~80MB)
+python scripts/seed_data.py  # indexes sample data - downloads the embedding
+                              # model once on the very first run (~80MB)
 ```
 
-## Nutzung
+## Usage
 
-`POST /search` mit `{"query": "...", "top_k": 5, "use_llm_answer": true}` -
-ein echtes Beispiel inkl. Antwort steht oben unter "Beispiel (echter Output)".
+`POST /search` with `{"query": "...", "top_k": 5, "use_llm_answer": true, "lang": "en"}` -
+`lang` is `"en"` (default) or `"de"` and controls the language of the RAG
+answer as well as error messages. A real example including the answer is
+shown above under "Example (real output)".
 
-Interaktive API-Doku (Swagger): http://localhost:8000/docs
+Interactive API docs (Swagger): http://localhost:8000/docs
 
 ## Tests
 
@@ -98,17 +102,17 @@ pytest -v
 ruff check .
 ```
 
-## Tech-Stack
+## Tech stack
 
-Python 3.11+ - FastAPI - Elasticsearch - OpenAI-kompatible LLM-Anbindung - Docker - pytest - ruff - GitHub Actions
+Python 3.11+ - FastAPI - Elasticsearch - OpenAI-compatible LLM integration - Docker - pytest - ruff - GitHub Actions
 
 ## Roadmap
 
-- [x] Echtes Embedding-Modell fuer die Vektorsuche (sentence-transformers, all-MiniLM-L6-v2, lokal)
-- [ ] Reranking der Top-Treffer mit einem Cross-Encoder
-- [ ] Query-Caching
-- [ ] Auth (API-Key) fuer den `/search`-Endpunkt
+- [x] Real embedding model for vector search (sentence-transformers, all-MiniLM-L6-v2, local)
+- [ ] Reranking of top hits with a cross-encoder
+- [ ] Query caching
+- [ ] Auth (API key) for the `/search` endpoint
 
-## Lizenz
+## License
 
-MIT - siehe [LICENSE](LICENSE)
+MIT - see [LICENSE](LICENSE)

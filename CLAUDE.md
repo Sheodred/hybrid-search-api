@@ -1,40 +1,42 @@
 # hybrid-search-api
 
-Portfolio-Projekt fuer Bewerbungen (Backend + KI-Integration + Elasticsearch-
-Spezialist). Elasticsearch Hybrid Search (BM25 + kNN via RRF) mit einer
-LLM-Schicht fuer RAG-Antworten. Siehe README.md und docs/architecture.md fuer
-Architektur/Setup - bitte vor groesseren Aenderungen lesen.
+Portfolio project for job applications (backend + AI integration +
+Elasticsearch specialist). Elasticsearch hybrid search (BM25 + kNN via RRF)
+combined with an LLM layer for RAG answers. See README.md and
+docs/architecture.md for architecture/setup - please read before making
+larger changes.
 
 ## Stack
-- Python 3.11+ (lokal getestet auf 3.14), FastAPI, Elasticsearch 8.x
-- LLM ueber OpenAI-kompatiblen Endpunkt (LLM_* Env-Vars in .env) - kein
-  direkter Anthropic-API-Call
-- Docker Compose fuer Elasticsearch + API-Container
-- Windows/PowerShell als primaere Dev-Umgebung
+- Python 3.11+ (tested locally on 3.14), FastAPI, Elasticsearch 8.x
+- LLM via an OpenAI-compatible endpoint (LLM_* env vars in .env) - no direct
+  Anthropic API call
+- Docker Compose for Elasticsearch + API container
+- Windows/PowerShell as the primary dev environment
 
-## Bekannte Stolperer (bitte nicht wiederholen)
-- venv gilt nur pro Terminal-Sitzung - vor jedem Befehl pruefen, ob `(.venv)`
-  im Prompt steht, sonst `.\.venv\Scripts\Activate.ps1`.
-- Der Docker-Container zieht Code-Aenderungen NICHT automatisch - nach jeder
-  Aenderung `docker compose up -d --build api`, sonst laeuft der alte Stand
-  unbemerkt weiter.
-- Nach Aenderungen an `search/index_config.py` (Analyzer/Mapping) muss der
-  ES-Index geloescht und neu geseedet werden, sonst greift die neue Mapping
-  nicht:
+## Known gotchas (please don't repeat)
+- venv only applies per terminal session - check before every command
+  whether `(.venv)` shows in the prompt, otherwise run
+  `.\.venv\Scripts\Activate.ps1`.
+- The Docker container does NOT pick up code changes automatically - after
+  every change run `docker compose up -d --build api`, otherwise the old
+  build keeps running unnoticed.
+- After changes to `search/index_config.py` (analyzer/mapping), the ES index
+  must be deleted and reseeded, otherwise the new mapping doesn't take
+  effect:
   `Invoke-RestMethod -Method Delete -Uri http://localhost:9200/documents`
-  dann `python scripts/seed_data.py`.
-- PowerShell: `Invoke-RestMethod` verwenden, nicht curl-Syntax.
-- Git-Autor durchgaengig "Adrian K. <92444350+Sheodred@users.noreply.github.com>".
-- Vor jedem `git push`: kurz `git log --oneline -5` und `git status` pruefen,
-  ob die lokale History wirklich linear zum Remote steht (einmal gab es eine
-  Divergenz durch parallele Copilot-Commits).
+  then `python scripts/seed_data.py`.
+- PowerShell: use `Invoke-RestMethod`, not curl syntax.
+- Git author consistently "Adrian K. <92444350+Sheodred@users.noreply.github.com>".
+- Before every `git push`: briefly check `git log --oneline -5` and
+  `git status` to confirm the local history is really linear with the
+  remote (there was once a divergence caused by parallel Copilot commits).
 
 ## Workflow
-- Neue Features/groessere Aenderungen jeweils auf einem eigenen Branch
-  (z. B. `feat/...`, `docs/...`) statt direkt auf `main` committen - macht
-  einzelne Aenderungen sichtbar, review-/revert-bar und unabhaengig
-  voneinander mergebar. Branch von `main` abzweigen, PR gegen `main`.
+- New features/larger changes each go on their own branch (e.g. `feat/...`,
+  `docs/...`) instead of committing directly to `main` - this keeps
+  individual changes visible, reviewable/revertible, and independently
+  mergeable. Branch off `main`, PR against `main`.
 
-## Nuetzliche Commands
-- `/verify` - Tests + Lint lokal durchlaufen lassen
-- `/rebuild` - Docker-API-Container mit aktuellem Code neu bauen
+## Useful commands
+- `/verify` - run tests + lint locally
+- `/rebuild` - rebuild the Docker API container with the current code
