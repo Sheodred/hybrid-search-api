@@ -20,7 +20,8 @@ dependencies = [
 dev = [
     "pytest>=8.2",
     "pytest-mock>=3.14",
-    "httpx>=0.27",
+    "httpx>=0.27",   # used directly in tests to build fake openai.* exception responses
+    "httpx2",        # FastAPI's TestClient (via Starlette) now prefers this over plain httpx
     "ruff>=0.5",
     "pre-commit>=3.7",
 ]
