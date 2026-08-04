@@ -22,6 +22,13 @@ FastAPI (/search)
    formuliert (RAG-Pattern).
 4. Die Antwort inkl. der zugrunde liegenden Treffer geht an den Client zurueck.
 
+## Embeddings
+
+Query und Dokumente werden mit einem lokalen `sentence-transformers`-Modell
+(`all-MiniLM-L6-v2`, 384 Dimensionen) eingebettet - kein externer API-Call,
+keine Zusatzkosten pro Suche. Schlaegt das Laden des Modells fehl, faellt
+`/search` automatisch auf reines BM25 zurueck (siehe `api/routes.py`).
+
 ## Warum Reciprocal Rank Fusion?
 
 RRF kombiniert zwei Ranglisten, ohne dass man BM25- und Vektor-Scores (die auf

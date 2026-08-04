@@ -13,9 +13,11 @@ def test_health():
     assert response.json() == {"status": "ok"}
 
 
+@patch("hybrid_search_api.api.routes.embed")
 @patch("hybrid_search_api.api.routes.hybrid_search")
 @patch("hybrid_search_api.api.routes.build_client")
-def test_search_without_llm_answer(mock_build_client, mock_hybrid_search):
+def test_search_without_llm_answer(mock_build_client, mock_hybrid_search, mock_embed):
+    mock_embed.return_value = [0.1, 0.2, 0.3]
     mock_hybrid_search.return_value = [
         {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
     ]

@@ -57,7 +57,8 @@ Python 3.12 - FastAPI - Elasticsearch - Anthropic API - Docker - pytest - ruff -
 
 ## Roadmap
 
-- [ ] Echtes Embedding-Modell fuer die Vektorsuche anbinden (aktuell: BM25-Fallback ohne Embeddings)
+- [x] Echtes Embedding-Modell fuer die Vektorsuche (sentence-transformers, all-MiniLM-L6-v2, lokal)
+- [ ] Reranking der Top-Treffer mit einem Cross-Encoder
 - [ ] Query-Caching
 - [ ] Auth (API-Key) fuer den `/search`-Endpunkt
 
