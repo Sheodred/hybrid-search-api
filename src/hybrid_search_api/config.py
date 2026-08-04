@@ -13,9 +13,12 @@ class Settings(BaseSettings):
     elasticsearch_api_key: str | None = None
     elasticsearch_index: str = "documents"
 
-    # Anthropic
-    anthropic_api_key: str
-    anthropic_model: str = "claude-sonnet-4-6"
+    # LLM - any OpenAI-compatible endpoint (Anthropic-through-a-gateway, an
+    # internal company hub, Azure OpenAI, vLLM, etc.). base_url=None uses
+    # OpenAI's own default endpoint.
+    llm_api_key: str
+    llm_base_url: str | None = None
+    llm_model: str = "claude-sonnet-4-6"
 
     # App
     app_env: str = "development"

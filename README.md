@@ -5,7 +5,8 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 Elasticsearch-Suche (klassisches BM25 **und** Vektor-/kNN-Suche, fusioniert per
-Reciprocal Rank Fusion) kombiniert mit einer LLM-Schicht (Anthropic API), die aus
+Reciprocal Rank Fusion) kombiniert mit einer LLM-Schicht (jeder OpenAI-kompatible
+Endpunkt - z. B. ein Firmen-Gateway vor Claude, oder OpenAI direkt), die aus
 den Top-Treffern eine kurze, quellenbasierte Antwort formuliert (RAG-Pattern).
 
 > Screenshot/Demo-GIF hier einfuegen, sobald die API laeuft.
@@ -26,7 +27,7 @@ Siehe [docs/architecture.md](docs/architecture.md).
 ```bash
 git clone <dein-repo-link>
 cd hybrid-search-api
-cp .env.example .env  # ANTHROPIC_API_KEY eintragen
+cp .env.example .env  # LLM_API_KEY (+ ggf. LLM_BASE_URL) eintragen
 
 docker compose up -d  # startet Elasticsearch + API
 
@@ -53,7 +54,7 @@ ruff check .
 
 ## Tech-Stack
 
-Python 3.12 - FastAPI - Elasticsearch - Anthropic API - Docker - pytest - ruff - GitHub Actions
+Python 3.12 - FastAPI - Elasticsearch - OpenAI-kompatible LLM-Anbindung - Docker - pytest - ruff - GitHub Actions
 
 ## Roadmap
 

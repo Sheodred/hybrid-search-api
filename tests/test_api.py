@@ -1,7 +1,7 @@
 from unittest.mock import patch
 
 import httpx
-from anthropic import AuthenticationError, NotFoundError
+from openai import AuthenticationError, NotFoundError
 from fastapi.testclient import TestClient
 
 from hybrid_search_api.main import app
@@ -41,7 +41,7 @@ def test_search_returns_502_on_bad_api_key(
     mock_hybrid_search.return_value = [
         {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
     ]
-    fake_response = httpx.Response(401, request=httpx.Request("POST", "https://api.anthropic.com"))
+    fake_response = httpx.Response(401, request=httpx.Request("POST", "https://llm.example.com"))
     mock_llm_cls.return_value.complete.side_effect = AuthenticationError(
         message="invalid x-api-key", response=fake_response, body=None
     )
@@ -63,7 +63,7 @@ def test_search_returns_502_on_unknown_model(
     mock_hybrid_search.return_value = [
         {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
     ]
-    fake_response = httpx.Response(404, request=httpx.Request("POST", "https://api.anthropic.com"))
+    fake_response = httpx.Response(404, request=httpx.Request("POST", "https://llm.example.com"))
     mock_llm_cls.return_value.complete.side_effect = NotFoundError(
         message="model not found", response=fake_response, body=None
     )

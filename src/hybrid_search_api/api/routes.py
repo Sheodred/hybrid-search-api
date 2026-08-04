@@ -1,7 +1,7 @@
 import logging
 
-from anthropic import AuthenticationError, NotFoundError
 from fastapi import APIRouter, Depends, HTTPException
+from openai import AuthenticationError, NotFoundError
 
 from hybrid_search_api.ai.llm_client import LLMClient
 from hybrid_search_api.ai.prompts import build_rag_prompt
@@ -33,7 +33,7 @@ def health() -> dict:
     description=(
         "Runs BM25 + kNN hybrid search (fused via Reciprocal Rank Fusion) against the "
         "configured Elasticsearch index. If `use_llm_answer` is true, the top hits are "
-        "passed to the configured Anthropic model to synthesize a short, source-grounded "
+        "passed to the configured LLM to synthesize a short, source-grounded "
         "answer."
     ),
 )
@@ -73,16 +73,16 @@ def search(request: SearchRequest, settings: Settings = Depends(get_settings)) -
             raise HTTPException(
                 status_code=502,
                 detail=(
-                    "Anthropic hat den API-Key abgelehnt. Pruefe ANTHROPIC_API_KEY in .env "
-                    "(evtl. noch der Platzhalter aus .env.example?)."
+                    "Der LLM-Endpunkt hat den API-Key abgelehnt. Pruefe LLM_API_KEY "
+                    "(und ggf. LLM_BASE_URL) in .env."
                 ),
             ) from exc
         except NotFoundError as exc:
             raise HTTPException(
                 status_code=502,
                 detail=(
-                    f"Anthropic-Modell '{settings.anthropic_model}' wurde nicht gefunden. "
-                    "Pruefe ANTHROPIC_MODEL in .env."
+                    f"Modell '{settings.llm_model}' wurde am konfigurierten Endpunkt nicht "
+                    "gefunden. Pruefe LLM_MODEL in .env."
                 ),
             ) from exc
 
