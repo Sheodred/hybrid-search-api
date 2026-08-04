@@ -9,7 +9,9 @@ Reciprocal Rank Fusion) kombiniert mit einer LLM-Schicht (jeder OpenAI-kompatibl
 Endpunkt - z. B. ein Firmen-Gateway vor Claude, oder OpenAI direkt), die aus
 den Top-Treffern eine kurze, quellenbasierte Antwort formuliert (RAG-Pattern).
 
-> Screenshot/Demo-GIF hier einfuegen (Swagger-UI unter /docs eignet sich gut).
+![Swagger UI](docs/images/swagger-ui.jpg)
+
+![Demo: POST /search ueber die Swagger-UI](docs/images/swagger-search-demo.gif)
 
 ## Beispiel (echter Output)
 
@@ -39,6 +41,23 @@ Bemerkenswert: Das Modell zitiert nur das tatsaechlich relevante Dokument und
 markiert die anderen Treffer explizit als nicht einschlaegig, statt sie
 unreflektiert zu vermischen - das ist das Grounding-Verhalten, das ein
 RAG-System liefern soll, nicht nur behauptet.
+
+## Kosten pro RAG-Antwort
+
+Ueber 10 unterschiedliche, inhaltlich passende Testanfragen (eine pro
+Beispieldokument) ergab sich im Schnitt folgender Tokenverbrauch fuer den
+LLM-Antwortschritt (`use_llm_answer=true`):
+
+| Metrik | Durchschnitt |
+|---|---|
+| Prompt-Tokens (Suchkontext + Frage) | ~417 |
+| Completion-Tokens (generierte Antwort) | ~343 |
+| Gesamt | ~760 |
+
+Bewusst in Tokens statt in Euro/Dollar angegeben: Der tatsaechliche
+Geldbetrag haengt vom gewaehlten LLM-Provider und dessen Preisliste ab -
+die Tokenzahl bleibt davon unabhaengig und laesst sich mit dem Preis pro
+Token des jeweils eingesetzten Modells direkt umrechnen.
 
 ## Warum dieses Projekt
 
