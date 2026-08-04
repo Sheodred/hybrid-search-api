@@ -15,11 +15,16 @@ FastAPI (/search)
 ## Ablauf einer Anfrage
 
 1. Client schickt eine natuerlichsprachliche Anfrage an `POST /search`.
-2. Der Search-Layer fuehrt BM25- und kNN-Suche gegen Elasticsearch aus und
-   fusioniert die Ergebnislisten per Reciprocal Rank Fusion (RRF).
-3. Optional (`use_llm_answer=true`) werden die Top-Treffer als Kontext an
-   den konfigurierten LLM-Endpunkt uebergeben, der daraus eine kurze,
-   quellenbasierte Antwort formuliert (RAG-Pattern).
+2. Der Search-Layer fuehrt immer BM25-Suche aus; kNN-Suche kommt nur hinzu,
+   wenn eine Query-Embedding vorliegt (siehe Abschnitt "Embeddings" fuer den
+   Fallback). Liegen beide Ergebnislisten vor, werden sie per Reciprocal Rank
+   Fusion (RRF) fusioniert - sonst zaehlt allein das BM25-Ranking.
+3. Optional (`use_llm_answer=true` **und** mindestens ein Treffer vorhanden)
+   werden die Top-Treffer als Kontext an den konfigurierten LLM-Endpunkt
+   uebergeben, der daraus eine kurze, quellenbasierte Antwort formuliert
+   (RAG-Pattern). Fehler beim LLM-Call (falscher Key, unbekanntes Modell,
+   Endpunkt nicht erreichbar, ...) werden als aussagekraeftige 502-Antworten
+   durchgereicht statt als nackter 500er - siehe `api/routes.py`.
 4. Die Antwort inkl. der zugrunde liegenden Treffer geht an den Client zurueck.
 
 ## Embeddings

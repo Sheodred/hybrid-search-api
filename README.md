@@ -1,6 +1,6 @@
 # Hybrid Search API
 
-![CI](https://github.com/<user>/hybrid-search-api/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Sheodred/hybrid-search-api/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
@@ -54,23 +54,21 @@ Siehe [docs/architecture.md](docs/architecture.md).
 ## Setup
 
 ```bash
-git clone <dein-repo-link>
+git clone https://github.com/Sheodred/hybrid-search-api.git
 cd hybrid-search-api
 cp .env.example .env  # LLM_API_KEY (+ ggf. LLM_BASE_URL) eintragen
 
 docker compose up -d  # startet Elasticsearch + API
 
 pip install -e ".[dev]"
-python scripts/seed_data.py  # Beispieldaten indexieren
+python scripts/seed_data.py  # Beispieldaten indexieren - laedt beim allerersten
+                              # Lauf einmalig das Embedding-Modell (~80MB)
 ```
 
 ## Nutzung
 
-```bash
-curl -X POST http://localhost:8000/search \
-  -H "Content-Type: application/json" \
-  -d '{"query": "Wie funktioniert Vektorsuche?", "top_k": 5}'
-```
+`POST /search` mit `{"query": "...", "top_k": 5, "use_llm_answer": true}` -
+ein echtes Beispiel inkl. Antwort steht oben unter "Beispiel (echter Output)".
 
 Interaktive API-Doku (Swagger): http://localhost:8000/docs
 
@@ -83,7 +81,7 @@ ruff check .
 
 ## Tech-Stack
 
-Python 3.12 - FastAPI - Elasticsearch - OpenAI-kompatible LLM-Anbindung - Docker - pytest - ruff - GitHub Actions
+Python 3.11+ - FastAPI - Elasticsearch - OpenAI-kompatible LLM-Anbindung - Docker - pytest - ruff - GitHub Actions
 
 ## Roadmap
 
