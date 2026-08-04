@@ -19,12 +19,23 @@ def _extract_score(hit: dict) -> float:
     return score if score is not None else hit.get("_rrf_score", 0.0)
 
 
-@router.get("/health")
+@router.get("/health", tags=["ops"], summary="Liveness check")
 def health() -> dict:
     return {"status": "ok"}
 
 
-@router.post("/search", response_model=SearchResponse)
+@router.post(
+    "/search",
+    response_model=SearchResponse,
+    tags=["search"],
+    summary="Hybrid search with optional RAG answer",
+    description=(
+        "Runs BM25 + kNN hybrid search (fused via Reciprocal Rank Fusion) against the "
+        "configured Elasticsearch index. If `use_llm_answer` is true, the top hits are "
+        "passed to the configured Anthropic model to synthesize a short, source-grounded "
+        "answer."
+    ),
+)
 def search(request: SearchRequest, settings: Settings = Depends(get_settings)) -> SearchResponse:
     es_client = build_client(settings)
 
