@@ -1,6 +1,7 @@
 import logging
 
-from fastapi import APIRouter, Depends
+from anthropic import AuthenticationError, NotFoundError
+from fastapi import APIRouter, Depends, HTTPException
 
 from hybrid_search_api.ai.llm_client import LLMClient
 from hybrid_search_api.ai.prompts import build_rag_prompt
@@ -66,6 +67,23 @@ def search(request: SearchRequest, settings: Settings = Depends(get_settings)) -
     if request.use_llm_answer and hits:
         llm = LLMClient(settings)
         system, prompt = build_rag_prompt(request.query, [h.model_dump() for h in hits])
-        answer = llm.complete(system=system, prompt=prompt)
+        try:
+            answer = llm.complete(system=system, prompt=prompt)
+        except AuthenticationError as exc:
+            raise HTTPException(
+                status_code=502,
+                detail=(
+                    "Anthropic hat den API-Key abgelehnt. Pruefe ANTHROPIC_API_KEY in .env "
+                    "(evtl. noch der Platzhalter aus .env.example?)."
+                ),
+            ) from exc
+        except NotFoundError as exc:
+            raise HTTPException(
+                status_code=502,
+                detail=(
+                    f"Anthropic-Modell '{settings.anthropic_model}' wurde nicht gefunden. "
+                    "Pruefe ANTHROPIC_MODEL in .env."
+                ),
+            ) from exc
 
     return SearchResponse(query=request.query, hits=hits, answer=answer)
