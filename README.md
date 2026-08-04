@@ -9,7 +9,36 @@ Reciprocal Rank Fusion) kombiniert mit einer LLM-Schicht (jeder OpenAI-kompatibl
 Endpunkt - z. B. ein Firmen-Gateway vor Claude, oder OpenAI direkt), die aus
 den Top-Treffern eine kurze, quellenbasierte Antwort formuliert (RAG-Pattern).
 
-> Screenshot/Demo-GIF hier einfuegen, sobald die API laeuft.
+> Screenshot/Demo-GIF hier einfuegen (Swagger-UI unter /docs eignet sich gut).
+
+## Beispiel (echter Output)
+
+Anfrage:
+
+```bash
+curl -X POST http://localhost:8000/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Wie funktioniert Vektorsuche?", "top_k": 3}'
+```
+
+`answer`-Feld der Antwort:
+
+> ## Vektorsuche
+>
+> Laut **Dokument [1]** funktioniert Vektorsuche folgendermassen:
+>
+> - Dokumente werden als **Embedding-Vektoren** repraesentiert
+> - Die Suche verwendet **kNN (k-Nearest-Neighbor)**, um aehnliche Dokumente zu finden
+> - Im Gegensatz zur klassischen Suche wird **keine exakte Wortuebereinstimmung**
+>   benoetigt - stattdessen wird **semantische Aehnlichkeit** gemessen
+>
+> Die anderen Suchergebnisse [2] und [3] betreffen verwandte, aber andere Themen
+> und liefern keine weiteren Details zur Vektorsuche selbst.
+
+Bemerkenswert: Das Modell zitiert nur das tatsaechlich relevante Dokument und
+markiert die anderen Treffer explizit als nicht einschlaegig, statt sie
+unreflektiert zu vermischen - das ist das Grounding-Verhalten, das ein
+RAG-System liefern soll, nicht nur behauptet.
 
 ## Warum dieses Projekt
 
