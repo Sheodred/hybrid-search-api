@@ -12,94 +12,92 @@ from hybrid_search_api.search.embeddings import embed_many
 
 SAMPLE_DOCS = [
     {
-        "title": "Elasticsearch Grundlagen",
+        "title": "Elasticsearch Basics",
         "content": (
-            "Elasticsearch ist eine verteilte Such- und Analyse-Engine auf Basis von "
-            "Apache Lucene. Sie eignet sich fuer Volltextsuche, strukturierte Suche und "
-            "Analytics nahezu in Echtzeit. Daten werden in Indizes organisiert, die "
-            "intern auf mehrere Shards verteilt werden."
+            "Elasticsearch is a distributed search and analytics engine built on top of "
+            "Apache Lucene. It is suited for full-text search, structured search, and "
+            "near-real-time analytics. Data is organized into indices, which are "
+            "internally distributed across multiple shards."
         ),
     },
     {
-        "title": "Vektorsuche und Embeddings",
+        "title": "Vector Search and Embeddings",
         "content": (
-            "Bei der Vektorsuche werden Texte als hochdimensionale Zahlenvektoren "
-            "(Embeddings) repraesentiert. Aehnliche Inhalte liegen im Vektorraum nah "
-            "beieinander, wodurch semantisch verwandte Dokumente gefunden werden, auch "
-            "wenn keine woertliche Uebereinstimmung vorliegt."
+            "Vector search represents text as high-dimensional numeric vectors "
+            "(embeddings). Similar content lies close together in vector space, which "
+            "means semantically related documents can be found even when there is no "
+            "literal word match."
         ),
     },
     {
         "title": "Retrieval-Augmented Generation (RAG)",
         "content": (
-            "RAG kombiniert eine Suchkomponente mit einem Sprachmodell: Zunaechst "
-            "werden relevante Dokumente abgerufen, anschliessend generiert das Modell "
-            "eine Antwort auf Basis dieser Quellen. Das reduziert Halluzinationen und "
-            "macht Antworten nachvollziehbar."
+            "RAG combines a search component with a language model: relevant documents "
+            "are retrieved first, then the model generates an answer based on those "
+            "sources. This reduces hallucinations and makes answers traceable."
         ),
     },
     {
-        "title": "BM25-Ranking",
+        "title": "BM25 Ranking",
         "content": (
-            "BM25 ist eine Ranking-Funktion fuer die klassische Volltextsuche, die "
-            "Termfrequenz, inverse Dokumentfrequenz und Dokumentlaenge beruecksichtigt. "
-            "Sie ist der Standard-Scoring-Algorithmus in Elasticsearch und liefert bei "
-            "exakten Begriffstreffern sehr gute Ergebnisse."
+            "BM25 is a ranking function for classic full-text search that takes term "
+            "frequency, inverse document frequency, and document length into account. "
+            "It is the default scoring algorithm in Elasticsearch and delivers very good "
+            "results for exact term matches."
         ),
     },
     {
         "title": "Reciprocal Rank Fusion (RRF)",
         "content": (
-            "RRF fusioniert mehrere Ranglisten unterschiedlicher Suchverfahren, ohne "
-            "dass deren Scores auf eine gemeinsame Skala gebracht werden muessen. Jedes "
-            "Dokument erhaelt Punkte basierend auf seinem Rang in jeder Liste, was RRF "
-            "robust gegenueber Ausreissern macht."
+            "RRF fuses multiple ranked lists from different search methods without "
+            "requiring their scores to be brought onto a common scale. Each document "
+            "gets points based on its rank in every list, which makes RRF robust "
+            "against outliers."
         ),
     },
     {
         "title": "Approximate Nearest Neighbor Search (HNSW)",
         "content": (
-            "Elasticsearch nutzt fuer die kNN-Suche den HNSW-Algorithmus (Hierarchical "
-            "Navigable Small World), um aehnliche Vektoren approximativ, aber sehr "
-            "schnell zu finden. Der Parameter num_candidates steuert dabei die Balance "
-            "zwischen Suchgeschwindigkeit und Genauigkeit."
+            "For kNN search, Elasticsearch uses the HNSW algorithm (Hierarchical "
+            "Navigable Small World) to find similar vectors approximately but very "
+            "quickly. The num_candidates parameter controls the balance between search "
+            "speed and accuracy."
         ),
     },
     {
-        "title": "Sentence-Transformer-Modelle",
+        "title": "Sentence Transformer Models",
         "content": (
-            "Sentence-Transformer-Modelle wie all-MiniLM-L6-v2 wandeln ganze Saetze in "
-            "Embedding-Vektoren um, statt einzelne Woerter isoliert zu betrachten. "
-            "Dadurch erfassen sie Kontext und Bedeutung besser als klassische "
-            "Wort-Embeddings."
+            "Sentence transformer models like all-MiniLM-L6-v2 turn whole sentences "
+            "into embedding vectors instead of considering individual words in "
+            "isolation. This lets them capture context and meaning better than classic "
+            "word embeddings."
         ),
     },
     {
-        "title": "Volltextsuche vs. semantische Suche",
+        "title": "Full-Text Search vs. Semantic Search",
         "content": (
-            "Volltextsuche findet Dokumente ueber exakte oder fuzzy "
-            "Wortuebereinstimmungen, waehrend semantische Suche auf "
-            "Bedeutungsaehnlichkeit basiert. Hybrid Search kombiniert beide Ansaetze, "
-            "um sowohl praezise Begriffstreffer als auch inhaltlich verwandte "
-            "Ergebnisse zu liefern."
+            "Full-text search finds documents through exact or fuzzy word matches, "
+            "while semantic search relies on meaning similarity. Hybrid search combines "
+            "both approaches to deliver precise term matches as well as content that is "
+            "conceptually related."
         ),
     },
     {
-        "title": "Analyzer und Tokenisierung",
+        "title": "Analyzers and Tokenization",
         "content": (
-            "Ein Elasticsearch-Analyzer zerlegt Text in Tokens und normalisiert sie, "
-            "etwa durch Kleinschreibung, Stemming oder Stoppwort-Entfernung. "
-            "Sprachspezifische Analyzer wie der German-Analyzer verbessern die "
-            "Trefferquote bei deutschsprachigen Inhalten deutlich."
+            "An Elasticsearch analyzer breaks text into tokens and normalizes them, for "
+            "example through lowercasing, stemming, or stopword removal. "
+            "Language-specific analyzers, such as the German analyzer, noticeably "
+            "improve match quality for German-language content."
         ),
     },
     {
-        "title": "Prompt Engineering fuer RAG-Systeme",
+        "title": "Prompt Engineering for RAG Systems",
         "content": (
-            "Die Formulierung des System-Prompts entscheidet massgeblich darueber, ob "
-            "ein RAG-System nur auf Basis der gelieferten Quellen antwortet oder zu "
-            "Halluzinationen neigt. Klare Anweisungen, explizite Quellenverweise und "
-            "Versionierung der Prompts erhoehen die Nachvollziehbarkeit."
+            "How the system prompt is worded largely determines whether a RAG system "
+            "answers strictly from the supplied sources or tends toward "
+            "hallucinations. Clear instructions, explicit source references, and "
+            "prompt versioning all improve traceability."
         ),
     },
 ]

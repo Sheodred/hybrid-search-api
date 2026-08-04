@@ -45,5 +45,5 @@ async def es_connection_error_handler(request: Request, exc: ESConnectionError) 
     logger.exception("Elasticsearch unreachable")
     return UTF8JSONResponse(
         status_code=502,
-        content={"detail": f"Elasticsearch nicht erreichbar (ELASTICSEARCH_URL pruefen): {exc}"},
+        content={"detail": f"Elasticsearch not reachable (check ELASTICSEARCH_URL): {exc}"},
     )
