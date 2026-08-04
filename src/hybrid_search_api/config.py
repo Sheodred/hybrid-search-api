@@ -15,7 +15,7 @@ class Settings(BaseSettings):
 
     # Anthropic
     anthropic_api_key: str
-    anthropic_model: str = "claude-sonnet-4-6"
+    anthropic_model: str = "claude-sonnet-5"
 
     # App
     app_env: str = "development"
