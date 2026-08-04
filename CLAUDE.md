@@ -29,6 +29,12 @@ Architektur/Setup - bitte vor groesseren Aenderungen lesen.
   ob die lokale History wirklich linear zum Remote steht (einmal gab es eine
   Divergenz durch parallele Copilot-Commits).
 
+## Workflow
+- Neue Features/groessere Aenderungen jeweils auf einem eigenen Branch
+  (z. B. `feat/...`, `docs/...`) statt direkt auf `main` committen - macht
+  einzelne Aenderungen sichtbar, review-/revert-bar und unabhaengig
+  voneinander mergebar. Branch von `main` abzweigen, PR gegen `main`.
+
 ## Nuetzliche Commands
 - `/verify` - Tests + Lint lokal durchlaufen lassen
 - `/rebuild` - Docker-API-Container mit aktuellem Code neu bauen
