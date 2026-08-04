@@ -20,10 +20,8 @@ tags_metadata = [
     {"name": "search", "description": "Hybrid (BM25 + kNN) search and RAG-style answers."},
     {
         "name": "index",
-        "description": (
-            "Introspect the Elasticsearch index: mapping, document count, ",
-            "browse documents.",
-        ),
+        "description":
+            "Introspect the Elasticsearch index: mapping, document count, browse documents.",
     },
     {"name": "ops", "description": "Health and operational endpoints."},
 ]
