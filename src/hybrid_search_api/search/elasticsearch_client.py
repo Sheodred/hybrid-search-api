@@ -8,7 +8,7 @@ INDEX_MAPPING = {
         "content": {"type": "text"},
         "embedding": {
             "type": "dense_vector",
-            "dims": 384,
+            "dims": 384,  # matches search/embeddings.py (all-MiniLM-L6-v2)
             "index": True,
             "similarity": "cosine",
         },

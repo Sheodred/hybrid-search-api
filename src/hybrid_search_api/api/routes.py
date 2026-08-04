@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import APIRouter, Depends
 
 from hybrid_search_api.ai.llm_client import LLMClient
@@ -5,8 +7,10 @@ from hybrid_search_api.ai.prompts import build_rag_prompt
 from hybrid_search_api.config import Settings, get_settings
 from hybrid_search_api.models import SearchHit, SearchRequest, SearchResponse
 from hybrid_search_api.search.elasticsearch_client import build_client
+from hybrid_search_api.search.embeddings import embed
 from hybrid_search_api.search.hybrid_search import hybrid_search
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
@@ -23,10 +27,18 @@ def health() -> dict:
 @router.post("/search", response_model=SearchResponse)
 def search(request: SearchRequest, settings: Settings = Depends(get_settings)) -> SearchResponse:
     es_client = build_client(settings)
+
+    try:
+        query_vector = embed(request.query)
+    except Exception:
+        logger.exception("Embedding model unavailable, falling back to BM25-only search")
+        query_vector = None
+
     raw_hits = hybrid_search(
         client=es_client,
         index=settings.elasticsearch_index,
         query=request.query,
+        query_vector=query_vector,
         size=request.top_k,
     )
     hits = [
