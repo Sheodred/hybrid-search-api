@@ -13,15 +13,24 @@ from hybrid_search_api.search.embeddings import embed_many
 SAMPLE_DOCS = [
     {
         "title": "Elasticsearch Basics",
-        "content": "Elasticsearch ist eine verteilte Such- und Analyse-Engine auf Basis von Apache Lucene.",
+        "content": (
+            "Elasticsearch ist eine verteilte Such- und Analyse-Engine auf Basis von "
+            "Apache Lucene."
+        ),
     },
     {
         "title": "Vector Search",
-        "content": "kNN-Suche findet semantisch aehnliche Dokumente ueber Embedding-Vektoren statt exakter Wortuebereinstimmung.",
+        "content": (
+            "kNN-Suche findet semantisch aehnliche Dokumente ueber Embedding-Vektoren "
+            "statt exakter Wortuebereinstimmung."
+        ),
     },
     {
         "title": "Retrieval-Augmented Generation",
-        "content": "RAG kombiniert Suchergebnisse mit einem LLM, um Antworten auf Basis konkreter Quellen zu generieren.",
+        "content": (
+            "RAG kombiniert Suchergebnisse mit einem LLM, um Antworten auf Basis "
+            "konkreter Quellen zu generieren."
+        ),
     },
 ]
 
@@ -41,7 +50,10 @@ def main() -> None:
             document={**doc, "embedding": vector},
         )
     client.indices.refresh(index=settings.elasticsearch_index)
-    print(f"Indexed {len(SAMPLE_DOCS)} sample documents (with embeddings) into '{settings.elasticsearch_index}'.")
+    print(
+        f"Indexed {len(SAMPLE_DOCS)} sample documents (with embeddings) "
+        f"into '{settings.elasticsearch_index}'."
+    )
 
 
 if __name__ == "__main__":
