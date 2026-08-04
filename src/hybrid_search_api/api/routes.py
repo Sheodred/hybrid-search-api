@@ -1,7 +1,7 @@
 import logging
 
 from fastapi import APIRouter, Depends, HTTPException
-from openai import AuthenticationError, NotFoundError
+from openai import APIError, APIStatusError, AuthenticationError, NotFoundError
 
 from hybrid_search_api.ai.llm_client import LLMClient
 from hybrid_search_api.ai.prompts import build_rag_prompt
@@ -84,6 +84,20 @@ def search(request: SearchRequest, settings: Settings = Depends(get_settings)) -
                     f"Modell '{settings.llm_model}' wurde am konfigurierten Endpunkt nicht "
                     "gefunden. Pruefe LLM_MODEL in .env."
                 ),
+            ) from exc
+        except APIStatusError as exc:
+            # Catches everything else the endpoint answered with an HTTP error for
+            # (429 rate limit, 400 bad request, 5xx on the gateway's own side, ...).
+            raise HTTPException(
+                status_code=502,
+                detail=f"LLM-Endpunkt antwortete mit Fehler {exc.status_code}: {exc.message}",
+            ) from exc
+        except APIError as exc:
+            # No HTTP response at all - connection refused, DNS failure, timeout,
+            # TLS problem, etc. Usually means LLM_BASE_URL is wrong or unreachable.
+            raise HTTPException(
+                status_code=502,
+                detail=f"LLM-Endpunkt nicht erreichbar ({settings.llm_base_url}): {exc}",
             ) from exc
 
     return SearchResponse(query=request.query, hits=hits, answer=answer)
