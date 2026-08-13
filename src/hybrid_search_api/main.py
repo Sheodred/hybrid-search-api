@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 
 from hybrid_search_api.api.index_routes import router as index_router
 from hybrid_search_api.api.routes import router
+from hybrid_search_api.api.ui_routes import router as ui_router
 
 logger = logging.getLogger(__name__)
 
@@ -35,6 +36,7 @@ app = FastAPI(
 )
 app.include_router(router)
 app.include_router(index_router)
+app.include_router(ui_router)
 
 
 @app.exception_handler(ESConnectionError)
