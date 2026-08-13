@@ -24,6 +24,7 @@ dev = [
     "httpx2",        # FastAPI's TestClient (via Starlette) now prefers this over plain httpx
     "ruff>=0.5",
     "pre-commit>=3.7",
+    "certifi",       # explicit CA bundle for scripts/seed_nfcorpus.py's dataset download
 ]
 
 [tool.ruff]

@@ -11,9 +11,9 @@ Reciprocal Rank Fusion) combined with an LLM layer (any OpenAI-compatible
 endpoint - e.g. a company gateway in front of Claude, or OpenAI directly)
 that turns the top hits into a short, source-grounded answer (RAG pattern).
 
-![Swagger UI](docs/images/swagger-ui.jpg)
+![Search UI](docs/images/search-ui.jpg)
 
-![Demo: POST /search via the Swagger UI](docs/images/swagger-search-demo.gif)
+![Demo: searching via the built-in UI](docs/images/search-ui-demo.gif)
 
 ## Example (real output)
 
@@ -27,22 +27,32 @@ curl -X POST http://localhost:8000/search \
 
 `answer` field of the response:
 
-> ## Vector Search
+> Based on the search results, vector search works by representing text as
+> high-dimensional numeric vectors called embeddings. The key idea is that
+> semantically similar content ends up positioned close together in this
+> vector space, which allows the system to find related documents even when
+> there is no exact word match between the query and the document.
 >
-> According to **document [1]**, vector search works as follows:
+> When performing a search, the system looks for vectors that are nearest to
+> the query vector. According to the third result, Elasticsearch does this
+> using an algorithm called HNSW (Hierarchical Navigable Small World), which
+> finds similar vectors approximately but very efficiently. There is a
+> tunable parameter called num_candidates that lets you control the
+> trade-off between speed and accuracy.
 >
-> - Documents are represented as **embedding vectors**
-> - The search uses **kNN (k-nearest-neighbor)** to find similar documents
-> - Unlike classic search, **no exact word match** is required - instead,
->   **semantic similarity** is measured
->
-> The other search results [2] and [3] cover related but different topics
-> and don't provide further detail on vector search itself.
+> This approach is distinct from traditional full-text search, which relies
+> on exact or fuzzy word matching. Vector search instead captures meaning
+> and concept similarity, making it useful for finding conceptually related
+> content that might use completely different wording.
 
-Notably, the model cites only the document that's actually relevant and
-explicitly marks the other hits as not relevant, instead of blending them in
-uncritically - that's the grounding behavior a RAG system is supposed to
-deliver, not just claim to.
+The answer grounds specific claims in specific results (e.g. attributing
+HNSW to "the third result") rather than presenting an unsourced, blended
+summary - plain prose by design, so it reads naturally instead of dumping
+Markdown headers and bullet lists into a JSON string.
+
+Interactive API docs are also available via Swagger:
+
+![Swagger UI](docs/images/swagger-ui.jpg)
 
 ## Cost per RAG answer
 
@@ -95,6 +105,19 @@ gateway (see the commented-out block in `.env.example`):
 LLM_API_KEY=ollama       # Ollama ignores the value, it just can't be empty
 LLM_BASE_URL=http://localhost:11434/v1
 LLM_MODEL=llama3.1
+```
+
+### Trying it against a larger, unrelated corpus
+
+`seed_data.py`'s 10 sample docs are deliberately about search/RAG concepts
+themselves, which makes for a clean demo but doesn't prove much about scale.
+For that, `scripts/seed_nfcorpus.py` downloads
+[NFCorpus](https://github.com/beir-cellar/beir) (~3.6K medical documents, a
+recognized IR benchmark) into its own index, leaving the default one alone:
+
+```bash
+python scripts/seed_nfcorpus.py            # indexes into '<ELASTICSEARCH_INDEX>_nfcorpus'
+ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 ```
 
 ## Usage
