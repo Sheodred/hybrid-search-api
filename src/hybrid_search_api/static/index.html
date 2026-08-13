@@ -257,7 +257,11 @@
     for (const hit of data.hits) {
       const el = document.createElement("div");
       el.className = "hit";
-      el.innerHTML = `<h3>${escapeHtml(hit.title)} <span class="score">${hit.score.toFixed(2)}</span></h3><p></p>`;
+      // 3 significant figures, not fixed decimals: RRF-fused scores are small
+      // (~0.01-0.03) and toFixed(2) collapsed them into visual ties; raw BM25
+      // scores are much larger and don't need 2 decimals at all.
+      const score = Number(hit.score.toPrecision(3));
+      el.innerHTML = `<h3>${escapeHtml(hit.title)} <span class="score">${score}</span></h3><p></p>`;
       el.querySelector("p").textContent = hit.content;
       resultsEl.appendChild(el);
     }

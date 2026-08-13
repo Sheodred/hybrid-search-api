@@ -11,9 +11,9 @@ Reciprocal Rank Fusion) kombiniert mit einer LLM-Schicht (jeder OpenAI-kompatibl
 Endpunkt - z. B. ein Firmen-Gateway vor Claude, oder OpenAI direkt), die aus
 den Top-Treffern eine kurze, quellenbasierte Antwort formuliert (RAG-Pattern).
 
-![Swagger UI](docs/images/swagger-ui.jpg)
+![Such-UI](docs/images/search-ui.jpg)
 
-![Demo: POST /search ueber die Swagger-UI](docs/images/swagger-search-demo.gif)
+![Demo: Suche ueber die eingebaute UI](docs/images/search-ui-demo.gif)
 
 ## Beispiel (echter Output)
 
@@ -27,22 +27,28 @@ curl -X POST http://localhost:8000/search \
 
 `answer`-Feld der Antwort:
 
-> ## Vektorsuche
->
-> Laut **Dokument [1]** funktioniert Vektorsuche folgendermassen:
->
-> - Dokumente werden als **Embedding-Vektoren** repraesentiert
-> - Die Suche verwendet **kNN (k-Nearest-Neighbor)**, um aehnliche Dokumente zu finden
-> - Im Gegensatz zur klassischen Suche wird **keine exakte Wortuebereinstimmung**
->   benoetigt - stattdessen wird **semantische Aehnlichkeit** gemessen
->
-> Die anderen Suchergebnisse [2] und [3] betreffen verwandte, aber andere Themen
-> und liefern keine weiteren Details zur Vektorsuche selbst.
+> Zur Vektorsuche liefern die Suchergebnisse nur begrenzte, aber relevante
+> Informationen. Grundlage der Vektorsuche sind sogenannte
+> Embedding-Vektoren. Laut Dokument "Sentence Transformer Models" wandeln
+> Modelle wie all-MiniLM-L6-v2 ganze Saetze in solche Vektoren um, anstatt
+> einzelne Woerter isoliert zu betrachten. Dadurch koennen Kontext und
+> Bedeutung besser erfasst werden als mit klassischen Wort-Embeddings. Die
+> eigentliche Suche funktioniert dann so, dass Suchanfragen ebenfalls in
+> einen Vektor umgewandelt und mit den gespeicherten Vektoren verglichen
+> werden, um semantisch aehnliche Inhalte zu finden. Wie genau dieser
+> Vergleich technisch ablaeuft, etwa durch Aehnlichkeitsmasse wie
+> Kosinus-Aehnlichkeit, geht aus den vorliegenden Suchergebnissen jedoch
+> nicht hervor. Darueber hinaus enthalten die anderen Dokumente keine
+> weiteren Informationen zur Vektorsuche.
 
-Bemerkenswert: Das Modell zitiert nur das tatsaechlich relevante Dokument und
-markiert die anderen Treffer explizit als nicht einschlaegig, statt sie
-unreflektiert zu vermischen - das ist das Grounding-Verhalten, das ein
-RAG-System liefern soll, nicht nur behauptet.
+Bemerkenswert: Das Modell benennt explizit, was die Quellen *nicht*
+hergeben (die technische Funktionsweise des Vektorvergleichs), statt sich
+etwas auszudenken - genau das Grounding-Verhalten, das ein RAG-System
+liefern soll, nicht nur behauptet.
+
+Interaktive API-Dokumentation ist ebenfalls per Swagger verfuegbar:
+
+![Swagger UI](docs/images/swagger-ui.jpg)
 
 ## Kosten pro RAG-Antwort
 
@@ -95,6 +101,20 @@ Endpunkt zeigen lassen (siehe der auskommentierte Block in `.env.example`):
 LLM_API_KEY=ollama       # Ollama ignoriert den Wert, er darf nur nicht leer sein
 LLM_BASE_URL=http://localhost:11434/v1
 LLM_MODEL=llama3.1
+```
+
+### Test mit einem groesseren, fachfremden Korpus
+
+Die 10 Beispieldokumente in `seed_data.py` handeln bewusst von Such-/RAG-Konzepten
+selbst - gut fuer eine saubere Demo, zeigt aber nichts ueber Skalierung.
+Dafuer laedt `scripts/seed_nfcorpus.py`
+[NFCorpus](https://github.com/beir-cellar/beir) (~3.600 medizinische
+Dokumente, ein anerkannter IR-Benchmark) in einen eigenen Index, ohne den
+Standard-Index anzuruehren:
+
+```bash
+python scripts/seed_nfcorpus.py            # indexiert in '<ELASTICSEARCH_INDEX>_nfcorpus'
+ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 ```
 
 ## Nutzung
