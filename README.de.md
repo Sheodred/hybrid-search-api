@@ -86,6 +86,17 @@ python scripts/seed_data.py  # Beispieldaten indexieren - laedt beim allerersten
                               # Lauf einmalig das Embedding-Modell (~80MB)
 ```
 
+Fuer die LLM-Anbindung funktioniert jeder OpenAI-kompatible Endpunkt, auch ein
+lokales Modell via [Ollama](https://ollama.com) - ganz ohne Cloud-Key. Dazu
+`LLM_BASE_URL` statt auf ein Cloud-Gateway auf Ollamas OpenAI-kompatiblen
+Endpunkt zeigen lassen (siehe der auskommentierte Block in `.env.example`):
+
+```bash
+LLM_API_KEY=ollama       # Ollama ignoriert den Wert, er darf nur nicht leer sein
+LLM_BASE_URL=http://localhost:11434/v1
+LLM_MODEL=llama3.1
+```
+
 ## Nutzung
 
 `POST /search` mit `{"query": "...", "top_k": 5, "use_llm_answer": true, "lang": "de"}` -
