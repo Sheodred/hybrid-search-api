@@ -72,7 +72,7 @@ Token des jeweils eingesetzten Modells direkt umrechnen.
 Zeigt in einem zusammenhaengenden Projekt drei Kernkompetenzen:
 - **Backend-Engineering** - sauber strukturierte FastAPI-Anwendung, getestet, containerisiert, CI.
 - **Such-Spezialisierung** - Elasticsearch-Mapping, custom Analyzer (Stemming, Stoppwoerter), BM25, kNN-Vektorsuche, Ranking-Fusion.
-- **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, Streaming, versionierte Prompts, RAG).
+- **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, Streaming, versionierte Prompts, RAG), inklusive vollstaendig on-prem betreibbarem Datenschutz-Modus fuer regulierte Umgebungen (siehe unten).
 
 ## Architektur
 
@@ -92,16 +92,34 @@ python scripts/seed_data.py  # Beispieldaten indexieren - laedt beim allerersten
                               # Lauf einmalig das Embedding-Modell (~80MB)
 ```
 
-Fuer die LLM-Anbindung funktioniert jeder OpenAI-kompatible Endpunkt, auch ein
-lokales Modell via [Ollama](https://ollama.com) - ganz ohne Cloud-Key. Dazu
-`LLM_BASE_URL` statt auf ein Cloud-Gateway auf Ollamas OpenAI-kompatiblen
-Endpunkt zeigen lassen (siehe der auskommentierte Block in `.env.example`):
+### Datenschutz-Betriebsmodus (Data Sovereignty)
+
+Der LLM-Client funktioniert mit jedem OpenAI-kompatiblen Endpunkt - relevant
+fuer ein reales Szenario: Daten, die die eigene Infrastruktur nicht verlassen
+duerfen (DSGVO, regulierte Branchen). `docker compose --profile local-llm up`
+startet einen lokalen [llama.cpp](https://github.com/ggml-org/llama.cpp)-Server
+neben Elasticsearch und der API - der RAG-Schritt macht dann keinen externen
+Aufruf mehr. Siehe [ADR-0002](docs/adr/0002-llama-server-for-data-sovereignty-deployments.md)
+fuer die Begruendung, warum llama-server statt des bekannteren Ollama
+(Kurzfassung: Ollama erzwingt standardmaessig keine API-Key-Pruefung, wodurch
+die eigene Fehlerbehandlung fuer Auth-Fehler damit ungetestet bliebe).
 
 ```bash
-LLM_API_KEY=ollama       # Ollama ignoriert den Wert, er darf nur nicht leer sein
-LLM_BASE_URL=http://localhost:11434/v1
-LLM_MODEL=llama3.1
+docker compose --profile local-llm up -d   # startet auch den lokalen LLM-Server
 ```
+
+```bash
+# .env
+LLM_API_KEY=local-dev-key
+LLM_BASE_URL=http://localhost:8090/v1
+LLM_MODEL=qwen2.5-1.5b
+```
+
+Fuer einfache lokale Entwicklung, bei der Data Sovereignty nicht im Fokus
+steht, ist [Ollama](https://ollama.com) einfacher aufzusetzen (siehe der
+auskommentierte Block in `.env.example`). Fuer GPU-Produktionsbetrieb
+funktioniert derselbe `LLM_BASE_URL`-Tausch auch mit vLLM oder TGI - der App
+ist es egal, welcher OpenAI-kompatible Server dahinter steht.
 
 ### Test mit einem groesseren, fachfremden Korpus
 

@@ -22,5 +22,28 @@ services:
     volumes:
       - esdata:/usr/share/elasticsearch/data
 
+  # Data-sovereignty deployment mode: a local, OpenAI-compatible LLM server so
+  # the RAG answer step never leaves this machine. Opt-in - `docker compose
+  # --profile local-llm up` - not part of the default stack. See
+  # docs/adr/0002-llama-server-for-data-sovereignty-deployments.md for why
+  # llama-server rather than Ollama.
+  local-llm:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    profiles: ["local-llm"]
+    command:
+      - -hf
+      - Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M
+      - --api-key
+      - ${LOCAL_LLM_API_KEY:-local-dev-key}
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+    ports:
+      - "8090:8080"
+    volumes:
+      - local_llm_cache:/root/.cache/huggingface
+
 volumes:
   esdata:
+  local_llm_cache:
