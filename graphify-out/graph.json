@@ -69,8 +69,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_seed_data",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "seed_data.py"
     },
     {
@@ -81,8 +81,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "scripts_seed_data_main",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "main()"
     },
     {
@@ -92,9 +92,78 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_seed_data_rationale_1",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "utility script: indexes a small set of sample documents into elasticsearch,..."
+    },
+    {
+      "label": "seed_nfcorpus.py",
+      "file_type": "code",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_seed_nfcorpus",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
+      "norm_label": "seed_nfcorpus.py"
+    },
+    {
+      "label": "download_and_extract()",
+      "file_type": "code",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "scripts_seed_nfcorpus_download_and_extract",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
+      "norm_label": "download_and_extract()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "path",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
+      "norm_label": "path"
+    },
+    {
+      "label": "load_corpus()",
+      "file_type": "code",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "scripts_seed_nfcorpus_load_corpus",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
+      "norm_label": "load_corpus()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L68",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "scripts_seed_nfcorpus_main",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
+      "norm_label": "main()"
+    },
+    {
+      "label": "Opt-in utility script: downloads the NFCorpus subset of the BEIR benchmark\u2026",
+      "file_type": "rationale",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_seed_nfcorpus_rationale_1",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
+      "norm_label": "opt-in utility script: downloads the nfcorpus subset of the beir benchmark..."
     },
     {
       "label": "hybrid_search_api/__init__.py",
@@ -125,8 +194,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "llm_client.py"
     },
     {
@@ -138,8 +207,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "llmclient"
     },
     {
@@ -150,8 +219,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_init",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": ".__init__()"
     },
     {
@@ -162,7 +231,7 @@
       "_origin": "ast",
       "id": "retry",
       "community": 0,
-      "community_name": "config.py",
+      "community_name": ".complete",
       "norm_label": "retry"
     },
     {
@@ -174,7 +243,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete",
       "community": 0,
-      "community_name": "config.py",
+      "community_name": ".complete",
       "norm_label": ".complete()"
     },
     {
@@ -185,8 +254,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_stream",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": ".stream()"
     },
     {
@@ -196,8 +265,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_1",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "thin wrapper around an openai-compatible chat completions endpoint. works..."
     },
     {
@@ -208,7 +277,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_31",
       "community": 0,
-      "community_name": "config.py",
+      "community_name": ".complete",
       "norm_label": "single non-streaming completion, with automatic retry on transient api errors."
     },
     {
@@ -218,8 +287,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_47",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "yields text chunks as they arrive - use for a responsive, incremental ui."
     },
     {
@@ -456,8 +525,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_config",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "config.py"
     },
     {
@@ -492,8 +561,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_get_settings",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "get_settings()"
     },
     {
@@ -854,8 +923,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embeddings.py"
     },
     {
@@ -866,8 +935,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_get_model",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "_get_model()"
     },
     {
@@ -877,8 +946,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "sentencetransformer",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "sentencetransformer"
     },
     {
@@ -889,8 +958,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embed()"
     },
     {
@@ -901,8 +970,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed_many",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embed_many()"
     },
     {
@@ -912,8 +981,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_1",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "sentence-embedding helper for the knn side of hybrid search. uses a small local..."
     },
     {
@@ -923,8 +992,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_23",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "returns the embedding vector for a single piece of text."
     },
     {
@@ -934,8 +1003,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_28",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "batched embedding - more efficient than calling embed() in a loop."
     },
     {
@@ -1514,8 +1583,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_embeddings",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embeddings.py"
     },
     {
@@ -1525,8 +1594,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_test_embeddings_py_patch",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "patch"
     },
     {
@@ -1537,8 +1606,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_returns_list_of_floats",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embed_returns_list_of_floats()"
     },
     {
@@ -1549,8 +1618,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_many_batches_multiple_texts",
-      "community": 7,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embed_many_batches_multiple_texts()"
     },
     {
@@ -1688,8 +1757,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_client",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "test_llm_client.py"
     },
     {
@@ -1699,8 +1768,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_test_llm_client_py_patch",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "patch"
     },
     {
@@ -1711,8 +1780,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_llm_client_test_complete_returns_text_from_response",
-      "community": 0,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "test_complete_returns_text_from_response()"
     },
     {
@@ -1809,6 +1878,72 @@
       "norm_label": "test_root_serves_search_ui_html()"
     },
     {
+      "label": "0001-local-embeddings-over-ollama.md",
+      "file_type": "document",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "0001-local-embeddings-over-ollama.md"
+    },
+    {
+      "label": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "file_type": "document",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "adr-0001: local sentence-transformers for embeddings, not ollama"
+    },
+    {
+      "label": "Context",
+      "file_type": "document",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama_context",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "context"
+    },
+    {
+      "label": "Decision",
+      "file_type": "document",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama_decision",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "decision"
+    },
+    {
+      "label": "Options considered",
+      "file_type": "document",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama_options_considered",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "options considered"
+    },
+    {
+      "label": "Consequences",
+      "file_type": "document",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama_consequences",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "consequences"
+    },
+    {
       "label": "/rebuild Command",
       "file_type": "document",
       "source_file": ".claude/commands/rebuild.md",
@@ -1817,8 +1952,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "community_name": "Architecture (English)",
+      "community": 4,
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "/rebuild command",
       "_origin": "semantic",
       "id": "claude_commands_rebuild_rebuild_command"
@@ -2282,8 +2417,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "community_name": "Architecture (English)",
+      "community": 4,
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "search/index_config.py",
       "_origin": "semantic",
       "id": "src_hybrid_search_api_search_index_config_module"
@@ -2377,66 +2512,6 @@
       "norm_label": "scripts/seed_data.py",
       "_origin": "semantic",
       "id": "scripts_seed_data_module"
-    },
-    {
-      "label": "Swagger UI Search Demo (GIF)",
-      "file_type": "image",
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 10,
-      "community_name": "POST /search Endpoint",
-      "norm_label": "swagger ui search demo (gif)",
-      "_origin": "semantic",
-      "id": "docs_images_swagger_search_demo_searchdemoui"
-    },
-    {
-      "label": "POST /search Endpoint",
-      "file_type": "concept",
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 10,
-      "community_name": "POST /search Endpoint",
-      "norm_label": "post /search endpoint",
-      "_origin": "semantic",
-      "id": "docs_images_swagger_search_demo_searchendpoint"
-    },
-    {
-      "label": "RAG-style LLM Answer Feature",
-      "file_type": "concept",
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 10,
-      "community_name": "POST /search Endpoint",
-      "norm_label": "rag-style llm answer feature",
-      "_origin": "semantic",
-      "id": "docs_images_swagger_search_demo_ragstyleanswer"
-    },
-    {
-      "label": "Hybrid Search (BM25 + kNN via RRF)",
-      "file_type": "concept",
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 10,
-      "community_name": "POST /search Endpoint",
-      "norm_label": "hybrid search (bm25 + knn via rrf)",
-      "_origin": "semantic",
-      "id": "docs_images_swagger_search_demo_hybridsearch"
     },
     {
       "label": "Swagger UI Screenshot",
@@ -2709,6 +2784,182 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "scripts_seed_data_main",
+      "target": "src_hybrid_search_api_search_embeddings_embed_many"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus",
+      "target": "scripts_seed_nfcorpus_download_and_extract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus",
+      "target": "scripts_seed_nfcorpus_load_corpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus",
+      "target": "scripts_seed_nfcorpus_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus",
+      "target": "src_hybrid_search_api_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus",
+      "target": "src_hybrid_search_api_search_elasticsearch_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus",
+      "target": "src_hybrid_search_api_search_embeddings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_rationale_1",
+      "target": "scripts_seed_nfcorpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_download_and_extract",
+      "target": "path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_main",
+      "target": "scripts_seed_nfcorpus_download_and_extract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_load_corpus",
+      "target": "path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_main",
+      "target": "scripts_seed_nfcorpus_load_corpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_main",
+      "target": "src_hybrid_search_api_config_get_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_main",
+      "target": "src_hybrid_search_api_search_elasticsearch_client_build_client"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_main",
+      "target": "src_hybrid_search_api_search_elasticsearch_client_ensure_index"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/seed_nfcorpus.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_seed_nfcorpus_main",
       "target": "src_hybrid_search_api_search_embeddings_embed_many"
     },
     {
@@ -6120,6 +6371,61 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0001_local_embeddings_over_ollama",
+      "target": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
+      "target": "docs_adr_0001_local_embeddings_over_ollama_consequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
+      "target": "docs_adr_0001_local_embeddings_over_ollama_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
+      "target": "docs_adr_0001_local_embeddings_over_ollama_decision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
+      "target": "docs_adr_0001_local_embeddings_over_ollama_options_considered",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -6670,50 +6976,6 @@
       "target": "readme_rag_example"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "docs_images_swagger_search_demo_searchdemoui",
-      "target": "docs_images_swagger_search_demo_ragstyleanswer"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "docs_images_swagger_search_demo_searchdemoui",
-      "target": "docs_images_swagger_search_demo_searchendpoint"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "docs_images_swagger_search_demo_searchendpoint",
-      "target": "docs_images_swagger_search_demo_hybridsearch"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "docs/images/swagger-search-demo.gif",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "docs_images_swagger_search_demo_searchendpoint",
-      "target": "docs_images_swagger_search_demo_ragstyleanswer"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -6923,5 +7185,5 @@
       "source_file": ".claude/commands/startup.md"
     }
   ],
-  "built_at_commit": "6c9ef7a7b4bdc27af0deb9f41d24090b5372d092"
+  "built_at_commit": "167d87daa47027327357674b47a3d4c4d8ac8d5d"
 }

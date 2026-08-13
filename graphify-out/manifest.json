@@ -10,8 +10,8 @@
     "semantic_hash": "b878dfdcca30f336251b478cb075e8a5"
   },
   "pyproject.toml": {
-    "mtime": 1786641672.2853053,
-    "ast_hash": "2142d2af1ea1db840e7f6838a6752ddb",
+    "mtime": 1786645214.2203107,
+    "ast_hash": "4ae7bc4a1aeec11094f464526ed555ee",
     "semantic_hash": ""
   },
   "scripts/seed_data.py": {
@@ -190,13 +190,13 @@
     "semantic_hash": "82071777f3e8454f968c62fae159e383"
   },
   "README.de.md": {
-    "mtime": 1786623664.0608099,
-    "ast_hash": "40c4d34382818ea9b421be6664978c42",
+    "mtime": 1786645214.2123108,
+    "ast_hash": "2b681eca13496877c7731447286e3658",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1786623664.0608099,
-    "ast_hash": "068565983e3e6e909af96b964802eaaa",
+    "mtime": 1786645214.2133145,
+    "ast_hash": "99f96d7f48007783612812197d5ac417",
     "semantic_hash": ""
   },
   "docker-compose.yml": {
@@ -205,8 +205,8 @@
     "semantic_hash": "51d32fd29bbdd75ca936ec665a6b05ad"
   },
   "docs/adr/README.md": {
-    "mtime": 1786624079.2877328,
-    "ast_hash": "755972b1bf4041834c09cd8dd8192e65",
+    "mtime": 1786645214.2143114,
+    "ast_hash": "ea3a811af27b6b5ff9ece0a9ffb2ed75",
     "semantic_hash": ""
   },
   "docs/agents/domain.md": {
@@ -233,11 +233,6 @@
     "mtime": 1785852379.628801,
     "ast_hash": "390feb416c9236b080235de5b74eaa02",
     "semantic_hash": "390feb416c9236b080235de5b74eaa02"
-  },
-  "docs/images/swagger-search-demo.gif": {
-    "mtime": 1785846437.3581798,
-    "ast_hash": "439bf0cf864342c7ceedb48aa61d4172",
-    "semantic_hash": "439bf0cf864342c7ceedb48aa61d4172"
   },
   "docs/images/swagger-ui.jpg": {
     "mtime": 1785846344.1533482,
@@ -270,8 +265,28 @@
     "semantic_hash": ""
   },
   "src/hybrid_search_api/static/index.html": {
-    "mtime": 1786641672.2883043,
-    "ast_hash": "a4cfe9966c5c3f12a8777c5ea950aca6",
+    "mtime": 1786645214.2223086,
+    "ast_hash": "f98aa8b8a26468f4e3904ccd98f7e491",
+    "semantic_hash": ""
+  },
+  "scripts/seed_nfcorpus.py": {
+    "mtime": 1786645214.2203107,
+    "ast_hash": "c6b37cf799e384d6e0b438cef0dad113",
+    "semantic_hash": ""
+  },
+  "docs/adr/0001-local-embeddings-over-ollama.md": {
+    "mtime": 1786645214.2143114,
+    "ast_hash": "4e6686638fa72ab30de19a0f92328918",
+    "semantic_hash": ""
+  },
+  "docs/images/search-ui-demo.gif": {
+    "mtime": 1786645214.2183087,
+    "ast_hash": "c54db805a5ab7f52f618045b7a028282",
+    "semantic_hash": ""
+  },
+  "docs/images/search-ui.jpg": {
+    "mtime": 1786645214.2193086,
+    "ast_hash": "ee6c58ecce18a484274f58af86f651c4",
     "semantic_hash": ""
   }
 }
