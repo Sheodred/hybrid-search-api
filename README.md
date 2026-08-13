@@ -76,7 +76,7 @@ whichever model is in use.
 Demonstrates three core competencies in one coherent project:
 - **Backend engineering** - cleanly structured FastAPI application, tested, containerized, CI.
 - **Search specialization** - Elasticsearch mapping, custom analyzers (stemming, stopwords), BM25, kNN vector search, ranking fusion.
-- **AI integration** - production-style LLM integration (retry logic, streaming, versioned prompts, RAG).
+- **AI integration** - production-style LLM integration (retry logic, streaming, versioned prompts, RAG), including a fully on-prem/data-sovereignty deployment mode for regulated environments (see below).
 
 ## Architecture
 
@@ -96,16 +96,34 @@ python scripts/seed_data.py  # indexes sample data - downloads the embedding
                               # model once on the very first run (~80MB)
 ```
 
-Any OpenAI-compatible endpoint works for the LLM layer, including a local
-model via [Ollama](https://ollama.com) - no cloud key required. Point
-`LLM_BASE_URL` at Ollama's OpenAI-compatible endpoint instead of a cloud
-gateway (see the commented-out block in `.env.example`):
+### Data-sovereignty deployment mode
+
+The LLM client works against any OpenAI-compatible endpoint, which matters
+for a real scenario: data that must never leave infrastructure you control
+(GDPR, regulated industries). `docker compose --profile local-llm up` starts
+a local [llama.cpp](https://github.com/ggml-org/llama.cpp) server alongside
+Elasticsearch and the API - the RAG step then never makes an external call.
+See [ADR-0002](docs/adr/0002-llama-server-for-data-sovereignty-deployments.md)
+for why llama-server rather than the more familiar Ollama (short version:
+Ollama doesn't enforce API-key auth by default, which would leave this
+project's own auth-error handling silently untested against it).
 
 ```bash
-LLM_API_KEY=ollama       # Ollama ignores the value, it just can't be empty
-LLM_BASE_URL=http://localhost:11434/v1
-LLM_MODEL=llama3.1
+docker compose --profile local-llm up -d   # also starts the local LLM server
 ```
+
+```bash
+# .env
+LLM_API_KEY=local-dev-key
+LLM_BASE_URL=http://localhost:8090/v1
+LLM_MODEL=qwen2.5-1.5b
+```
+
+For casual local dev where data-sovereignty isn't the point, [Ollama](https://ollama.com)
+is simpler to set up (see the commented-out block in `.env.example`). For
+GPU-scale production self-hosting, the same `LLM_BASE_URL` swap works with
+vLLM or TGI too - the app doesn't care which OpenAI-compatible server is on
+the other end.
 
 ### Trying it against a larger, unrelated corpus
 
