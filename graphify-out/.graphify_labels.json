@@ -1,1 +1,22 @@
-{"0": "LLM Client & Prompts", "1": "Settings, Seeding & Index Routes", "2": "Architecture Docs & RRF Rationale", "3": "Hybrid Search Core (BM25+kNN+RRF)", "4": "Agent Session & Workflow Docs", "5": "API Error Handling & Main App", "6": "API Schema & Endpoints (Swagger)", "7": "Embeddings Module", "8": "Search API Tests", "9": "Elasticsearch Index Config", "10": "Hybrid Search Demo & RAG Answer", "11": "Test Fixtures", "12": "Project Root", "13": "AI Package Init", "14": "API Package Init", "15": "Hybrid Search API Package Init", "16": "Search Package Init", "17": "Tests Package Init"}
+{
+  "0": "config.py",
+  "1": "index_routes.py",
+  "2": "Architecture (English)",
+  "3": "hybrid_search.py",
+  "4": "hybrid-search-api CLAUDE.md",
+  "5": "main.py",
+  "6": "Swagger UI Screenshot",
+  "7": "embeddings.py",
+  "8": "test_api.py",
+  "9": "elasticsearch_client.py",
+  "10": "POST /search Endpoint",
+  "11": "_test_env",
+  "12": "hybrid-search-api",
+  "13": "ai/__init__.py",
+  "14": "api/__init__.py",
+  "15": "hybrid_search_api/__init__.py",
+  "16": "search/__init__.py",
+  "17": "tests/__init__.py",
+  "18": "Settings",
+  "19": "build_rag_prompt"
+}

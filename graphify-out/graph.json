@@ -59,7 +59,7 @@
       "_origin": "ast",
       "id": "pkg_hybrid_search_api",
       "community": 12,
-      "community_name": "Project Root",
+      "community_name": "hybrid-search-api",
       "norm_label": "hybrid-search-api"
     },
     {
@@ -69,8 +69,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_seed_data",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 0,
+      "community_name": "config.py",
       "norm_label": "seed_data.py"
     },
     {
@@ -81,8 +81,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "scripts_seed_data_main",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 0,
+      "community_name": "config.py",
       "norm_label": "main()"
     },
     {
@@ -92,8 +92,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_seed_data_rationale_1",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 0,
+      "community_name": "config.py",
       "norm_label": "utility script: indexes a small set of sample documents into elasticsearch,..."
     },
     {
@@ -104,7 +104,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_init",
       "community": 15,
-      "community_name": "Hybrid Search API Package Init",
+      "community_name": "hybrid_search_api/__init__.py",
       "norm_label": "hybrid_search_api/__init__.py"
     },
     {
@@ -115,7 +115,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_init",
       "community": 13,
-      "community_name": "AI Package Init",
+      "community_name": "ai/__init__.py",
       "norm_label": "ai/__init__.py"
     },
     {
@@ -126,7 +126,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "llm_client.py"
     },
     {
@@ -139,7 +139,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "llmclient"
     },
     {
@@ -150,8 +150,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_init",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 0,
+      "community_name": "config.py",
       "norm_label": ".__init__()"
     },
     {
@@ -162,7 +162,7 @@
       "_origin": "ast",
       "id": "retry",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "retry"
     },
     {
@@ -174,7 +174,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": ".complete()"
     },
     {
@@ -186,7 +186,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_stream",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": ".stream()"
     },
     {
@@ -197,7 +197,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_1",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "thin wrapper around an openai-compatible chat completions endpoint. works..."
     },
     {
@@ -208,7 +208,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_31",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "single non-streaming completion, with automatic retry on transient api errors."
     },
     {
@@ -219,7 +219,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_47",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "yields text chunks as they arrive - use for a responsive, incremental ui."
     },
     {
@@ -229,20 +229,20 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 19,
+      "community_name": "build_rag_prompt",
       "norm_label": "prompts.py"
     },
     {
       "label": "build_rag_prompt()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/ai/prompts.py",
-      "source_location": "L28",
+      "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts_build_rag_prompt",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 19,
+      "community_name": "build_rag_prompt",
       "norm_label": "build_rag_prompt()"
     },
     {
@@ -252,19 +252,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts_rationale_1",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 19,
+      "community_name": "build_rag_prompt",
       "norm_label": "prompt templates for the rag layer. keeping them versioned in one place makes..."
     },
     {
       "label": "Returns (system_prompt, user_prompt) for the given prompt version and language.",
       "file_type": "rationale",
       "source_file": "src/hybrid_search_api/ai/prompts.py",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
-      "id": "src_hybrid_search_api_ai_prompts_rationale_31",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "id": "src_hybrid_search_api_ai_prompts_rationale_33",
+      "community": 19,
+      "community_name": "build_rag_prompt",
       "norm_label": "returns (system_prompt, user_prompt) for the given prompt version and language."
     },
     {
@@ -275,7 +275,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_init",
       "community": 14,
-      "community_name": "API Package Init",
+      "community_name": "api/__init__.py",
       "norm_label": "api/__init__.py"
     },
     {
@@ -286,7 +286,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_index_routes",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "index_routes.py"
     },
     {
@@ -297,7 +297,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_index_routes_py_get",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "get"
     },
     {
@@ -309,7 +309,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_index_routes_elasticsearch_health",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearch_health()"
     },
     {
@@ -321,7 +321,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_index_routes_index_info",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "index_info()"
     },
     {
@@ -333,7 +333,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_index_routes_list_documents",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "list_documents()"
     },
     {
@@ -344,7 +344,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_index_routes_rationale_1",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "introspection endpoints: elasticsearch cluster health, index info, and a way to..."
     },
     {
@@ -354,21 +354,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "routes.py"
-    },
-    {
-      "label": "_extract_score()",
-      "file_type": "code",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L43",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "src_hybrid_search_api_api_routes_extract_score",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
-      "norm_label": "_extract_score()"
     },
     {
       "label": "get",
@@ -377,20 +365,20 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes_py_get",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "get"
     },
     {
       "label": "health()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L49",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes_health",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "health()"
     },
     {
@@ -400,21 +388,66 @@
       "source_location": "",
       "_origin": "ast",
       "id": "post",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "post"
     },
     {
       "label": "search()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L65",
+      "source_location": "L56",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes_search",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "search()"
+    },
+    {
+      "label": "ui_routes.py",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/api/ui_routes.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_api_ui_routes",
+      "community": 5,
+      "community_name": "main.py",
+      "norm_label": "ui_routes.py"
+    },
+    {
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_api_ui_routes_py_get",
+      "community": 5,
+      "community_name": "main.py",
+      "norm_label": "get"
+    },
+    {
+      "label": "search_ui()",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/api/ui_routes.py",
+      "source_location": "L12",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_api_ui_routes_search_ui",
+      "community": 5,
+      "community_name": "main.py",
+      "norm_label": "search_ui()"
+    },
+    {
+      "label": "FileResponse",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "fileresponse",
+      "community": 5,
+      "community_name": "main.py",
+      "norm_label": "fileresponse"
     },
     {
       "label": "config.py",
@@ -423,8 +456,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_config",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 0,
+      "community_name": "config.py",
       "norm_label": "config.py"
     },
     {
@@ -436,8 +469,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_settings",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "settings"
     },
     {
@@ -447,8 +480,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basesettings",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "basesettings"
     },
     {
@@ -459,8 +492,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_get_settings",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 0,
+      "community_name": "config.py",
       "norm_label": "get_settings()"
     },
     {
@@ -470,8 +503,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_rationale_7",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "central application configuration, populated from environment variables / .env."
     },
     {
@@ -482,20 +515,20 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_main",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "main.py"
     },
     {
       "label": "UTF8JSONResponse",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_main_utf8jsonresponse",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "utf8jsonresponse"
     },
     {
@@ -506,7 +539,7 @@
       "_origin": "ast",
       "id": "jsonresponse",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "jsonresponse"
     },
     {
@@ -517,19 +550,19 @@
       "_origin": "ast",
       "id": "exception_handler",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "exception_handler"
     },
     {
       "label": "es_connection_error_handler()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_main_es_connection_error_handler",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "es_connection_error_handler()"
     },
     {
@@ -540,7 +573,7 @@
       "_origin": "ast",
       "id": "request",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "request"
     },
     {
@@ -551,29 +584,29 @@
       "_origin": "ast",
       "id": "esconnectionerror",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "esconnectionerror"
     },
     {
       "label": "JSON response with an explicit charset for older HTTP clients.",
       "file_type": "rationale",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
-      "id": "src_hybrid_search_api_main_rationale_14",
+      "id": "src_hybrid_search_api_main_rationale_15",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "json response with an explicit charset for older http clients."
     },
     {
       "label": "Applies to every route: if Elasticsearch itself is unreachable, return a clear\u2026",
       "file_type": "rationale",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L42",
+      "source_location": "L44",
       "_origin": "ast",
-      "id": "src_hybrid_search_api_main_rationale_42",
+      "id": "src_hybrid_search_api_main_rationale_44",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "applies to every route: if elasticsearch itself is unreachable, return a clear..."
     },
     {
@@ -583,8 +616,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_models",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "models.py"
     },
     {
@@ -596,8 +629,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_searchrequest",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "searchrequest"
     },
     {
@@ -607,8 +640,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basemodel",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "basemodel"
     },
     {
@@ -620,8 +653,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_searchhit",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "searchhit"
     },
     {
@@ -633,8 +666,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_searchresponse",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 18,
+      "community_name": "Settings",
       "norm_label": "searchresponse"
     },
     {
@@ -646,8 +679,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_elasticsearchhealth",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearchhealth"
     },
     {
@@ -660,7 +693,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_indexinfo",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "indexinfo"
     },
     {
@@ -672,8 +705,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_documentpreview",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "documentpreview"
     },
     {
@@ -685,8 +718,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_documentlistresponse",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "documentlistresponse"
     },
     {
@@ -697,8 +730,54 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_init",
       "community": 16,
-      "community_name": "Search Package Init",
+      "community_name": "search/__init__.py",
       "norm_label": "search/__init__.py"
+    },
+    {
+      "label": "answering.py",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_search_answering",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "answering.py"
+    },
+    {
+      "label": "_extract_score()",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L21",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_search_answering_extract_score",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "_extract_score()"
+    },
+    {
+      "label": "answer_search()",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L29",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_search_answering_answer_search",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "answer_search()"
+    },
+    {
+      "label": "Owns the /search request end to end: builds the ES client, embeds the query\u2026",
+      "file_type": "rationale",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_search_answering_rationale_1",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "owns the /search request end to end: builds the es client, embeds the query..."
     },
     {
       "label": "elasticsearch_client.py",
@@ -707,8 +786,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "elasticsearch_client.py"
     },
     {
@@ -720,7 +799,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_build_client",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "build_client()"
     },
     {
@@ -730,8 +809,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_py_elasticsearch",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "elasticsearch"
     },
     {
@@ -742,8 +821,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_ensure_index",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "ensure_index()"
     },
     {
@@ -754,7 +833,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_8",
       "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community_name": "index_routes.py",
       "norm_label": "create an elasticsearch client from settings. supports both no-auth (local dev)..."
     },
     {
@@ -764,8 +843,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_16",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "create the index with the configured analyzers/mappings if it doesn't exist..."
     },
     {
@@ -776,7 +855,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "embeddings.py"
     },
     {
@@ -788,7 +867,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_get_model",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "_get_model()"
     },
     {
@@ -799,7 +878,7 @@
       "_origin": "ast",
       "id": "sentencetransformer",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "sentencetransformer"
     },
     {
@@ -810,8 +889,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 7,
+      "community_name": "embeddings.py",
       "norm_label": "embed()"
     },
     {
@@ -823,7 +902,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed_many",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "embed_many()"
     },
     {
@@ -834,7 +913,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_1",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "sentence-embedding helper for the knn side of hybrid search. uses a small local..."
     },
     {
@@ -844,8 +923,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_23",
-      "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community": 7,
+      "community_name": "embeddings.py",
       "norm_label": "returns the embedding vector for a single piece of text."
     },
     {
@@ -856,7 +935,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_28",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "batched embedding - more efficient than calling embed() in a loop."
     },
     {
@@ -867,7 +946,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "hybrid_search.py"
     },
     {
@@ -879,7 +958,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_bm25_search",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "_bm25_search()"
     },
     {
@@ -890,7 +969,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_py_elasticsearch",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "elasticsearch"
     },
     {
@@ -902,7 +981,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_knn_search",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "_knn_search()"
     },
     {
@@ -914,7 +993,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_reciprocal_rank_fusion",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "_reciprocal_rank_fusion()"
     },
     {
@@ -926,7 +1005,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_hybrid_search",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "hybrid_search()"
     },
     {
@@ -937,7 +1016,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_rationale_1",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "hybrid search: combines classic bm25 full-text search with knn vector search..."
     },
     {
@@ -948,7 +1027,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_hybrid_search_rationale_47",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "run bm25 (+ optionally knn) search and fuse the results with rrf. falls back to..."
     },
     {
@@ -959,7 +1038,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config",
       "community": 9,
-      "community_name": "Elasticsearch Index Config",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "index_config.py"
     },
     {
@@ -971,7 +1050,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_build_index_body",
       "community": 9,
-      "community_name": "Elasticsearch Index Config",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "build_index_body()"
     },
     {
@@ -982,7 +1061,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_rationale_1",
       "community": 9,
-      "community_name": "Elasticsearch Index Config",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "elasticsearch index configuration: analyzers, filters, and field mappings. this..."
     },
     {
@@ -993,7 +1072,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_rationale_68",
       "community": 9,
-      "community_name": "Elasticsearch Index Config",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "full index creation body: analysis settings + field mappings."
     },
     {
@@ -1004,7 +1083,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_queries",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "queries.py"
     },
     {
@@ -1016,7 +1095,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_queries_bm25_query",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "bm25_query()"
     },
     {
@@ -1028,7 +1107,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_queries_knn_query",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "knn_query()"
     },
     {
@@ -1039,7 +1118,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_queries_rationale_1",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "elasticsearch query templates - the \"prepared statements\" for search. every..."
     },
     {
@@ -1050,7 +1129,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_queries_rationale_20",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "classic full-text query: multi_match across title (boosted) and content...."
     },
     {
@@ -1061,7 +1140,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_queries_rationale_35",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "knn vector search against the 'embedding' field."
     },
     {
@@ -1072,7 +1151,7 @@
       "_origin": "ast",
       "id": "tests_init",
       "community": 17,
-      "community_name": "Tests Package Init",
+      "community_name": "tests/__init__.py",
       "norm_label": "tests/__init__.py"
     },
     {
@@ -1083,7 +1162,7 @@
       "_origin": "ast",
       "id": "tests_conftest",
       "community": 11,
-      "community_name": "Test Fixtures",
+      "community_name": "_test_env",
       "norm_label": "conftest.py"
     },
     {
@@ -1094,7 +1173,7 @@
       "_origin": "ast",
       "id": "fixture",
       "community": 11,
-      "community_name": "Test Fixtures",
+      "community_name": "_test_env",
       "norm_label": "fixture"
     },
     {
@@ -1106,7 +1185,7 @@
       "_origin": "ast",
       "id": "tests_conftest_test_env",
       "community": 11,
-      "community_name": "Test Fixtures",
+      "community_name": "_test_env",
       "norm_label": "_test_env()"
     },
     {
@@ -1117,8 +1196,163 @@
       "_origin": "ast",
       "id": "tests_conftest_rationale_6",
       "community": 11,
-      "community_name": "Test Fixtures",
+      "community_name": "_test_env",
       "norm_label": "ensure settings() can be instantiated in tests without a real .env file."
+    },
+    {
+      "label": "test_answering.py",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_answering",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answering.py"
+    },
+    {
+      "label": "_FakeLLMClient",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L14",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_fakellmclient",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "_fakellmclient"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_fakellmclient_init",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".complete()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_fakellmclient_complete",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": ".complete()"
+    },
+    {
+      "label": "patch",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "tests_test_answering_py_patch",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "patch"
+    },
+    {
+      "label": "test_answer_search_prefers_rrf_score_over_original_score()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_prefers_rrf_score_over_original_score()"
+    },
+    {
+      "label": "test_answer_search_without_llm_answer()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L54",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_without_llm_answer",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_without_llm_answer()"
+    },
+    {
+      "label": "test_answer_search_returns_llm_answer_when_requested()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L69",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_returns_llm_answer_when_requested()"
+    },
+    {
+      "label": "test_answer_search_propagates_authentication_error()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L86",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_propagates_authentication_error()"
+    },
+    {
+      "label": "test_answer_search_propagates_not_found_error()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L105",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_propagates_not_found_error()"
+    },
+    {
+      "label": "test_answer_search_propagates_rate_limit_error()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L124",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_propagates_rate_limit_error()"
+    },
+    {
+      "label": "test_answer_search_propagates_connection_error()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L143",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_propagates_connection_error()"
+    },
+    {
+      "label": "test_answer_search_falls_back_to_bm25_when_embedding_fails()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L160",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
+      "community": 18,
+      "community_name": "Settings",
+      "norm_label": "test_answer_search_falls_back_to_bm25_when_embedding_fails()"
     },
     {
       "label": "test_api.py",
@@ -1128,19 +1362,19 @@
       "_origin": "ast",
       "id": "tests_test_api",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_api.py"
     },
     {
       "label": "test_health()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_health",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_health()"
     },
     {
@@ -1151,91 +1385,91 @@
       "_origin": "ast",
       "id": "tests_test_api_py_patch",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "patch"
     },
     {
-      "label": "test_search_without_llm_answer()",
+      "label": "test_search_returns_200_with_hits()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L22",
+      "source_location": "L21",
       "_callable": true,
       "_origin": "ast",
-      "id": "tests_test_api_test_search_without_llm_answer",
+      "id": "tests_test_api_test_search_returns_200_with_hits",
       "community": 8,
-      "community_name": "Search API Tests",
-      "norm_label": "test_search_without_llm_answer()"
+      "community_name": "test_api.py",
+      "norm_label": "test_search_returns_200_with_hits()"
     },
     {
       "label": "test_search_returns_502_on_bad_api_key()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L38",
+      "source_location": "L35",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_search_returns_502_on_bad_api_key",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_bad_api_key()"
     },
     {
       "label": "test_search_returns_german_error_when_lang_de()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L60",
+      "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_search_returns_german_error_when_lang_de",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_german_error_when_lang_de()"
     },
     {
       "label": "test_search_returns_502_on_unknown_model()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L84",
+      "source_location": "L63",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_search_returns_502_on_unknown_model",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_unknown_model()"
     },
     {
       "label": "test_search_returns_502_on_rate_limit()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L106",
+      "source_location": "L76",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_search_returns_502_on_rate_limit",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_rate_limit()"
     },
     {
       "label": "test_search_returns_502_on_connection_error()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L128",
+      "source_location": "L89",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_search_returns_502_on_connection_error",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_connection_error()"
     },
     {
       "label": "test_search_returns_502_when_elasticsearch_unreachable()",
       "file_type": "code",
       "source_file": "tests/test_api.py",
-      "source_location": "L145",
+      "source_location": "L100",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_api_test_search_returns_502_when_elasticsearch_unreachable",
       "community": 8,
-      "community_name": "Search API Tests",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_when_elasticsearch_unreachable()"
     },
     {
@@ -1245,8 +1479,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_elasticsearch_client.py"
     },
     {
@@ -1257,8 +1491,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client_test_ensure_index_creates_when_missing",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_ensure_index_creates_when_missing()"
     },
     {
@@ -1269,8 +1503,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client_test_ensure_index_skips_when_already_present",
-      "community": 1,
-      "community_name": "Settings, Seeding & Index Routes",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_ensure_index_skips_when_already_present()"
     },
     {
@@ -1281,7 +1515,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "test_embeddings.py"
     },
     {
@@ -1292,7 +1526,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings_py_patch",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "patch"
     },
     {
@@ -1304,7 +1538,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_returns_list_of_floats",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "test_embed_returns_list_of_floats()"
     },
     {
@@ -1316,7 +1550,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_many_batches_multiple_texts",
       "community": 7,
-      "community_name": "Embeddings Module",
+      "community_name": "embeddings.py",
       "norm_label": "test_embed_many_batches_multiple_texts()"
     },
     {
@@ -1327,7 +1561,7 @@
       "_origin": "ast",
       "id": "tests_test_hybrid_search",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_hybrid_search.py"
     },
     {
@@ -1339,7 +1573,7 @@
       "_origin": "ast",
       "id": "tests_test_hybrid_search_test_rrf_favors_docs_ranked_high_in_both_lists",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_rrf_favors_docs_ranked_high_in_both_lists()"
     },
     {
@@ -1350,7 +1584,7 @@
       "_origin": "ast",
       "id": "tests_test_index_config",
       "community": 9,
-      "community_name": "Elasticsearch Index Config",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_index_config.py"
     },
     {
@@ -1362,7 +1596,7 @@
       "_origin": "ast",
       "id": "tests_test_index_config_test_build_index_body_has_settings_and_mappings",
       "community": 9,
-      "community_name": "Elasticsearch Index Config",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_build_index_body_has_settings_and_mappings()"
     },
     {
@@ -1373,7 +1607,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "test_index_routes.py"
     },
     {
@@ -1384,7 +1618,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes_py_patch",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "patch"
     },
     {
@@ -1396,7 +1630,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes_test_elasticsearch_health",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "test_elasticsearch_health()"
     },
     {
@@ -1408,7 +1642,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes_test_elasticsearch_health_returns_502_when_unreachable",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "test_elasticsearch_health_returns_502_when_unreachable()"
     },
     {
@@ -1420,7 +1654,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes_test_index_info_when_missing",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "test_index_info_when_missing()"
     },
     {
@@ -1432,7 +1666,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes_test_index_info_when_present",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "test_index_info_when_present()"
     },
     {
@@ -1444,7 +1678,7 @@
       "_origin": "ast",
       "id": "tests_test_index_routes_test_list_documents_excludes_embedding_field",
       "community": 5,
-      "community_name": "API Error Handling & Main App",
+      "community_name": "main.py",
       "norm_label": "test_list_documents_excludes_embedding_field()"
     },
     {
@@ -1455,7 +1689,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "test_llm_client.py"
     },
     {
@@ -1466,7 +1700,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client_py_patch",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "patch"
     },
     {
@@ -1478,8 +1712,43 @@
       "_origin": "ast",
       "id": "tests_test_llm_client_test_complete_returns_text_from_response",
       "community": 0,
-      "community_name": "LLM Client & Prompts",
+      "community_name": "config.py",
       "norm_label": "test_complete_returns_text_from_response()"
+    },
+    {
+      "label": "test_prompts.py",
+      "file_type": "code",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_prompts",
+      "community": 19,
+      "community_name": "build_rag_prompt",
+      "norm_label": "test_prompts.py"
+    },
+    {
+      "label": "test_system_prompt_instructs_plain_text_answer_en()",
+      "file_type": "code",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_en",
+      "community": 19,
+      "community_name": "build_rag_prompt",
+      "norm_label": "test_system_prompt_instructs_plain_text_answer_en()"
+    },
+    {
+      "label": "test_system_prompt_instructs_plain_text_answer_de()",
+      "file_type": "code",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_de",
+      "community": 19,
+      "community_name": "build_rag_prompt",
+      "norm_label": "test_system_prompt_instructs_plain_text_answer_de()"
     },
     {
       "label": "test_queries.py",
@@ -1489,7 +1758,7 @@
       "_origin": "ast",
       "id": "tests_test_queries",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_queries.py"
     },
     {
@@ -1501,7 +1770,7 @@
       "_origin": "ast",
       "id": "tests_test_queries_test_bm25_query_boosts_title_and_allows_typos",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_bm25_query_boosts_title_and_allows_typos()"
     },
     {
@@ -1513,8 +1782,31 @@
       "_origin": "ast",
       "id": "tests_test_queries_test_knn_query_scales_candidate_pool_with_k",
       "community": 3,
-      "community_name": "Hybrid Search Core (BM25+kNN+RRF)",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_knn_query_scales_candidate_pool_with_k()"
+    },
+    {
+      "label": "test_ui_routes.py",
+      "file_type": "code",
+      "source_file": "tests/test_ui_routes.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_ui_routes",
+      "community": 5,
+      "community_name": "main.py",
+      "norm_label": "test_ui_routes.py"
+    },
+    {
+      "label": "test_root_serves_search_ui_html()",
+      "file_type": "code",
+      "source_file": "tests/test_ui_routes.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_ui_routes_test_root_serves_search_ui_html",
+      "community": 5,
+      "community_name": "main.py",
+      "norm_label": "test_root_serves_search_ui_html()"
     },
     {
       "label": "/rebuild Command",
@@ -1525,10 +1817,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_commands_rebuild_rebuild_command",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "/rebuild command"
+      "community_name": "Architecture (English)",
+      "norm_label": "/rebuild command",
+      "_origin": "semantic",
+      "id": "claude_commands_rebuild_rebuild_command"
     },
     {
       "label": "/startup Command",
@@ -1539,10 +1832,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_commands_startup_startup_command",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "/startup command"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "/startup command",
+      "_origin": "semantic",
+      "id": "claude_commands_startup_startup_command"
     },
     {
       "label": "/verify Command",
@@ -1553,10 +1847,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_commands_verify_verify_command",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "/verify command"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "/verify command",
+      "_origin": "semantic",
+      "id": "claude_commands_verify_verify_command"
     },
     {
       "label": "CI GitHub Actions Workflow",
@@ -1567,10 +1862,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "github_workflows_ci_ci_workflow",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "ci github actions workflow"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "ci github actions workflow",
+      "_origin": "semantic",
+      "id": "github_workflows_ci_ci_workflow"
     },
     {
       "label": "Pre-commit Hooks Config",
@@ -1581,10 +1877,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pre_commit_config_pre_commit_hooks",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "pre-commit hooks config"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "pre-commit hooks config",
+      "_origin": "semantic",
+      "id": "pre_commit_config_pre_commit_hooks"
     },
     {
       "label": "Serena Project Config",
@@ -1595,10 +1892,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "serena_project_serena_project_config",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "serena project config"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "serena project config",
+      "_origin": "semantic",
+      "id": "serena_project_serena_project_config"
     },
     {
       "label": "hybrid-search-api CLAUDE.md",
@@ -1609,10 +1907,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_project_instructions",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "hybrid-search-api claude.md"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "hybrid-search-api claude.md",
+      "_origin": "semantic",
+      "id": "claude_project_instructions"
     },
     {
       "label": "Ubiquitous Language Glossary",
@@ -1623,10 +1922,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "context_ubiquitous_language_glossary",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "ubiquitous language glossary"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "ubiquitous language glossary",
+      "_origin": "semantic",
+      "id": "context_ubiquitous_language_glossary"
     },
     {
       "label": "Contributing Guide",
@@ -1637,10 +1937,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "contributing_contributing_guide",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "contributing guide"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "contributing guide",
+      "_origin": "semantic",
+      "id": "contributing_contributing_guide"
     },
     {
       "label": "README (German)",
@@ -1651,10 +1952,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_de_readme_de",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "readme (german)"
+      "community_name": "Architecture (English)",
+      "norm_label": "readme (german)",
+      "_origin": "semantic",
+      "id": "readme_de_readme_de"
     },
     {
       "label": "README (English)",
@@ -1665,10 +1967,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_readme_en",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "readme (english)"
+      "community_name": "Architecture (English)",
+      "norm_label": "readme (english)",
+      "_origin": "semantic",
+      "id": "readme_readme_en"
     },
     {
       "label": "Docker Compose Services",
@@ -1679,10 +1982,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose_services",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "docker compose services"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "docker compose services",
+      "_origin": "semantic",
+      "id": "docker_compose_services"
     },
     {
       "label": "ADR Process",
@@ -1693,10 +1997,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_adr_readme_adr_process",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "adr process"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "adr process",
+      "_origin": "semantic",
+      "id": "docs_adr_readme_adr_process"
     },
     {
       "label": "Domain Docs Consumption Rules",
@@ -1707,10 +2012,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_agents_domain_domain_docs_consumption",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "domain docs consumption rules"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "domain docs consumption rules",
+      "_origin": "semantic",
+      "id": "docs_agents_domain_domain_docs_consumption"
     },
     {
       "label": "GitHub Issue Tracker Conventions",
@@ -1721,10 +2027,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_agents_issue_tracker_issue_tracker_conventions",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "github issue tracker conventions"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "github issue tracker conventions",
+      "_origin": "semantic",
+      "id": "docs_agents_issue_tracker_issue_tracker_conventions"
     },
     {
       "label": "Wayfinder Map/Child Ticket Pattern",
@@ -1735,10 +2042,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_agents_issue_tracker_wayfinder_pattern",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "wayfinder map/child ticket pattern"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "wayfinder map/child ticket pattern",
+      "_origin": "semantic",
+      "id": "docs_agents_issue_tracker_wayfinder_pattern"
     },
     {
       "label": "Triage Label Mapping",
@@ -1749,10 +2057,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_agents_triage_labels_triage_label_mapping",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "triage label mapping"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "triage label mapping",
+      "_origin": "semantic",
+      "id": "docs_agents_triage_labels_triage_label_mapping"
     },
     {
       "label": "Architecture (German)",
@@ -1763,10 +2072,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_de_architecture_de",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "architecture (german)"
+      "community_name": "Architecture (English)",
+      "norm_label": "architecture (german)",
+      "_origin": "semantic",
+      "id": "docs_architecture_de_architecture_de"
     },
     {
       "label": "Architecture (English)",
@@ -1777,10 +2087,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_architecture_en",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "architecture (english)"
+      "community_name": "Architecture (English)",
+      "norm_label": "architecture (english)",
+      "_origin": "semantic",
+      "id": "docs_architecture_architecture_en"
     },
     {
       "label": "Hybrid Search (BM25 + kNN + RRF)",
@@ -1791,10 +2102,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_hybrid_search",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "hybrid search (bm25 + knn + rrf)"
+      "community_name": "Architecture (English)",
+      "norm_label": "hybrid search (bm25 + knn + rrf)",
+      "_origin": "semantic",
+      "id": "docs_architecture_hybrid_search"
     },
     {
       "label": "Reciprocal Rank Fusion (RRF)",
@@ -1805,10 +2117,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_reciprocal_rank_fusion",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "reciprocal rank fusion (rrf)"
+      "community_name": "Architecture (English)",
+      "norm_label": "reciprocal rank fusion (rrf)",
+      "_origin": "semantic",
+      "id": "docs_architecture_reciprocal_rank_fusion"
     },
     {
       "label": "Why RRF Rationale",
@@ -1819,10 +2132,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_why_rrf",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "why rrf rationale"
+      "community_name": "Architecture (English)",
+      "norm_label": "why rrf rationale",
+      "_origin": "semantic",
+      "id": "docs_architecture_why_rrf"
     },
     {
       "label": "RAG Answer Synthesis Pattern",
@@ -1833,10 +2147,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_rag_pattern",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "rag answer synthesis pattern"
+      "community_name": "Architecture (English)",
+      "norm_label": "rag answer synthesis pattern",
+      "_origin": "semantic",
+      "id": "docs_architecture_rag_pattern"
     },
     {
       "label": "sentence-transformers all-MiniLM-L6-v2 Embeddings",
@@ -1847,10 +2162,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_embeddings_model",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "sentence-transformers all-minilm-l6-v2 embeddings"
+      "community_name": "Architecture (English)",
+      "norm_label": "sentence-transformers all-minilm-l6-v2 embeddings",
+      "_origin": "semantic",
+      "id": "docs_architecture_embeddings_model"
     },
     {
       "label": "Hybrid Search (BM25 + kNN + RRF) [DE]",
@@ -1861,10 +2177,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_de_hybrid_search",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "hybrid search (bm25 + knn + rrf) [de]"
+      "community_name": "Architecture (English)",
+      "norm_label": "hybrid search (bm25 + knn + rrf) [de]",
+      "_origin": "semantic",
+      "id": "docs_architecture_de_hybrid_search"
     },
     {
       "label": "Reciprocal Rank Fusion (RRF) [DE]",
@@ -1875,10 +2192,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_de_reciprocal_rank_fusion",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "reciprocal rank fusion (rrf) [de]"
+      "community_name": "Architecture (English)",
+      "norm_label": "reciprocal rank fusion (rrf) [de]",
+      "_origin": "semantic",
+      "id": "docs_architecture_de_reciprocal_rank_fusion"
     },
     {
       "label": "Why RRF Rationale [DE]",
@@ -1889,10 +2207,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_architecture_de_why_rrf",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "why rrf rationale [de]"
+      "community_name": "Architecture (English)",
+      "norm_label": "why rrf rationale [de]",
+      "_origin": "semantic",
+      "id": "docs_architecture_de_why_rrf"
     },
     {
       "label": "RAG Grounding Example (README)",
@@ -1903,10 +2222,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_rag_example",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "rag grounding example (readme)"
+      "community_name": "Architecture (English)",
+      "norm_label": "rag grounding example (readme)",
+      "_origin": "semantic",
+      "id": "readme_rag_example"
     },
     {
       "label": "RAG Grounding Example (README, DE)",
@@ -1917,10 +2237,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_de_rag_example",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "rag grounding example (readme, de)"
+      "community_name": "Architecture (English)",
+      "norm_label": "rag grounding example (readme, de)",
+      "_origin": "semantic",
+      "id": "readme_de_rag_example"
     },
     {
       "label": "Graphify Knowledge Graph Workflow",
@@ -1931,10 +2252,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_graphify_workflow",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "graphify knowledge graph workflow"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "graphify knowledge graph workflow",
+      "_origin": "semantic",
+      "id": "claude_graphify_workflow"
     },
     {
       "label": "Handoff Document Workflow",
@@ -1945,10 +2267,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_handoff_doc_workflow",
       "community": 4,
-      "community_name": "Agent Session & Workflow Docs",
-      "norm_label": "handoff document workflow"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "handoff document workflow",
+      "_origin": "semantic",
+      "id": "claude_handoff_doc_workflow"
     },
     {
       "label": "search/index_config.py",
@@ -1959,10 +2282,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "src_hybrid_search_api_search_index_config_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "search/index_config.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "search/index_config.py",
+      "_origin": "semantic",
+      "id": "src_hybrid_search_api_search_index_config_module"
     },
     {
       "label": "search/queries.py",
@@ -1973,10 +2297,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "search_queries_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "search/queries.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "search/queries.py",
+      "_origin": "semantic",
+      "id": "search_queries_module"
     },
     {
       "label": "hybrid_search.py",
@@ -1987,10 +2312,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "hybrid_search_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "hybrid_search.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "hybrid_search.py",
+      "_origin": "semantic",
+      "id": "hybrid_search_module"
     },
     {
       "label": "ai/prompts.py",
@@ -2001,10 +2327,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "ai_prompts_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "ai/prompts.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "ai/prompts.py",
+      "_origin": "semantic",
+      "id": "ai_prompts_module"
     },
     {
       "label": "api/routes.py",
@@ -2015,10 +2342,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "api_routes_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "api/routes.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "api/routes.py",
+      "_origin": "semantic",
+      "id": "api_routes_module"
     },
     {
       "label": "main.py",
@@ -2029,10 +2357,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "main_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "main.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "main.py",
+      "_origin": "semantic",
+      "id": "main_module"
     },
     {
       "label": "scripts/seed_data.py",
@@ -2043,10 +2372,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "scripts_seed_data_module",
       "community": 2,
-      "community_name": "Architecture Docs & RRF Rationale",
-      "norm_label": "scripts/seed_data.py"
+      "community_name": "Architecture (English)",
+      "norm_label": "scripts/seed_data.py",
+      "_origin": "semantic",
+      "id": "scripts_seed_data_module"
     },
     {
       "label": "Swagger UI Search Demo (GIF)",
@@ -2057,10 +2387,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_search_demo_searchdemoui",
       "community": 10,
-      "community_name": "Hybrid Search Demo & RAG Answer",
-      "norm_label": "swagger ui search demo (gif)"
+      "community_name": "POST /search Endpoint",
+      "norm_label": "swagger ui search demo (gif)",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_search_demo_searchdemoui"
     },
     {
       "label": "POST /search Endpoint",
@@ -2071,10 +2402,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_search_demo_searchendpoint",
       "community": 10,
-      "community_name": "Hybrid Search Demo & RAG Answer",
-      "norm_label": "post /search endpoint"
+      "community_name": "POST /search Endpoint",
+      "norm_label": "post /search endpoint",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_search_demo_searchendpoint"
     },
     {
       "label": "RAG-style LLM Answer Feature",
@@ -2085,10 +2417,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_search_demo_ragstyleanswer",
       "community": 10,
-      "community_name": "Hybrid Search Demo & RAG Answer",
-      "norm_label": "rag-style llm answer feature"
+      "community_name": "POST /search Endpoint",
+      "norm_label": "rag-style llm answer feature",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_search_demo_ragstyleanswer"
     },
     {
       "label": "Hybrid Search (BM25 + kNN via RRF)",
@@ -2099,10 +2432,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_search_demo_hybridsearch",
       "community": 10,
-      "community_name": "Hybrid Search Demo & RAG Answer",
-      "norm_label": "hybrid search (bm25 + knn via rrf)"
+      "community_name": "POST /search Endpoint",
+      "norm_label": "hybrid search (bm25 + knn via rrf)",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_search_demo_hybridsearch"
     },
     {
       "label": "Swagger UI Screenshot",
@@ -2113,10 +2447,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_swaggeruiscreen",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "swagger ui screenshot"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "swagger ui screenshot",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_swaggeruiscreen"
     },
     {
       "label": "POST /search endpoint",
@@ -2127,10 +2462,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_searchendpoint",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "post /search endpoint"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "post /search endpoint",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_searchendpoint"
     },
     {
       "label": "GET /index endpoint",
@@ -2141,10 +2477,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_indexendpoint",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "get /index endpoint"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "get /index endpoint",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_indexendpoint"
     },
     {
       "label": "GET /index/documents endpoint",
@@ -2155,10 +2492,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_indexdocumentsendpoint",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "get /index/documents endpoint"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "get /index/documents endpoint",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_indexdocumentsendpoint"
     },
     {
       "label": "GET /health endpoint",
@@ -2169,10 +2507,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_healthendpoint",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "get /health endpoint"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "get /health endpoint",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_healthendpoint"
     },
     {
       "label": "GET /health/elasticsearch endpoint",
@@ -2183,10 +2522,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_healthelasticsearchendpoint",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "get /health/elasticsearch endpoint"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "get /health/elasticsearch endpoint",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_healthelasticsearchendpoint"
     },
     {
       "label": "DocumentListResponse schema",
@@ -2197,10 +2537,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_documentlistresponseschema",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "documentlistresponse schema"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "documentlistresponse schema",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_documentlistresponseschema"
     },
     {
       "label": "DocumentPreview schema",
@@ -2211,10 +2552,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_documentpreviewschema",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "documentpreview schema"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "documentpreview schema",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_documentpreviewschema"
     },
     {
       "label": "ElasticsearchHealth schema",
@@ -2225,10 +2567,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_elasticsearchhealthschema",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "elasticsearchhealth schema"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "elasticsearchhealth schema",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_elasticsearchhealthschema"
     },
     {
       "label": "HTTPValidationError schema",
@@ -2239,10 +2582,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_httpvalidationerrorschema",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "httpvalidationerror schema"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "httpvalidationerror schema",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_httpvalidationerrorschema"
     },
     {
       "label": "IndexInfo schema",
@@ -2253,10 +2597,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_images_swagger_ui_indexinfoschema",
       "community": 6,
-      "community_name": "API Schema & Endpoints (Swagger)",
-      "norm_label": "indexinfo schema"
+      "community_name": "Swagger UI Screenshot",
+      "norm_label": "indexinfo schema",
+      "_origin": "semantic",
+      "id": "docs_images_swagger_ui_indexinfoschema"
     }
   ],
   "links": [
@@ -2416,11 +2761,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L6",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
+      "source": "src_hybrid_search_api_search_answering",
       "target": "src_hybrid_search_api_ai_llm_client",
       "confidence_score": 1.0
     },
@@ -2484,25 +2829,25 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L6",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
+      "source": "src_hybrid_search_api_search_answering",
       "target": "src_hybrid_search_api_ai_llm_client_llmclient",
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "references",
+      "context": "parameter_type",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L93",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_ai_llm_client_llmclient"
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_ai_llm_client_llmclient",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2566,7 +2911,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/ai/prompts.py",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_ai_prompts",
@@ -2588,11 +2933,23 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L7",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_ai_prompts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_prompts",
       "target": "src_hybrid_search_api_ai_prompts",
       "confidence_score": 1.0
     },
@@ -2600,10 +2957,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/ai/prompts.py",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_ai_prompts_rationale_31",
+      "source": "src_hybrid_search_api_ai_prompts_rationale_33",
       "target": "src_hybrid_search_api_ai_prompts_build_rag_prompt",
       "confidence_score": 1.0
     },
@@ -2611,11 +2968,23 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L7",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_ai_prompts_build_rag_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
       "target": "src_hybrid_search_api_ai_prompts_build_rag_prompt",
       "confidence_score": 1.0
     },
@@ -2624,11 +2993,23 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L94",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
+      "source": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_de",
+      "target": "src_hybrid_search_api_ai_prompts_build_rag_prompt"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_en",
       "target": "src_hybrid_search_api_ai_prompts_build_rag_prompt"
     },
     {
@@ -2967,18 +3348,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_api_routes_extract_score",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L49",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -2989,7 +3359,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L65",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3001,7 +3371,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L8",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3013,7 +3383,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L8",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3025,7 +3395,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L8",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3037,7 +3407,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3049,19 +3419,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_models_searchhit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3073,7 +3431,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
@@ -3085,11 +3443,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L10",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_search_elasticsearch_client",
+      "target": "src_hybrid_search_api_search_answering",
       "confidence_score": 1.0
     },
     {
@@ -3097,59 +3455,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L10",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_search_elasticsearch_client_build_client",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_search_embeddings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_search_embeddings_embed",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_search_hybrid_search",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes",
-      "target": "src_hybrid_search_api_search_hybrid_search_hybrid_search",
+      "target": "src_hybrid_search_api_search_answering_answer_search",
       "confidence_score": 1.0
     },
     {
@@ -3165,34 +3475,10 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_extract_score",
-      "target": "src_hybrid_search_api_api_routes_py_get",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L84",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_api_routes_extract_score",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L48",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -3201,22 +3487,10 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L85",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_api_routes_py_get",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L53",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -3229,7 +3503,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L65",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes_search",
@@ -3237,23 +3511,11 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L82",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_models_searchhit"
-    },
-    {
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L65",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes_search",
@@ -3265,7 +3527,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L65",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes_search",
@@ -3278,35 +3540,58 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L66",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_search_elasticsearch_client_build_client"
+      "target": "src_hybrid_search_api_search_answering_answer_search"
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L69",
+      "source_file": "src/hybrid_search_api/api/ui_routes.py",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_search_embeddings_embed"
+      "source": "src_hybrid_search_api_api_ui_routes",
+      "target": "src_hybrid_search_api_api_ui_routes_search_ui",
+      "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/hybrid_search_api/api/routes.py",
-      "source_location": "L74",
+      "source_file": "src/hybrid_search_api/main.py",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_api_routes_search",
-      "target": "src_hybrid_search_api_search_hybrid_search_hybrid_search"
+      "source": "src_hybrid_search_api_main",
+      "target": "src_hybrid_search_api_api_ui_routes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/api/ui_routes.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_api_ui_routes_search_ui",
+      "target": "src_hybrid_search_api_api_ui_routes_py_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/api/ui_routes.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_api_ui_routes_search_ui",
+      "target": "fileresponse",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3334,11 +3619,35 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/elasticsearch_client.py",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_elasticsearch_client",
+      "target": "src_hybrid_search_api_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
       "target": "src_hybrid_search_api_config",
       "confidence_score": 1.0
     },
@@ -3392,6 +3701,30 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_config_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_config_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/elasticsearch_client.py",
       "source_location": "L3",
       "weight": 1.0,
@@ -3413,6 +3746,113 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_test_answering_fakellmclient",
+      "target": "src_hybrid_search_api_config_settings",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_without_llm_answer",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3428,7 +3868,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_main",
@@ -3439,7 +3879,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_main",
@@ -3471,11 +3911,23 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_ui_routes.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_ui_routes",
+      "target": "src_hybrid_search_api_main",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_main_es_connection_error_handler",
@@ -3486,10 +3938,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_main_rationale_14",
+      "source": "src_hybrid_search_api_main_rationale_15",
       "target": "src_hybrid_search_api_main_utf8jsonresponse",
       "confidence_score": 1.0
     },
@@ -3497,7 +3949,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_main_utf8jsonresponse",
@@ -3508,7 +3960,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L40",
+      "source_location": "L42",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -3521,7 +3973,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_main_es_connection_error_handler",
@@ -3533,7 +3985,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_main_es_connection_error_handler",
@@ -3544,10 +3996,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_main_rationale_42",
+      "source": "src_hybrid_search_api_main_rationale_44",
       "target": "src_hybrid_search_api_main_es_connection_error_handler",
       "confidence_score": 1.0
     },
@@ -3557,7 +4009,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/test_api.py",
-      "source_location": "L149",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api_test_search_returns_502_when_elasticsearch_unreachable",
@@ -3653,6 +4105,42 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "src_hybrid_search_api_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_api.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_api",
+      "target": "src_hybrid_search_api_models",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
@@ -3662,6 +4150,137 @@
       "source": "src_hybrid_search_api_models_searchrequest",
       "target": "basemodel",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_models_searchrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_models_searchrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_test_answering_fakellmclient",
+      "target": "src_hybrid_search_api_models_searchrequest",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_without_llm_answer",
+      "target": "src_hybrid_search_api_models_searchrequest"
     },
     {
       "relation": "inherits",
@@ -3728,6 +4347,339 @@
       "source": "src_hybrid_search_api_models_searchresponse",
       "target": "basemodel",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_models_searchhit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_models_searchhit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_api.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_api_test_search_returns_200_with_hits",
+      "target": "src_hybrid_search_api_models_searchhit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_models_searchresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_models_searchresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_api.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_api_test_search_returns_200_with_hits",
+      "target": "src_hybrid_search_api_models_searchresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_answering_answer_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_answering_extract_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_elasticsearch_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_elasticsearch_client_build_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_embeddings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_embeddings_embed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_hybrid_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_search_hybrid_search_hybrid_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_rationale_1",
+      "target": "src_hybrid_search_api_search_answering",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "src_hybrid_search_api_search_answering",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_search_answering_extract_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_search_elasticsearch_client_build_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_search_embeddings_embed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_search_hybrid_search_hybrid_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_without_llm_answer",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
     },
     {
       "relation": "contains",
@@ -4438,8 +5390,285 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_fakellmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_without_llm_answer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_fakellmclient",
+      "target": "tests_test_answering_fakellmclient_complete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_fakellmclient",
+      "target": "tests_test_answering_fakellmclient_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "target": "tests_test_answering_fakellmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "target": "tests_test_answering_fakellmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "target": "tests_test_answering_fakellmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L130",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "target": "tests_test_answering_fakellmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "tests_test_answering_fakellmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_authentication_error",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_connection_error",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_not_found_error",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_without_llm_answer",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4450,7 +5679,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L38",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_api",
+      "target": "tests_test_api_test_search_returns_200_with_hits",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_api.py",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4461,7 +5701,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L128",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4472,7 +5712,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L106",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4483,7 +5723,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L84",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4494,7 +5734,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L145",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4505,7 +5745,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L60",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api",
@@ -4513,21 +5753,22 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0,
+      "context": "decorator",
       "_origin": "ast",
-      "source": "tests_test_api",
-      "target": "tests_test_api_test_search_without_llm_answer",
+      "source": "tests_test_api_test_search_returns_200_with_hits",
+      "target": "tests_test_api_py_patch",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L37",
+      "source_location": "L34",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -4539,7 +5780,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L127",
+      "source_location": "L88",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -4551,7 +5792,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L105",
+      "source_location": "L75",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -4563,7 +5804,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L83",
+      "source_location": "L62",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -4575,7 +5816,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L144",
+      "source_location": "L99",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -4587,23 +5828,11 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_api.py",
-      "source_location": "L59",
+      "source_location": "L47",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
       "source": "tests_test_api_test_search_returns_german_error_when_lang_de",
-      "target": "tests_test_api_py_patch",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/test_api.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "context": "decorator",
-      "_origin": "ast",
-      "source": "tests_test_api_test_search_without_llm_answer",
       "target": "tests_test_api_py_patch",
       "confidence_score": 1.0
     },
@@ -4838,6 +6067,28 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_prompts",
+      "target": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_de",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_prompts.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_prompts",
+      "target": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_en",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/test_queries.py",
       "source_location": "L4",
       "weight": 1.0,
@@ -4858,12 +6109,24 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_ui_routes.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_ui_routes",
+      "target": "tests_test_ui_routes_test_root_serves_search_ui_html",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".claude/commands/rebuild.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_rebuild_rebuild_command",
       "target": "claude_project_instructions"
     },
@@ -4874,6 +6137,7 @@
       "source_file": ".claude/commands/rebuild.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_rebuild_rebuild_command",
       "target": "src_hybrid_search_api_search_index_config_module"
     },
@@ -4884,6 +6148,7 @@
       "source_file": ".claude/commands/startup.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_startup_startup_command",
       "target": "claude_graphify_workflow"
     },
@@ -4894,6 +6159,7 @@
       "source_file": ".claude/commands/startup.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_startup_startup_command",
       "target": "claude_handoff_doc_workflow"
     },
@@ -4904,6 +6170,7 @@
       "source_file": ".claude/commands/startup.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_startup_startup_command",
       "target": "claude_project_instructions"
     },
@@ -4914,6 +6181,7 @@
       "source_file": ".claude/commands/startup.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_startup_startup_command",
       "target": "docs_agents_domain_domain_docs_consumption"
     },
@@ -4924,6 +6192,7 @@
       "source_file": ".claude/commands/startup.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_startup_startup_command",
       "target": "docs_agents_issue_tracker_issue_tracker_conventions"
     },
@@ -4934,6 +6203,7 @@
       "source_file": ".claude/commands/verify.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_commands_verify_verify_command",
       "target": "contributing_contributing_guide"
     },
@@ -4944,6 +6214,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "claude_commands_verify_verify_command"
     },
@@ -4954,6 +6225,7 @@
       "source_file": ".github/workflows/ci.yml",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "github_workflows_ci_ci_workflow",
       "target": "claude_project_instructions"
     },
@@ -4964,6 +6236,7 @@
       "source_file": ".github/workflows/ci.yml",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "github_workflows_ci_ci_workflow",
       "target": "contributing_contributing_guide"
     },
@@ -4974,6 +6247,7 @@
       "source_file": ".pre-commit-config.yaml",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "pre_commit_config_pre_commit_hooks",
       "target": "github_workflows_ci_ci_workflow"
     },
@@ -4984,6 +6258,7 @@
       "source_file": ".serena/project.yml",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "serena_project_serena_project_config",
       "target": "claude_project_instructions"
     },
@@ -4994,6 +6269,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "claude_graphify_workflow"
     },
@@ -5004,6 +6280,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "claude_handoff_doc_workflow"
     },
@@ -5014,6 +6291,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "docs_agents_domain_domain_docs_consumption"
     },
@@ -5024,6 +6302,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "docs_agents_issue_tracker_issue_tracker_conventions"
     },
@@ -5034,6 +6313,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "docs_agents_triage_labels_triage_label_mapping"
     },
@@ -5044,6 +6324,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "docs_architecture_architecture_en"
     },
@@ -5054,6 +6335,7 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "claude_project_instructions",
       "target": "readme_readme_en"
     },
@@ -5064,6 +6346,7 @@
       "source_file": "docker-compose.yml",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docker_compose_services",
       "target": "claude_project_instructions"
     },
@@ -5074,6 +6357,7 @@
       "source_file": "docs/agents/domain.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_agents_domain_domain_docs_consumption",
       "target": "context_ubiquitous_language_glossary"
     },
@@ -5084,6 +6368,7 @@
       "source_file": "README.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_de_readme_de",
       "target": "docs_architecture_de_architecture_de"
     },
@@ -5094,6 +6379,7 @@
       "source_file": "README.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_de_readme_de",
       "target": "readme_de_rag_example"
     },
@@ -5104,6 +6390,7 @@
       "source_file": "README.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_de_readme_de",
       "target": "readme_readme_en"
     },
@@ -5114,6 +6401,7 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_readme_en",
       "target": "docs_architecture_architecture_en"
     },
@@ -5124,6 +6412,7 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_readme_en",
       "target": "readme_rag_example"
     },
@@ -5134,6 +6423,7 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_readme_en",
       "target": "scripts_seed_data_module"
     },
@@ -5144,6 +6434,7 @@
       "source_file": "docs/agents/domain.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_agents_domain_domain_docs_consumption",
       "target": "docs_adr_readme_adr_process"
     },
@@ -5154,6 +6445,7 @@
       "source_file": "docs/agents/issue-tracker.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_agents_issue_tracker_issue_tracker_conventions",
       "target": "docs_agents_issue_tracker_wayfinder_pattern"
     },
@@ -5164,6 +6456,7 @@
       "source_file": "docs/agents/triage-labels.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_agents_triage_labels_triage_label_mapping",
       "target": "docs_agents_issue_tracker_issue_tracker_conventions"
     },
@@ -5174,6 +6467,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "docs_architecture_de_architecture_de"
     },
@@ -5184,6 +6478,7 @@
       "source_file": "docs/architecture.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_de_architecture_de",
       "target": "docs_architecture_de_hybrid_search"
     },
@@ -5194,6 +6489,7 @@
       "source_file": "docs/architecture.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_de_architecture_de",
       "target": "docs_architecture_de_reciprocal_rank_fusion"
     },
@@ -5204,6 +6500,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "ai_prompts_module"
     },
@@ -5214,6 +6511,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "api_routes_module"
     },
@@ -5224,6 +6522,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "docs_architecture_embeddings_model"
     },
@@ -5234,6 +6533,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "docs_architecture_hybrid_search"
     },
@@ -5244,6 +6544,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "docs_architecture_rag_pattern"
     },
@@ -5254,6 +6555,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "docs_architecture_reciprocal_rank_fusion"
     },
@@ -5264,6 +6566,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "hybrid_search_module"
     },
@@ -5274,6 +6577,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "main_module"
     },
@@ -5284,6 +6588,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "search_queries_module"
     },
@@ -5294,6 +6599,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_architecture_en",
       "target": "src_hybrid_search_api_search_index_config_module"
     },
@@ -5304,6 +6610,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_hybrid_search",
       "target": "docs_architecture_de_hybrid_search"
     },
@@ -5314,6 +6621,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_reciprocal_rank_fusion",
       "target": "docs_architecture_de_reciprocal_rank_fusion"
     },
@@ -5324,6 +6632,7 @@
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_why_rrf",
       "target": "docs_architecture_reciprocal_rank_fusion"
     },
@@ -5334,6 +6643,7 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_rag_example",
       "target": "docs_architecture_rag_pattern"
     },
@@ -5344,6 +6654,7 @@
       "source_file": "docs/architecture.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_architecture_de_why_rrf",
       "target": "docs_architecture_de_reciprocal_rank_fusion"
     },
@@ -5354,6 +6665,7 @@
       "source_file": "README.de.md",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "readme_de_rag_example",
       "target": "readme_rag_example"
     },
@@ -5364,6 +6676,7 @@
       "source_file": "docs/images/swagger-search-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_search_demo_searchdemoui",
       "target": "docs_images_swagger_search_demo_ragstyleanswer"
     },
@@ -5374,6 +6687,7 @@
       "source_file": "docs/images/swagger-search-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_search_demo_searchdemoui",
       "target": "docs_images_swagger_search_demo_searchendpoint"
     },
@@ -5384,6 +6698,7 @@
       "source_file": "docs/images/swagger-search-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_search_demo_searchendpoint",
       "target": "docs_images_swagger_search_demo_hybridsearch"
     },
@@ -5394,6 +6709,7 @@
       "source_file": "docs/images/swagger-search-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_search_demo_searchendpoint",
       "target": "docs_images_swagger_search_demo_ragstyleanswer"
     },
@@ -5404,6 +6720,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_documentlistresponseschema"
     },
@@ -5414,6 +6731,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_documentpreviewschema"
     },
@@ -5424,6 +6742,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_elasticsearchhealthschema"
     },
@@ -5434,6 +6753,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_healthelasticsearchendpoint"
     },
@@ -5444,6 +6764,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_healthendpoint"
     },
@@ -5454,6 +6775,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_httpvalidationerrorschema"
     },
@@ -5464,6 +6786,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_indexdocumentsendpoint"
     },
@@ -5474,6 +6797,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_indexendpoint"
     },
@@ -5484,6 +6808,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_indexinfoschema"
     },
@@ -5494,6 +6819,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_swaggeruiscreen",
       "target": "docs_images_swagger_ui_searchendpoint"
     },
@@ -5504,6 +6830,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_searchendpoint",
       "target": "docs_images_swagger_ui_httpvalidationerrorschema"
     },
@@ -5514,6 +6841,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_indexendpoint",
       "target": "docs_images_swagger_ui_indexinfoschema"
     },
@@ -5524,6 +6852,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_indexdocumentsendpoint",
       "target": "docs_images_swagger_ui_documentlistresponseschema"
     },
@@ -5534,6 +6863,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_indexdocumentsendpoint",
       "target": "docs_images_swagger_ui_documentpreviewschema"
     },
@@ -5544,6 +6874,7 @@
       "source_file": "docs/images/swagger-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_swagger_ui_healthelasticsearchendpoint",
       "target": "docs_images_swagger_ui_elasticsearchhealthschema"
     }
@@ -5592,5 +6923,5 @@
       "source_file": ".claude/commands/startup.md"
     }
   ],
-  "built_at_commit": "c3c6e33be280b9d174177dd28dba6a1703ec3189"
+  "built_at_commit": "6c9ef7a7b4bdc27af0deb9f41d24090b5372d092"
 }
