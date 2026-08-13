@@ -3,7 +3,7 @@ from unittest.mock import patch
 import httpx
 from elasticsearch import ConnectionError as ESConnectionError
 from fastapi.testclient import TestClient
-from openai import AuthenticationError
+from openai import APIConnectionError, AuthenticationError, NotFoundError, RateLimitError
 
 from hybrid_search_api.main import app
 from hybrid_search_api.models import SearchHit, SearchResponse
@@ -57,6 +57,43 @@ def test_search_returns_german_error_when_lang_de(mock_answer_search):
 
     assert response.status_code == 502
     assert "API-Key" in response.json()["detail"]
+
+
+@patch("hybrid_search_api.api.routes.answer_search")
+def test_search_returns_502_on_unknown_model(mock_answer_search):
+    fake_response = httpx.Response(404, request=httpx.Request("POST", "https://llm.example.com"))
+    mock_answer_search.side_effect = NotFoundError(
+        message="model not found", response=fake_response, body=None
+    )
+
+    response = client.post("/search", json={"query": "test", "use_llm_answer": True})
+
+    assert response.status_code == 502
+    assert "Model" in response.json()["detail"]
+
+
+@patch("hybrid_search_api.api.routes.answer_search")
+def test_search_returns_502_on_rate_limit(mock_answer_search):
+    fake_response = httpx.Response(429, request=httpx.Request("POST", "https://llm.example.com"))
+    mock_answer_search.side_effect = RateLimitError(
+        message="rate limit exceeded", response=fake_response, body=None
+    )
+
+    response = client.post("/search", json={"query": "test", "use_llm_answer": True})
+
+    assert response.status_code == 502
+    assert "429" in response.json()["detail"]
+
+
+@patch("hybrid_search_api.api.routes.answer_search")
+def test_search_returns_502_on_connection_error(mock_answer_search):
+    fake_request = httpx.Request("POST", "https://llm.example.com")
+    mock_answer_search.side_effect = APIConnectionError(request=fake_request)
+
+    response = client.post("/search", json={"query": "test", "use_llm_answer": True})
+
+    assert response.status_code == 502
+    assert "not reachable" in response.json()["detail"]
 
 
 @patch("hybrid_search_api.api.routes.answer_search")
