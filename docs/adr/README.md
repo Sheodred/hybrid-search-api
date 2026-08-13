@@ -5,7 +5,7 @@ carelessly. Format: Context, Decision, Options with a scoring table, Consequence
 
 | ADR | Decision | Status | Gist |
 | --- | -------- | ------ | ---- |
-| [0001](0001-<slug>.md) | <one line> | Proposed | <why> |
+| [0001](0001-local-embeddings-over-ollama.md) | Local sentence-transformers for embeddings, not Ollama | Accepted | No functional payoff at this corpus size; adds a required service to a "clone and `docker compose up`" demo |
 
 ## Add a new ADR
 
