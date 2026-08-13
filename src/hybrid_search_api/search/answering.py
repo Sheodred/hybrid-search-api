@@ -19,8 +19,11 @@ logger = logging.getLogger(__name__)
 
 
 def _extract_score(hit: dict) -> float:
-    score = hit.get("_score")
-    return score if score is not None else hit.get("_rrf_score", 0.0)
+    # After RRF fusion the hit still carries its original per-list _score
+    # (BM25 or kNN) alongside the fused _rrf_score it was actually ranked by -
+    # prefer the fused score so the displayed value matches the ranking.
+    score = hit.get("_rrf_score")
+    return score if score is not None else hit.get("_score", 0.0)
 
 
 def answer_search(

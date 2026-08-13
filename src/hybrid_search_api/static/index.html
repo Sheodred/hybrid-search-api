@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hybrid Search API</title>
+<style>
+  :root {
+    --accent: #2563eb;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 3rem 1.5rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 0.25rem;
+  }
+  .tagline {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  input[type="text"] {
+    font-size: 1rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+  }
+  input[type="text"]:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -1px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .lang-toggle button {
+    border: none;
+    background: #fff;
+    color: var(--muted);
+    padding: 0.3rem 0.6rem;
+    font-size: inherit;
+    cursor: pointer;
+  }
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  button[type="submit"] {
+    align-self: flex-start;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  #status {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  #status.error {
+    color: #b91c1c;
+  }
+  #results {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .answer-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+  }
+  .answer-card h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  .answer-card p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hit {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+  }
+  .hit h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .hit .score {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+  .hit p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.45;
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Hybrid Search API</h1>
+    <p class="tagline" id="tagline">Elasticsearch hybrid search (BM25 + kNN) with an LLM RAG answer.</p>
+  </header>
+
+  <form id="search-form">
+    <input type="text" id="query" name="query" required minlength="1" placeholder="Search…" autofocus />
+    <div class="row">
+      <div class="options">
+        <label class="checkbox">
+          <input type="checkbox" id="use-llm-answer" checked />
+          <span id="answer-label">Generate answer</span>
+        </label>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-en" class="active">EN</button>
+          <button type="button" id="lang-de">DE</button>
+        </div>
+      </div>
+      <button type="submit" id="search-button">Search</button>
+    </div>
+  </form>
+
+  <div id="status"></div>
+  <div id="results"></div>
+</main>
+
+<script>
+  const STRINGS = {
+    en: {
+      tagline: "Elasticsearch hybrid search (BM25 + kNN) with an LLM RAG answer.",
+      placeholder: "Search…",
+      answerLabel: "Generate answer",
+      searchButton: "Search",
+      searching: "Searching…",
+      noResults: "No results.",
+      answerHeading: "Answer",
+      errorPrefix: "Something went wrong: ",
+    },
+    de: {
+      tagline: "Elasticsearch Hybrid-Suche (BM25 + kNN) mit LLM-RAG-Antwort.",
+      placeholder: "Suchen…",
+      answerLabel: "Antwort generieren",
+      searchButton: "Suchen",
+      searching: "Suche läuft…",
+      noResults: "Keine Ergebnisse.",
+      answerHeading: "Antwort",
+      errorPrefix: "Etwas ist schiefgelaufen: ",
+    },
+  };
+
+  let lang = "en";
+
+  const form = document.getElementById("search-form");
+  const queryInput = document.getElementById("query");
+  const useLlmAnswerInput = document.getElementById("use-llm-answer");
+  const searchButton = document.getElementById("search-button");
+  const statusEl = document.getElementById("status");
+  const resultsEl = document.getElementById("results");
+  const langButtons = { en: document.getElementById("lang-en"), de: document.getElementById("lang-de") };
+
+  function applyLanguage() {
+    const s = STRINGS[lang];
+    document.getElementById("tagline").textContent = s.tagline;
+    document.getElementById("answer-label").textContent = s.answerLabel;
+    queryInput.placeholder = s.placeholder;
+    searchButton.textContent = s.searchButton;
+    langButtons.en.classList.toggle("active", lang === "en");
+    langButtons.de.classList.toggle("active", lang === "de");
+  }
+
+  langButtons.en.addEventListener("click", () => { lang = "en"; applyLanguage(); });
+  langButtons.de.addEventListener("click", () => { lang = "de"; applyLanguage(); });
+
+  function renderResults(data) {
+    resultsEl.innerHTML = "";
+
+    if (data.answer) {
+      const card = document.createElement("div");
+      card.className = "answer-card";
+      card.innerHTML = `<h2>${STRINGS[lang].answerHeading}</h2><p></p>`;
+      card.querySelector("p").textContent = data.answer;
+      resultsEl.appendChild(card);
+    }
+
+    if (data.hits.length === 0) {
+      const empty = document.createElement("p");
+      empty.textContent = STRINGS[lang].noResults;
+      resultsEl.appendChild(empty);
+      return;
+    }
+
+    for (const hit of data.hits) {
+      const el = document.createElement("div");
+      el.className = "hit";
+      el.innerHTML = `<h3>${escapeHtml(hit.title)} <span class="score">${hit.score.toFixed(2)}</span></h3><p></p>`;
+      el.querySelector("p").textContent = hit.content;
+      resultsEl.appendChild(el);
+    }
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const query = queryInput.value.trim();
+    if (!query) return;
+
+    searchButton.disabled = true;
+    statusEl.textContent = STRINGS[lang].searching;
+    statusEl.classList.remove("error");
+    resultsEl.innerHTML = "";
+
+    try {
+      const response = await fetch("/search", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query,
+          use_llm_answer: useLlmAnswerInput.checked,
+          lang,
+        }),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        const detail = typeof data.detail === "string" ? data.detail : response.statusText;
+        throw new Error(detail);
+      }
+
+      statusEl.textContent = "";
+      renderResults(data);
+    } catch (err) {
+      statusEl.textContent = STRINGS[lang].errorPrefix + err.message;
+      statusEl.classList.add("error");
+    } finally {
+      searchButton.disabled = false;
+    }
+  });
+
+  applyLanguage();
+</script>
+</body>
+</html>
