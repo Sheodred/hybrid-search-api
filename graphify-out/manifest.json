@@ -10,8 +10,8 @@
     "semantic_hash": "b878dfdcca30f336251b478cb075e8a5"
   },
   "pyproject.toml": {
-    "mtime": 1786645214.2203107,
-    "ast_hash": "4ae7bc4a1aeec11094f464526ed555ee",
+    "mtime": 1786923811.554237,
+    "ast_hash": "b27f2824f0e35d2f7cf55f9d79c834fb",
     "semantic_hash": ""
   },
   "scripts/seed_data.py": {
@@ -190,23 +190,23 @@
     "semantic_hash": "82071777f3e8454f968c62fae159e383"
   },
   "README.de.md": {
-    "mtime": 1786645214.2123108,
-    "ast_hash": "2b681eca13496877c7731447286e3658",
+    "mtime": 1786923900.6936576,
+    "ast_hash": "febb14dafabf61889402e1caddfed62d",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1786645214.2133145,
-    "ast_hash": "99f96d7f48007783612812197d5ac417",
+    "mtime": 1786923897.5777342,
+    "ast_hash": "0a4778b34f991fc54fa4f911c05fa002",
     "semantic_hash": ""
   },
   "docker-compose.yml": {
-    "mtime": 1785832323.731052,
-    "ast_hash": "51d32fd29bbdd75ca936ec665a6b05ad",
-    "semantic_hash": "51d32fd29bbdd75ca936ec665a6b05ad"
+    "mtime": 1786651638.61213,
+    "ast_hash": "3dbe40f48051f9f466a28b7018615cc0",
+    "semantic_hash": ""
   },
   "docs/adr/README.md": {
-    "mtime": 1786645214.2143114,
-    "ast_hash": "ea3a811af27b6b5ff9ece0a9ffb2ed75",
+    "mtime": 1786651638.6131294,
+    "ast_hash": "4a00917baba6d904379f80c1fdd83eb2",
     "semantic_hash": ""
   },
   "docs/agents/domain.md": {
@@ -287,6 +287,21 @@
   "docs/images/search-ui.jpg": {
     "mtime": 1786645214.2193086,
     "ast_hash": "ee6c58ecce18a484274f58af86f651c4",
+    "semantic_hash": ""
+  },
+  "src/hybrid_search_api/mcp_server.py": {
+    "mtime": 1786923806.7495313,
+    "ast_hash": "b54302be4985aba0fe0a5d325a46ec98",
+    "semantic_hash": ""
+  },
+  "tests/test_mcp_server.py": {
+    "mtime": 1786923834.655314,
+    "ast_hash": "78bf3213ebb7c5d71ebdae48119f1455",
+    "semantic_hash": ""
+  },
+  "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md": {
+    "mtime": 1786651638.61213,
+    "ast_hash": "5990e5cab86c35e109118707c8d03d58",
     "semantic_hash": ""
   }
 }

@@ -144,6 +144,28 @@ sowie der Fehlermeldungen. Ein echtes Beispiel inkl. Antwort steht oben unter
 
 Interaktive API-Doku (Swagger): http://localhost:8000/docs
 
+### MCP-Server
+
+Dieselbe Suche steht zusaetzlich als [MCP](https://modelcontextprotocol.io)-Tool
+fuer MCP-Clients (Claude Desktop, Claude Code, etc.) zur Verfuegung - als
+Ergaenzung neben der REST-API, nicht als Ersatz. In der MCP-Konfiguration des
+Clients eintragen:
+
+```json
+{
+  "mcpServers": {
+    "hybrid-search-api": {
+      "command": "python",
+      "args": ["-m", "hybrid_search_api.mcp_server"],
+      "cwd": "/pfad/zu/hybrid-search-api"
+    }
+  }
+}
+```
+
+Stellt ein Tool bereit, `search(query, top_k=10, use_llm_answer=True, lang="en")`,
+das dieselbe `answer_search()`-Logik wie der REST-Endpunkt nutzt.
+
 ## Tests
 
 ```bash
@@ -153,7 +175,7 @@ ruff check .
 
 ## Tech-Stack
 
-Python 3.11+ - FastAPI - Elasticsearch - OpenAI-kompatible LLM-Anbindung - Docker - pytest - ruff - GitHub Actions
+Python 3.11+ - FastAPI - Elasticsearch - OpenAI-kompatible LLM-Anbindung - MCP - Docker - pytest - ruff - GitHub Actions
 
 ## Roadmap
 
