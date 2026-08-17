@@ -15,7 +15,6 @@ from mcp.shared.memory import create_client_server_memory_streams
 from hybrid_search_api.ai.llm_client import LLMClient
 from hybrid_search_api.ai.prompts import build_agentic_system_prompt
 from hybrid_search_api.config import Settings
-from hybrid_search_api.mcp_server import mcp as mcp_server_instance
 from hybrid_search_api.models import SearchHit, SearchRequest, SearchResponse
 
 logger = logging.getLogger(__name__)
@@ -57,6 +56,8 @@ async def _execute_tool_call(session: ClientSession, tool_call) -> tuple[str, li
     args = json.loads(tool_call.function.arguments)
     result = await session.call_tool(tool_call.function.name, args)
     text = result.content[0].text
+    if result.is_error:
+        return text, None
     hits = json.loads(text).get("hits")
     return text, hits
 
@@ -89,6 +90,12 @@ async def _run_agentic_loop(
 def agentic_answer_search(
     request: SearchRequest, settings: Settings, llm_client: LLMClient | None = None
 ) -> SearchResponse:
+    # Local import to break the answering.py -> agentic_answering.py ->
+    # mcp_server.py -> answering.py import cycle; mcp_server.py stays
+    # unmodified (module-level import), this is the side of the cycle this
+    # module introduced.
+    from hybrid_search_api.mcp_server import mcp as mcp_server_instance
+
     llm = llm_client if llm_client is not None else LLMClient(settings)
 
     async def _run() -> tuple[str, list[dict]]:
@@ -120,6 +127,15 @@ def agentic_answer_search(
 
         return result["answer"], result["hits"]
 
-    answer, raw_hits = anyio.run(_run)
+    try:
+        answer, raw_hits = anyio.run(_run)
+    except BaseExceptionGroup as eg:
+        # anyio 4 task groups wrap even a single exception (ClientSession
+        # nests a second task group, so it wraps twice) — unwrap so LLM SDK
+        # errors still reach api/routes.py's handlers unchanged.
+        exc = eg
+        while isinstance(exc, BaseExceptionGroup) and len(exc.exceptions) == 1:
+            exc = exc.exceptions[0]
+        raise exc from None
     hits = [SearchHit(**h) for h in raw_hits]
     return SearchResponse(query=request.query, hits=hits, answer=answer)
