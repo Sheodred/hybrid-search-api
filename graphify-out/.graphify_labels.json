@@ -1,5 +1,5 @@
 {
-  "0": ".complete",
+  "0": "LLMClient",
   "1": "index_routes.py",
   "2": "Architecture (English)",
   "3": "hybrid_search.py",
@@ -8,7 +8,7 @@
   "6": "Swagger UI Screenshot",
   "7": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
   "8": "test_api.py",
-  "9": "elasticsearch_client.py",
+  "9": "config.py",
   "11": "_test_env",
   "12": "hybrid-search-api",
   "13": "ai/__init__.py",

@@ -70,7 +70,7 @@
       "_origin": "ast",
       "id": "scripts_seed_data",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "seed_data.py"
     },
     {
@@ -82,7 +82,7 @@
       "_origin": "ast",
       "id": "scripts_seed_data_main",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "main()"
     },
     {
@@ -93,7 +93,7 @@
       "_origin": "ast",
       "id": "scripts_seed_data_rationale_1",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "utility script: indexes a small set of sample documents into elasticsearch,..."
     },
     {
@@ -104,7 +104,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "seed_nfcorpus.py"
     },
     {
@@ -116,7 +116,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_download_and_extract",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "download_and_extract()"
     },
     {
@@ -127,7 +127,7 @@
       "_origin": "ast",
       "id": "path",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "path"
     },
     {
@@ -139,7 +139,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_load_corpus",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "load_corpus()"
     },
     {
@@ -151,7 +151,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_main",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "main()"
     },
     {
@@ -162,7 +162,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_rationale_1",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "opt-in utility script: downloads the nfcorpus subset of the beir benchmark..."
     },
     {
@@ -194,8 +194,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "llm_client.py"
     },
     {
@@ -207,8 +207,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "llmclient"
     },
     {
@@ -219,8 +219,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_init",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": ".__init__()"
     },
     {
@@ -231,7 +231,7 @@
       "_origin": "ast",
       "id": "retry",
       "community": 0,
-      "community_name": ".complete",
+      "community_name": "LLMClient",
       "norm_label": "retry"
     },
     {
@@ -243,7 +243,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete",
       "community": 0,
-      "community_name": ".complete",
+      "community_name": "LLMClient",
       "norm_label": ".complete()"
     },
     {
@@ -254,8 +254,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_stream",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": ".stream()"
     },
     {
@@ -265,8 +265,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_1",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "thin wrapper around an openai-compatible chat completions endpoint. works..."
     },
     {
@@ -277,7 +277,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_31",
       "community": 0,
-      "community_name": ".complete",
+      "community_name": "LLMClient",
       "norm_label": "single non-streaming completion, with automatic retry on transient api errors."
     },
     {
@@ -287,8 +287,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_47",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "yields text chunks as they arrive - use for a responsive, incremental ui."
     },
     {
@@ -526,7 +526,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_config",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "config.py"
     },
     {
@@ -562,7 +562,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_get_settings",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "get_settings()"
     },
     {
@@ -677,6 +677,62 @@
       "community": 5,
       "community_name": "main.py",
       "norm_label": "applies to every route: if elasticsearch itself is unreachable, return a clear..."
+    },
+    {
+      "label": "mcp_server.py",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_mcp_server",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "mcp_server.py"
+    },
+    {
+      "label": "tool",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "tool",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "tool"
+    },
+    {
+      "label": "search()",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_mcp_server_search",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "search()"
+    },
+    {
+      "label": "MCP server exposing this project's hybrid search as a tool for MCP clients\u2026",
+      "file_type": "rationale",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_mcp_server_rationale_1",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "mcp server exposing this project's hybrid search as a tool for mcp clients..."
+    },
+    {
+      "label": "Run hybrid (BM25 + kNN) search against the configured Elasticsearch index,\u2026",
+      "file_type": "rationale",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_mcp_server_rationale_19",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "run hybrid (bm25 + knn) search against the configured elasticsearch index,..."
     },
     {
       "label": "models.py",
@@ -856,7 +912,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "elasticsearch_client.py"
     },
     {
@@ -879,7 +935,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_py_elasticsearch",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "elasticsearch"
     },
     {
@@ -891,7 +947,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_ensure_index",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "ensure_index()"
     },
     {
@@ -913,7 +969,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_16",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "create the index with the configured analyzers/mappings if it doesn't exist..."
     },
     {
@@ -924,7 +980,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "embeddings.py"
     },
     {
@@ -936,7 +992,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_get_model",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "_get_model()"
     },
     {
@@ -947,7 +1003,7 @@
       "_origin": "ast",
       "id": "sentencetransformer",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "sentencetransformer"
     },
     {
@@ -959,7 +1015,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "embed()"
     },
     {
@@ -971,7 +1027,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed_many",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "embed_many()"
     },
     {
@@ -982,7 +1038,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_1",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "sentence-embedding helper for the knn side of hybrid search. uses a small local..."
     },
     {
@@ -993,7 +1049,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_23",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "returns the embedding vector for a single piece of text."
     },
     {
@@ -1004,7 +1060,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_28",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "batched embedding - more efficient than calling embed() in a loop."
     },
     {
@@ -1107,7 +1163,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "index_config.py"
     },
     {
@@ -1119,7 +1175,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_build_index_body",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "build_index_body()"
     },
     {
@@ -1130,7 +1186,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_rationale_1",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "elasticsearch index configuration: analyzers, filters, and field mappings. this..."
     },
     {
@@ -1141,7 +1197,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_rationale_68",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "full index creation body: analysis settings + field mappings."
     },
     {
@@ -1549,7 +1605,7 @@
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_elasticsearch_client.py"
     },
     {
@@ -1561,7 +1617,7 @@
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client_test_ensure_index_creates_when_missing",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_ensure_index_creates_when_missing()"
     },
     {
@@ -1573,7 +1629,7 @@
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client_test_ensure_index_skips_when_already_present",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_ensure_index_skips_when_already_present()"
     },
     {
@@ -1584,7 +1640,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_embeddings.py"
     },
     {
@@ -1595,7 +1651,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings_py_patch",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "patch"
     },
     {
@@ -1607,7 +1663,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_returns_list_of_floats",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_embed_returns_list_of_floats()"
     },
     {
@@ -1619,7 +1675,7 @@
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_many_batches_multiple_texts",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_embed_many_batches_multiple_texts()"
     },
     {
@@ -1653,7 +1709,7 @@
       "_origin": "ast",
       "id": "tests_test_index_config",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_index_config.py"
     },
     {
@@ -1665,7 +1721,7 @@
       "_origin": "ast",
       "id": "tests_test_index_config_test_build_index_body_has_settings_and_mappings",
       "community": 9,
-      "community_name": "elasticsearch_client.py",
+      "community_name": "config.py",
       "norm_label": "test_build_index_body_has_settings_and_mappings()"
     },
     {
@@ -1757,8 +1813,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_client",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "test_llm_client.py"
     },
     {
@@ -1768,8 +1824,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_test_llm_client_py_patch",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "patch"
     },
     {
@@ -1780,9 +1836,43 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_llm_client_test_complete_returns_text_from_response",
-      "community": 18,
-      "community_name": "Settings",
+      "community": 0,
+      "community_name": "LLMClient",
       "norm_label": "test_complete_returns_text_from_response()"
+    },
+    {
+      "label": "test_mcp_server.py",
+      "file_type": "code",
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_mcp_server",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "test_mcp_server.py"
+    },
+    {
+      "label": "patch",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "tests_test_mcp_server_py_patch",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "patch"
+    },
+    {
+      "label": "test_search_tool_builds_request_and_returns_dict()",
+      "file_type": "code",
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
+      "community": 9,
+      "community_name": "config.py",
+      "norm_label": "test_search_tool_builds_request_and_returns_dict()"
     },
     {
       "label": "test_prompts.py",
@@ -1944,6 +2034,72 @@
       "norm_label": "consequences"
     },
     {
+      "label": "0002-llama-server-for-data-sovereignty-deployments.md",
+      "file_type": "document",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "0002-llama-server-for-data-sovereignty-deployments.md"
+    },
+    {
+      "label": "ADR-0002: llama-server (not Ollama) for the local/data-sovereignty LLM deployment mode",
+      "file_type": "document",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "adr-0002: llama-server (not ollama) for the local/data-sovereignty llm deployment mode"
+    },
+    {
+      "label": "Context",
+      "file_type": "document",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_context",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "context"
+    },
+    {
+      "label": "Decision",
+      "file_type": "document",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "decision"
+    },
+    {
+      "label": "Options considered",
+      "file_type": "document",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_options_considered",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "options considered"
+    },
+    {
+      "label": "Consequences",
+      "file_type": "document",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_consequences",
+      "community": 7,
+      "community_name": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
+      "norm_label": "consequences"
+    },
+    {
       "label": "/rebuild Command",
       "file_type": "document",
       "source_file": ".claude/commands/rebuild.md",
@@ -1952,8 +2108,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "community_name": "hybrid-search-api CLAUDE.md",
+      "community": 2,
+      "community_name": "Architecture (English)",
       "norm_label": "/rebuild command",
       "_origin": "semantic",
       "id": "claude_commands_rebuild_rebuild_command"
@@ -2417,8 +2573,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "community_name": "hybrid-search-api CLAUDE.md",
+      "community": 2,
+      "community_name": "Architecture (English)",
       "norm_label": "search/index_config.py",
       "_origin": "semantic",
       "id": "src_hybrid_search_api_search_index_config_module"
@@ -3870,6 +4026,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/answering.py",
       "source_location": "L12",
       "weight": 1.0,
@@ -4116,6 +4284,30 @@
       "target": "src_hybrid_search_api_config_settings"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_config_get_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server_search",
+      "target": "src_hybrid_search_api_config_get_settings"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/main.py",
@@ -4277,6 +4469,147 @@
       "_origin": "ast",
       "source": "tests_test_index_routes_test_elasticsearch_health_returns_502_when_unreachable",
       "target": "esconnectionerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_mcp_server_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_models_searchrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_search_answering",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_search_answering_answer_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server_rationale_1",
+      "target": "src_hybrid_search_api_mcp_server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_mcp_server",
+      "target": "src_hybrid_search_api_mcp_server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server_search",
+      "target": "tool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server_rationale_19",
+      "target": "src_hybrid_search_api_mcp_server_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server_search",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server_search",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
+      "target": "src_hybrid_search_api_mcp_server_search"
     },
     {
       "relation": "contains",
@@ -4636,6 +4969,18 @@
       "target": "src_hybrid_search_api_models_searchhit"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
+      "target": "src_hybrid_search_api_models_searchhit"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -4669,6 +5014,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_api_test_search_returns_200_with_hits",
+      "target": "src_hybrid_search_api_models_searchresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
       "target": "src_hybrid_search_api_models_searchresponse"
     },
     {
@@ -6318,6 +6675,29 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_mcp_server",
+      "target": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_mcp_server.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
+      "target": "tests_test_mcp_server_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/test_prompts.py",
       "source_location": "L10",
       "weight": 1.0,
@@ -6382,6 +6762,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments",
+      "target": "docs_adr_0001_local_embeddings_over_ollama",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
@@ -6423,6 +6814,61 @@
       "_origin": "ast",
       "source": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama",
       "target": "docs_adr_0001_local_embeddings_over_ollama_options_considered",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments",
+      "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode",
+      "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_consequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode",
+      "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode",
+      "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode",
+      "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_options_considered",
       "confidence_score": 1.0
     },
     {
@@ -7185,5 +7631,5 @@
       "source_file": ".claude/commands/startup.md"
     }
   ],
-  "built_at_commit": "167d87daa47027327357674b47a3d4c4d8ac8d5d"
+  "built_at_commit": "f0dc9309d23bd2217cc473180b75964ce7a76abb"
 }
