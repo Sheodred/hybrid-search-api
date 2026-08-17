@@ -15,6 +15,7 @@ dependencies = [
     "tenacity>=8.3",
     "sentence-transformers>=3.0",
     "mcp>=2.0",
+    "anyio>=4.0",
 ]
 
 [project.optional-dependencies]

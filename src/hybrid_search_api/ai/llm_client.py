@@ -43,6 +43,27 @@ class LLMClient:
             logger.exception("LLM API call failed")
             raise
 
+    @retry(
+        retry=retry_if_exception_type((APIError, APIStatusError)),
+        wait=wait_exponential(multiplier=1, min=1, max=10),
+        stop=stop_after_attempt(3),
+        reraise=True,
+    )
+    def complete_with_tools(
+        self, messages: list[dict], tools: list[dict] | None, max_tokens: int = 1024
+    ):
+        """Multi-turn completion with optional tool-calling. Returns the raw response
+        message so the caller can inspect .content and .tool_calls."""
+        kwargs = {"model": self._model, "max_tokens": max_tokens, "messages": messages}
+        if tools:
+            kwargs["tools"] = tools
+        try:
+            response = self._client.chat.completions.create(**kwargs)
+            return response.choices[0].message
+        except (APIError, APIStatusError):
+            logger.exception("LLM API call failed")
+            raise
+
     def stream(self, system: str, prompt: str, max_tokens: int = 1024):
         """Yields text chunks as they arrive - use for a responsive, incremental UI."""
         chat_stream = self._client.chat.completions.create(

@@ -26,6 +26,35 @@ _USER_PROMPT_TEMPLATE = {
     "de": "Frage: {query}\n\nSuchergebnisse:\n{context}",
 }
 
+AGENTIC_SYSTEM_V1_EN = """\
+You can call the `search` tool to look up information before answering.
+When you call it, always set use_llm_answer to false - you will write the
+final answer yourself from the raw search results, not the tool.
+Call search as many times as needed to answer well, but don't call it
+needlessly if you already know the answer.
+Once you have enough information, answer concisely in plain prose - no
+markdown formatting (no headings, bold, or tables) - and state what your
+answer is based on (e.g. document title).
+"""
+
+AGENTIC_SYSTEM_V1_DE = """\
+Du kannst das Tool `search` nutzen, um vor der Antwort Informationen
+nachzuschlagen. Setze beim Aufruf immer use_llm_answer auf false - du
+schreibst die endgueltige Antwort selbst anhand der rohen Suchergebnisse,
+nicht das Tool.
+Rufe search so oft wie noetig auf, aber nicht unnoetig, wenn du die Antwort
+bereits kennst.
+Sobald du genug Informationen hast, antworte knapp in reinem Fliesstext -
+kein Markdown (keine Ueberschriften, Fettungen oder Tabellen) - und nenne,
+worauf sich deine Antwort stuetzt (z. B. Dokumenttitel).
+"""
+
+_AGENTIC_SYSTEM_PROMPTS = {"en": AGENTIC_SYSTEM_V1_EN, "de": AGENTIC_SYSTEM_V1_DE}
+
+
+def build_agentic_system_prompt(lang: str = "en") -> str:
+    return _AGENTIC_SYSTEM_PROMPTS[lang]
+
 
 def build_rag_prompt(
     query: str, hits: list[dict], version: str = "v1", lang: str = "en"

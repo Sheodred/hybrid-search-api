@@ -28,3 +28,14 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+
+def resolve_index(settings: Settings, dataset: str) -> str:
+    """Maps a `dataset` selector ("demo"/"nfcorpus") to its ES index name.
+
+    Mirrors the naming convention scripts/seed_nfcorpus.py uses by default:
+    "<elasticsearch_index>_nfcorpus".
+    """
+    if dataset == "nfcorpus":
+        return f"{settings.elasticsearch_index}_nfcorpus"
+    return settings.elasticsearch_index
