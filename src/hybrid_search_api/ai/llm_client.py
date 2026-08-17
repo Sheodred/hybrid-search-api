@@ -63,19 +63,3 @@ class LLMClient:
         except (APIError, APIStatusError):
             logger.exception("LLM API call failed")
             raise
-
-    def stream(self, system: str, prompt: str, max_tokens: int = 1024):
-        """Yields text chunks as they arrive - use for a responsive, incremental UI."""
-        chat_stream = self._client.chat.completions.create(
-            model=self._model,
-            max_tokens=max_tokens,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": prompt},
-            ],
-            stream=True,
-        )
-        for chunk in chat_stream:
-            delta = chunk.choices[0].delta.content
-            if delta:
-                yield delta
