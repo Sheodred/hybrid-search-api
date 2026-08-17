@@ -72,7 +72,7 @@ Token des jeweils eingesetzten Modells direkt umrechnen.
 Zeigt in einem zusammenhaengenden Projekt drei Kernkompetenzen:
 - **Backend-Engineering** - sauber strukturierte FastAPI-Anwendung, getestet, containerisiert, CI.
 - **Such-Spezialisierung** - Elasticsearch-Mapping, custom Analyzer (Stemming, Stoppwoerter), BM25, kNN-Vektorsuche, Ranking-Fusion.
-- **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, Streaming, versionierte Prompts, RAG), inklusive vollstaendig on-prem betreibbarem Datenschutz-Modus fuer regulierte Umgebungen (siehe unten).
+- **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, versionierte Prompts, RAG), ein agentischer Modus, in dem das LLM die Suche selbst ueber das projekteigene MCP-Tool steuert, sowie ein vollstaendig on-prem betreibbarer Datenschutz-Modus fuer regulierte Umgebungen (siehe unten).
 
 ## Architektur
 

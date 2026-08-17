@@ -76,7 +76,7 @@ whichever model is in use.
 Demonstrates three core competencies in one coherent project:
 - **Backend engineering** - cleanly structured FastAPI application, tested, containerized, CI.
 - **Search specialization** - Elasticsearch mapping, custom analyzers (stemming, stopwords), BM25, kNN vector search, ranking fusion.
-- **AI integration** - production-style LLM integration (retry logic, streaming, versioned prompts, RAG), including a fully on-prem/data-sovereignty deployment mode for regulated environments (see below).
+- **AI integration** - production-style LLM integration (retry logic, versioned prompts, RAG), an agentic mode where the LLM drives search itself via this project's own MCP tool, and a fully on-prem/data-sovereignty deployment mode for regulated environments (see below).
 
 ## Architecture
 
