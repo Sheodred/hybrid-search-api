@@ -1,14 +1,4 @@
 {
-  ".claude/settings.json": {
-    "mtime": 1786624079.2861753,
-    "ast_hash": "905b5a9d30e13e347c94bb4e1bb65f58",
-    "semantic_hash": "905b5a9d30e13e347c94bb4e1bb65f58"
-  },
-  ".claude/settings.local.json": {
-    "mtime": 1785855779.621,
-    "ast_hash": "b878dfdcca30f336251b478cb075e8a5",
-    "semantic_hash": "b878dfdcca30f336251b478cb075e8a5"
-  },
   "pyproject.toml": {
     "mtime": 1786959495.7043252,
     "ast_hash": "2a272ad6ade74df3d249bc43ba57433c",
@@ -175,9 +165,9 @@
     "semantic_hash": "582e50486bce6d2aa1f3c5b272a92a57"
   },
   "CLAUDE.md": {
-    "mtime": 1786623664.0598042,
-    "ast_hash": "8cdd50c6b590f75c3d191deff29e304a",
-    "semantic_hash": "8cdd50c6b590f75c3d191deff29e304a"
+    "mtime": 1786970638.4716947,
+    "ast_hash": "7b9dff5283339e27a1d36760363cd2df",
+    "semantic_hash": "7b9dff5283339e27a1d36760363cd2df"
   },
   "CONTEXT.md": {
     "mtime": 1786624079.286703,
@@ -280,9 +270,9 @@
     "semantic_hash": "4e6686638fa72ab30de19a0f92328918"
   },
   "docs/images/search-ui-demo.gif": {
-    "mtime": 1786967661.7520542,
-    "ast_hash": "71ee5f299c4a64328f18f0a9fad7c1be",
-    "semantic_hash": "71ee5f299c4a64328f18f0a9fad7c1be"
+    "mtime": 1786970394.3895419,
+    "ast_hash": "9d1b39ce7d8b2a0032d90ae9177d234a",
+    "semantic_hash": "9d1b39ce7d8b2a0032d90ae9177d234a"
   },
   "docs/images/search-ui.jpg": {
     "mtime": 1786967661.7540703,

@@ -1,0 +1,5 @@
+# Claude Code harness config. graphify treats .json as code (for package-manifest
+# parsing), so these route through the AST extractor and produce zero nodes,
+# warning on every run. They describe the tooling, not this project.
+.claude/settings.json
+.claude/settings.local.json
