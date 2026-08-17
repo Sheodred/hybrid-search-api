@@ -15,3 +15,35 @@ def test_complete_returns_text_from_response(mock_openai_cls):
     result = client.complete(system="sys", prompt="question")
 
     assert result == "Test answer"
+
+
+@patch("hybrid_search_api.ai.llm_client.OpenAI")
+def test_complete_with_tools_returns_raw_message(mock_openai_cls):
+    mock_message = MagicMock(content="Test", tool_calls=None)
+    mock_choice = MagicMock(message=mock_message)
+    mock_response = MagicMock(choices=[mock_choice])
+    mock_openai_cls.return_value.chat.completions.create.return_value = mock_response
+
+    client = LLMClient(Settings())
+    tools = [{"type": "function", "function": {"name": "x", "parameters": {}}}]
+    result = client.complete_with_tools(
+        messages=[{"role": "user", "content": "hi"}], tools=tools
+    )
+
+    assert result is mock_message
+    _, kwargs = mock_openai_cls.return_value.chat.completions.create.call_args
+    assert kwargs["tools"] == tools
+
+
+@patch("hybrid_search_api.ai.llm_client.OpenAI")
+def test_complete_with_tools_omits_tools_kwarg_when_none(mock_openai_cls):
+    mock_message = MagicMock(content="Test", tool_calls=None)
+    mock_choice = MagicMock(message=mock_message)
+    mock_response = MagicMock(choices=[mock_choice])
+    mock_openai_cls.return_value.chat.completions.create.return_value = mock_response
+
+    client = LLMClient(Settings())
+    client.complete_with_tools(messages=[{"role": "user", "content": "hi"}], tools=None)
+
+    _, kwargs = mock_openai_cls.return_value.chat.completions.create.call_args
+    assert "tools" not in kwargs
