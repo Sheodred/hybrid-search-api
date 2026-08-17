@@ -20,10 +20,6 @@ class Settings(BaseSettings):
     llm_base_url: str | None = None
     llm_model: str = "claude-sonnet-4-6"
 
-    # App
-    app_env: str = "development"
-    log_level: str = "INFO"
-
 
 @lru_cache
 def get_settings() -> Settings:
