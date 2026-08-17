@@ -22,6 +22,13 @@ class SearchRequest(BaseModel):
         default="en",
         description="Language for the RAG answer and error messages: English (default) or German",
     )
+    agentic: bool = Field(
+        default=False,
+        description=(
+            "If true, let the LLM decide when/how to call search instead of "
+            "running a fixed pipeline"
+        ),
+    )
 
 
 class SearchHit(BaseModel):

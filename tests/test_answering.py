@@ -11,6 +11,12 @@ from hybrid_search_api.search.answering import answer_search
 _RAW_HIT = {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
 
 
+def test_search_request_agentic_defaults_to_false():
+    from hybrid_search_api.models import SearchRequest
+
+    assert SearchRequest(query="test").agentic is False
+
+
 class _FakeLLMClient:
     def __init__(self, *, answer=None, error=None):
         self._answer = answer
