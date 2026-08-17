@@ -10,8 +10,8 @@ import logging
 from hybrid_search_api.ai.llm_client import LLMClient
 from hybrid_search_api.ai.prompts import build_rag_prompt
 from hybrid_search_api.config import Settings
-from hybrid_search_api.search.agentic_answering import agentic_answer_search
 from hybrid_search_api.models import SearchHit, SearchRequest, SearchResponse
+from hybrid_search_api.search.agentic_answering import agentic_answer_search
 from hybrid_search_api.search.elasticsearch_client import build_client
 from hybrid_search_api.search.embeddings import embed
 from hybrid_search_api.search.hybrid_search import hybrid_search

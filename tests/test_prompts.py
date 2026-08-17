@@ -1,4 +1,4 @@
-from hybrid_search_api.ai.prompts import build_rag_prompt, build_agentic_system_prompt
+from hybrid_search_api.ai.prompts import build_agentic_system_prompt, build_rag_prompt
 
 
 def test_system_prompt_instructs_plain_text_answer_en():
