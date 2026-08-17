@@ -149,7 +149,8 @@ Set `"agentic": true` to let the LLM decide when/how to call search itself
 (via this project's own MCP `search` tool, called in-process) instead of
 running the fixed search-then-answer pipeline - useful for vague queries
 that may need a refined follow-up search. Default is `false` (fixed
-pipeline, as above).
+pipeline, as above). `use_llm_answer` does not apply in agentic mode - the
+agentic loop always uses the LLM to decide and to answer.
 
 Interactive API docs (Swagger): http://localhost:8000/docs
 
