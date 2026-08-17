@@ -70,7 +70,7 @@
       "_origin": "ast",
       "id": "scripts_seed_data",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "seed_data.py"
     },
     {
@@ -82,7 +82,7 @@
       "_origin": "ast",
       "id": "scripts_seed_data_main",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "main()"
     },
     {
@@ -93,7 +93,7 @@
       "_origin": "ast",
       "id": "scripts_seed_data_rationale_1",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "utility script: indexes a small set of sample documents into elasticsearch,..."
     },
     {
@@ -104,7 +104,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "seed_nfcorpus.py"
     },
     {
@@ -116,7 +116,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_download_and_extract",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "download_and_extract()"
     },
     {
@@ -127,7 +127,7 @@
       "_origin": "ast",
       "id": "path",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "path"
     },
     {
@@ -139,7 +139,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_load_corpus",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "load_corpus()"
     },
     {
@@ -151,7 +151,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_main",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "main()"
     },
     {
@@ -162,7 +162,7 @@
       "_origin": "ast",
       "id": "scripts_seed_nfcorpus_rationale_1",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "opt-in utility script: downloads the nfcorpus subset of the beir benchmark..."
     },
     {
@@ -195,7 +195,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "llm_client.py"
     },
     {
@@ -208,7 +208,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "llmclient"
     },
     {
@@ -220,7 +220,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_init",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": ".__init__()"
     },
     {
@@ -230,8 +230,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "retry",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 10,
+      "community_name": ".complete",
       "norm_label": "retry"
     },
     {
@@ -242,8 +242,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 10,
+      "community_name": ".complete",
       "norm_label": ".complete()"
     },
     {
@@ -254,21 +254,9 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete_with_tools",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 10,
+      "community_name": ".complete",
       "norm_label": ".complete_with_tools()"
-    },
-    {
-      "label": ".stream()",
-      "file_type": "code",
-      "source_file": "src/hybrid_search_api/ai/llm_client.py",
-      "source_location": "L67",
-      "_callable": true,
-      "_origin": "ast",
-      "id": "src_hybrid_search_api_ai_llm_client_llmclient_stream",
-      "community": 0,
-      "community_name": "answering.py",
-      "norm_label": ".stream()"
     },
     {
       "label": "Thin wrapper around an OpenAI-compatible chat completions endpoint. Works\u2026",
@@ -278,7 +266,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_1",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "thin wrapper around an openai-compatible chat completions endpoint. works..."
     },
     {
@@ -288,8 +276,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_31",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 10,
+      "community_name": ".complete",
       "norm_label": "single non-streaming completion, with automatic retry on transient api errors."
     },
     {
@@ -299,20 +287,9 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_55",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 10,
+      "community_name": ".complete",
       "norm_label": "multi-turn completion with optional tool-calling. returns the raw response..."
-    },
-    {
-      "label": "Yields text chunks as they arrive - use for a responsive, incremental UI.",
-      "file_type": "rationale",
-      "source_file": "src/hybrid_search_api/ai/llm_client.py",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "src_hybrid_search_api_ai_llm_client_rationale_68",
-      "community": 0,
-      "community_name": "answering.py",
-      "norm_label": "yields text chunks as they arrive - use for a responsive, incremental ui."
     },
     {
       "label": "prompts.py",
@@ -321,8 +298,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "prompts.py"
     },
     {
@@ -333,8 +310,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts_build_agentic_system_prompt",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "build_agentic_system_prompt()"
     },
     {
@@ -345,8 +322,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts_build_rag_prompt",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "build_rag_prompt()"
     },
     {
@@ -356,8 +333,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts_rationale_1",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "prompt templates for the rag layer. keeping them versioned in one place makes..."
     },
     {
@@ -367,8 +344,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_hybrid_search_api_ai_prompts_rationale_62",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "returns (system_prompt, user_prompt) for the given prompt version and language."
     },
     {
@@ -459,7 +436,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "routes.py"
     },
     {
@@ -470,7 +447,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes_py_get",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "get"
     },
     {
@@ -482,7 +459,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes_health",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "health()"
     },
     {
@@ -493,7 +470,7 @@
       "_origin": "ast",
       "id": "post",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "post"
     },
     {
@@ -505,7 +482,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_api_routes_search",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "search()"
     },
     {
@@ -560,8 +537,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_config",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "config.py"
     },
     {
@@ -573,7 +550,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_settings",
-      "community": 18,
+      "community": 0,
       "community_name": "Settings",
       "norm_label": "settings"
     },
@@ -584,7 +561,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basesettings",
-      "community": 18,
+      "community": 0,
       "community_name": "Settings",
       "norm_label": "basesettings"
     },
@@ -592,13 +569,25 @@
       "label": "get_settings()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/config.py",
-      "source_location": "L29",
+      "source_location": "L25",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_get_settings",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "get_settings()"
+    },
+    {
+      "label": "resolve_index()",
+      "file_type": "code",
+      "source_file": "src/hybrid_search_api/config.py",
+      "source_location": "L29",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_config_resolve_index",
+      "community": 0,
+      "community_name": "Settings",
+      "norm_label": "resolve_index()"
     },
     {
       "label": "Central application configuration, populated from environment variables / .env.",
@@ -607,9 +596,20 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_hybrid_search_api_config_rationale_7",
-      "community": 18,
+      "community": 0,
       "community_name": "Settings",
       "norm_label": "central application configuration, populated from environment variables / .env."
+    },
+    {
+      "label": "Maps a `dataset` selector (\"demo\"/\"nfcorpus\") to its ES index name. Mirrors the\u2026",
+      "file_type": "rationale",
+      "source_file": "src/hybrid_search_api/config.py",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_config_rationale_30",
+      "community": 0,
+      "community_name": "Settings",
+      "norm_label": "maps a `dataset` selector (\"demo\"/\"nfcorpus\") to its es index name. mirrors the..."
     },
     {
       "label": "main.py",
@@ -720,8 +720,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_mcp_server",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "mcp_server.py"
     },
     {
@@ -731,20 +731,20 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tool",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "tool"
     },
     {
       "label": "search()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_mcp_server_search",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "search()"
     },
     {
@@ -754,19 +754,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_mcp_server_rationale_1",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "mcp server exposing this project's hybrid search as a tool for mcp clients..."
     },
     {
       "label": "Run hybrid (BM25 + kNN) search against the configured Elasticsearch index,\u2026",
       "file_type": "rationale",
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
-      "id": "src_hybrid_search_api_mcp_server_rationale_18",
-      "community": 9,
-      "community_name": "config.py",
+      "id": "src_hybrid_search_api_mcp_server_rationale_19",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "run hybrid (bm25 + knn) search against the configured elasticsearch index,..."
     },
     {
@@ -790,7 +790,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_searchrequest",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "searchrequest"
     },
     {
@@ -808,33 +808,33 @@
       "label": "SearchHit",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L34",
+      "source_location": "L42",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_searchhit",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "searchhit"
     },
     {
       "label": "SearchResponse",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L41",
+      "source_location": "L49",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_models_searchresponse",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "searchresponse"
     },
     {
       "label": "ElasticsearchHealth",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L47",
+      "source_location": "L55",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -847,7 +847,7 @@
       "label": "IndexInfo",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L55",
+      "source_location": "L63",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -860,7 +860,7 @@
       "label": "DocumentPreview",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L62",
+      "source_location": "L70",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -873,7 +873,7 @@
       "label": "DocumentListResponse",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L68",
+      "source_location": "L76",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -901,43 +901,43 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "agentic_answering.py"
     },
     {
       "label": "_mcp_tools_to_openai_schema()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L27",
+      "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering_mcp_tools_to_openai_schema",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "_mcp_tools_to_openai_schema()"
     },
     {
       "label": "_assistant_message_from()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L41",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering_assistant_message_from",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "_assistant_message_from()"
     },
     {
       "label": "_execute_tool_call()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L56",
+      "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering_execute_tool_call",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "_execute_tool_call()"
     },
     {
@@ -948,31 +948,31 @@
       "_origin": "ast",
       "id": "clientsession",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "clientsession"
     },
     {
       "label": "_run_agentic_loop()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L64",
+      "source_location": "L65",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "_run_agentic_loop()"
     },
     {
       "label": "agentic_answer_search()",
       "file_type": "code",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "agentic_answer_search()"
     },
     {
@@ -983,7 +983,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_agentic_answering_rationale_1",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "opt-in agentic search mode: instead of the fixed embed -> search -> answer..."
     },
     {
@@ -994,7 +994,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_answering",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "answering.py"
     },
     {
@@ -1005,8 +1005,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_answering_extract_score",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "_extract_score()"
     },
     {
@@ -1018,7 +1018,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_answering_answer_search",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "answer_search()"
     },
     {
@@ -1029,7 +1029,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_answering_rationale_1",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "owns the /search request end to end: builds the es client, embeds the query..."
     },
     {
@@ -1040,7 +1040,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "elasticsearch_client.py"
     },
     {
@@ -1051,8 +1051,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_build_client",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "build_client()"
     },
     {
@@ -1063,7 +1063,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_py_elasticsearch",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "elasticsearch"
     },
     {
@@ -1075,7 +1075,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_ensure_index",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "ensure_index()"
     },
     {
@@ -1085,8 +1085,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_8",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 1,
+      "community_name": "index_routes.py",
       "norm_label": "create an elasticsearch client from settings. supports both no-auth (local dev)..."
     },
     {
@@ -1097,7 +1097,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_16",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "create the index with the configured analyzers/mappings if it doesn't exist..."
     },
     {
@@ -1107,8 +1107,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embeddings.py"
     },
     {
@@ -1119,8 +1119,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_get_model",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "_get_model()"
     },
     {
@@ -1130,8 +1130,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "sentencetransformer",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "sentencetransformer"
     },
     {
@@ -1142,8 +1142,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embed()"
     },
     {
@@ -1154,8 +1154,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_embed_many",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embed_many()"
     },
     {
@@ -1165,8 +1165,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_1",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "sentence-embedding helper for the knn side of hybrid search. uses a small local..."
     },
     {
@@ -1176,8 +1176,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_23",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "returns the embedding vector for a single piece of text."
     },
     {
@@ -1187,8 +1187,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_embeddings_rationale_28",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "batched embedding - more efficient than calling embed() in a loop."
     },
     {
@@ -1291,7 +1291,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "index_config.py"
     },
     {
@@ -1303,7 +1303,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_build_index_body",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "build_index_body()"
     },
     {
@@ -1314,7 +1314,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_rationale_1",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "elasticsearch index configuration: analyzers, filters, and field mappings. this..."
     },
     {
@@ -1325,7 +1325,7 @@
       "_origin": "ast",
       "id": "src_hybrid_search_api_search_index_config_rationale_68",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "full index creation body: analysis settings + field mappings."
     },
     {
@@ -1459,20 +1459,20 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_agentic_answering",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "test_agentic_answering.py"
     },
     {
       "label": "_tool_call()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L10",
+      "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_tool_call",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "_tool_call()"
     },
     {
@@ -1482,57 +1482,57 @@
       "source_location": "",
       "_origin": "ast",
       "id": "simplenamespace",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "simplenamespace"
     },
     {
       "label": "_message()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L14",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_message",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "_message()"
     },
     {
       "label": "_ScriptedLLMClient",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L18",
+      "source_location": "L22",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_scriptedllmclient",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "_scriptedllmclient"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_scriptedllmclient_init",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": ".__init__()"
     },
     {
       "label": ".complete_with_tools()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L22",
+      "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_scriptedllmclient_complete_with_tools",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": ".complete_with_tools()"
     },
     {
@@ -1542,45 +1542,94 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_test_agentic_answering_py_patch",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "patch"
     },
     {
       "label": "test_agentic_loop_calls_search_then_answers()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L27",
+      "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "test_agentic_loop_calls_search_then_answers()"
     },
     {
       "label": "test_agentic_loop_answers_without_calling_tool()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L45",
+      "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "test_agentic_loop_answers_without_calling_tool()"
     },
     {
       "label": "test_agentic_loop_forces_final_answer_after_round_cap()",
       "file_type": "code",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L56",
+      "source_location": "L60",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
-      "community": 4,
-      "community_name": "SearchResponse",
+      "community": 0,
+      "community_name": "Settings",
       "norm_label": "test_agentic_loop_forces_final_answer_after_round_cap()"
+    },
+    {
+      "label": "_FailingLLMClient",
+      "file_type": "code",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L74",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "tests_test_agentic_answering_failingllmclient",
+      "community": 0,
+      "community_name": "Settings",
+      "norm_label": "_failingllmclient"
+    },
+    {
+      "label": ".complete_with_tools()",
+      "file_type": "code",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L75",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_agentic_answering_failingllmclient_complete_with_tools",
+      "community": 0,
+      "community_name": "Settings",
+      "norm_label": ".complete_with_tools()"
+    },
+    {
+      "label": "test_agentic_loop_propagates_llm_sdk_errors_unchanged()",
+      "file_type": "code",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L83",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged",
+      "community": 0,
+      "community_name": "Settings",
+      "norm_label": "test_agentic_loop_propagates_llm_sdk_errors_unchanged()"
+    },
+    {
+      "label": "test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising()",
+      "file_type": "code",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L91",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "community": 0,
+      "community_name": "Settings",
+      "norm_label": "test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising()"
     },
     {
       "label": "test_answering.py",
@@ -1590,7 +1639,7 @@
       "_origin": "ast",
       "id": "tests_test_answering",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answering.py"
     },
     {
@@ -1602,7 +1651,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_search_request_agentic_defaults_to_false",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_search_request_agentic_defaults_to_false()"
     },
     {
@@ -1615,7 +1664,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_fakellmclient",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "_fakellmclient"
     },
     {
@@ -1627,7 +1676,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_fakellmclient_init",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": ".__init__()"
     },
     {
@@ -1639,7 +1688,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_fakellmclient_complete",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": ".complete()"
     },
     {
@@ -1650,7 +1699,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_py_patch",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "patch"
     },
     {
@@ -1662,7 +1711,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_prefers_rrf_score_over_original_score()"
     },
     {
@@ -1674,7 +1723,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_without_llm_answer",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_without_llm_answer()"
     },
     {
@@ -1686,7 +1735,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_returns_llm_answer_when_requested()"
     },
     {
@@ -1698,7 +1747,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_propagates_authentication_error",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_propagates_authentication_error()"
     },
     {
@@ -1710,7 +1759,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_propagates_not_found_error",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_propagates_not_found_error()"
     },
     {
@@ -1722,7 +1771,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_propagates_rate_limit_error",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_propagates_rate_limit_error()"
     },
     {
@@ -1734,7 +1783,7 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_propagates_connection_error",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_propagates_connection_error()"
     },
     {
@@ -1746,19 +1795,31 @@
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_falls_back_to_bm25_when_embedding_fails()"
+    },
+    {
+      "label": "test_answer_search_routes_nfcorpus_dataset_to_suffixed_index()",
+      "file_type": "code",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L181",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index",
+      "community": 18,
+      "community_name": "SearchRequest",
+      "norm_label": "test_answer_search_routes_nfcorpus_dataset_to_suffixed_index()"
     },
     {
       "label": "test_answer_search_dispatches_to_agentic_when_requested()",
       "file_type": "code",
       "source_file": "tests/test_answering.py",
-      "source_location": "L179",
+      "source_location": "L196",
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_answering_test_answer_search_dispatches_to_agentic_when_requested",
       "community": 18,
-      "community_name": "Settings",
+      "community_name": "SearchRequest",
       "norm_label": "test_answer_search_dispatches_to_agentic_when_requested()"
     },
     {
@@ -1887,7 +1948,7 @@
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_elasticsearch_client.py"
     },
     {
@@ -1899,7 +1960,7 @@
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client_test_ensure_index_creates_when_missing",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_ensure_index_creates_when_missing()"
     },
     {
@@ -1911,7 +1972,7 @@
       "_origin": "ast",
       "id": "tests_test_elasticsearch_client_test_ensure_index_skips_when_already_present",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_ensure_index_skips_when_already_present()"
     },
     {
@@ -1921,8 +1982,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_embeddings",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embeddings.py"
     },
     {
@@ -1932,8 +1993,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_test_embeddings_py_patch",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "patch"
     },
     {
@@ -1944,8 +2005,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_returns_list_of_floats",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embed_returns_list_of_floats()"
     },
     {
@@ -1956,8 +2017,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_embeddings_test_embed_many_batches_multiple_texts",
-      "community": 10,
-      "community_name": "embeddings.py",
+      "community": 9,
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embed_many_batches_multiple_texts()"
     },
     {
@@ -1991,7 +2052,7 @@
       "_origin": "ast",
       "id": "tests_test_index_config",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_index_config.py"
     },
     {
@@ -2003,7 +2064,7 @@
       "_origin": "ast",
       "id": "tests_test_index_config_test_build_index_body_has_settings_and_mappings",
       "community": 9,
-      "community_name": "config.py",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_build_index_body_has_settings_and_mappings()"
     },
     {
@@ -2096,7 +2157,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "test_llm_client.py"
     },
     {
@@ -2107,7 +2168,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client_py_patch",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "patch"
     },
     {
@@ -2119,7 +2180,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client_test_complete_returns_text_from_response",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "test_complete_returns_text_from_response()"
     },
     {
@@ -2131,7 +2192,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client_test_complete_with_tools_returns_raw_message",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "test_complete_with_tools_returns_raw_message()"
     },
     {
@@ -2143,7 +2204,7 @@
       "_origin": "ast",
       "id": "tests_test_llm_client_test_complete_with_tools_omits_tools_kwarg_when_none",
       "community": 0,
-      "community_name": "answering.py",
+      "community_name": "Settings",
       "norm_label": "test_complete_with_tools_omits_tools_kwarg_when_none()"
     },
     {
@@ -2153,8 +2214,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_mcp_server",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "test_mcp_server.py"
     },
     {
@@ -2164,8 +2225,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_test_mcp_server_py_patch",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "patch"
     },
     {
@@ -2176,8 +2237,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict",
-      "community": 9,
-      "community_name": "config.py",
+      "community": 18,
+      "community_name": "SearchRequest",
       "norm_label": "test_search_tool_builds_request_and_returns_dict()"
     },
     {
@@ -2187,8 +2248,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_prompts",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "test_prompts.py"
     },
     {
@@ -2199,8 +2260,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_en",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "test_system_prompt_instructs_plain_text_answer_en()"
     },
     {
@@ -2211,8 +2272,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_de",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "test_system_prompt_instructs_plain_text_answer_de()"
     },
     {
@@ -2223,8 +2284,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_prompts_test_agentic_system_prompt_instructs_no_nested_llm_answer_en",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "test_agentic_system_prompt_instructs_no_nested_llm_answer_en()"
     },
     {
@@ -2235,8 +2296,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_prompts_test_agentic_system_prompt_instructs_no_nested_llm_answer_de",
-      "community": 0,
-      "community_name": "answering.py",
+      "community": 4,
+      "community_name": "prompts.py",
       "norm_label": "test_agentic_system_prompt_instructs_no_nested_llm_answer_de()"
     },
     {
@@ -3802,17 +3863,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/ai/llm_client.py",
-      "source_location": "L67",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_ai_llm_client_llmclient",
-      "target": "src_hybrid_search_api_ai_llm_client_llmclient_stream",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/hybrid_search_api/ai/llm_client.py",
@@ -3840,7 +3890,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search",
@@ -3852,7 +3902,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop",
@@ -3978,17 +4028,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/ai/llm_client.py",
-      "source_location": "L68",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_ai_llm_client_rationale_68",
-      "target": "src_hybrid_search_api_ai_llm_client_llmclient_stream",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/ai/prompts.py",
@@ -4074,7 +4113,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop",
@@ -4749,11 +4788,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/config.py",
-      "source_location": "L29",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_config",
       "target": "src_hybrid_search_api_config_get_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/config.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_config",
+      "target": "src_hybrid_search_api_config_resolve_index",
       "confidence_score": 1.0
     },
     {
@@ -4820,7 +4870,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L5",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -4856,7 +4906,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/config.py",
-      "source_location": "L29",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_config_get_settings",
@@ -4871,6 +4921,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_config_rationale_7",
+      "target": "src_hybrid_search_api_config_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/config.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_config_resolve_index",
       "target": "src_hybrid_search_api_config_settings",
       "confidence_score": 1.0
     },
@@ -4902,7 +4964,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search",
@@ -4961,7 +5023,18 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L5",
+      "source_location": "L9",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_failingllmclient",
+      "target": "src_hybrid_search_api_config_settings",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L9",
       "weight": 0.8,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient",
@@ -4974,7 +5047,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool",
@@ -4986,7 +5059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L38",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -4998,10 +5071,34 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L65",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged",
       "target": "src_hybrid_search_api_config_settings"
     },
     {
@@ -5021,7 +5118,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_answering.py",
-      "source_location": "L183",
+      "source_location": "L200",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_answering_test_answer_search_dispatches_to_agentic_when_requested",
@@ -5117,6 +5214,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_answering.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index",
+      "target": "src_hybrid_search_api_config_settings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
       "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
@@ -5177,11 +5286,46 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_mcp_server_search",
       "target": "src_hybrid_search_api_config_get_settings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/config.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_config_rationale_30",
+      "target": "src_hybrid_search_api_config_resolve_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering",
+      "target": "src_hybrid_search_api_config_resolve_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/search/answering.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_search_answering_answer_search",
+      "target": "src_hybrid_search_api_config_resolve_index",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5350,7 +5494,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_mcp_server",
@@ -5382,11 +5526,23 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hybrid_search_api/mcp_server.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hybrid_search_api_mcp_server",
+      "target": "src_hybrid_search_api_search_answering",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L20",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_mcp_server",
@@ -5408,18 +5564,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_hybrid_search_api_search_agentic_answering",
-      "target": "src_hybrid_search_api_mcp_server",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "tests/test_mcp_server.py",
       "source_location": "L3",
       "weight": 1.0,
@@ -5432,7 +5576,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -5444,10 +5588,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_hybrid_search_api_mcp_server_rationale_18",
+      "source": "src_hybrid_search_api_mcp_server_rationale_19",
       "target": "src_hybrid_search_api_mcp_server_search",
       "confidence_score": 1.0
     },
@@ -5457,7 +5601,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_mcp_server_search",
@@ -5469,7 +5613,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hybrid_search_api/mcp_server.py",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_mcp_server_search",
@@ -5491,7 +5635,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L68",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models",
@@ -5502,7 +5646,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L62",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models",
@@ -5513,7 +5657,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L47",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models",
@@ -5524,7 +5668,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L55",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models",
@@ -5535,7 +5679,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L34",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models",
@@ -5557,7 +5701,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L41",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models",
@@ -5569,7 +5713,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -5593,7 +5737,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L6",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -5640,7 +5784,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -5652,7 +5796,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search",
@@ -5687,7 +5831,18 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L6",
+      "source_location": "L10",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_failingllmclient",
+      "target": "src_hybrid_search_api_models_searchrequest",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L10",
       "weight": 0.8,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient",
@@ -5700,7 +5855,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool",
@@ -5712,7 +5867,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L38",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -5724,10 +5879,34 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L65",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged",
       "target": "src_hybrid_search_api_models_searchrequest"
     },
     {
@@ -5747,7 +5926,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_answering.py",
-      "source_location": "L183",
+      "source_location": "L200",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_answering_test_answer_search_dispatches_to_agentic_when_requested",
@@ -5843,6 +6022,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_answering.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index",
+      "target": "src_hybrid_search_api_models_searchrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
       "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
@@ -5865,7 +6056,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L68",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models_documentlistresponse",
@@ -5876,7 +6067,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L62",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models_documentpreview",
@@ -5887,7 +6078,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L47",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models_elasticsearchhealth",
@@ -5898,7 +6089,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L55",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models_indexinfo",
@@ -5909,7 +6100,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L34",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models_searchhit",
@@ -5920,7 +6111,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/models.py",
-      "source_location": "L41",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_models_searchresponse",
@@ -5932,7 +6123,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -5944,7 +6135,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L124",
+      "source_location": "L140",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search",
@@ -5979,7 +6170,18 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L6",
+      "source_location": "L10",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_failingllmclient",
+      "target": "src_hybrid_search_api_models_searchhit",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L10",
       "weight": 0.8,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient",
@@ -5992,7 +6194,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -6004,7 +6206,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L58",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
@@ -6039,7 +6241,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -6051,7 +6253,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search",
@@ -6086,7 +6288,18 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L6",
+      "source_location": "L10",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_failingllmclient",
+      "target": "src_hybrid_search_api_models_searchresponse",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L10",
       "weight": 0.8,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient",
@@ -6099,7 +6312,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -6111,7 +6324,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L57",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
@@ -6134,7 +6347,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_answering.py",
-      "source_location": "L180",
+      "source_location": "L197",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_answering_test_answer_search_dispatches_to_agentic_when_requested",
@@ -6168,7 +6381,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -6179,7 +6392,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -6190,7 +6403,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L56",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -6201,7 +6414,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -6212,7 +6425,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering",
@@ -6247,7 +6460,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L7",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -6259,7 +6472,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L78",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop",
@@ -6271,7 +6484,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L56",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_execute_tool_call",
@@ -6283,7 +6496,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L80",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop",
@@ -6295,7 +6508,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/hybrid_search_api/search/agentic_answering.py",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop",
@@ -6332,7 +6545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool",
@@ -6344,7 +6557,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L38",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -6356,10 +6569,34 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L65",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
+      "target": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged",
       "target": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search"
     },
     {
@@ -6533,7 +6770,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_answering.py",
-      "source_location": "L183",
+      "source_location": "L200",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_answering_test_answer_search_dispatches_to_agentic_when_requested",
@@ -6621,6 +6858,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "src_hybrid_search_api_search_answering_answer_search"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_answering.py",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index",
       "target": "src_hybrid_search_api_search_answering_answer_search"
     },
     {
@@ -7345,11 +7594,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L14",
+      "source_location": "L74",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
-      "target": "tests_test_agentic_answering_message",
+      "target": "tests_test_agentic_answering_failingllmclient",
       "confidence_score": 1.0
     },
     {
@@ -7360,6 +7609,17 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
+      "target": "tests_test_agentic_answering_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering",
       "target": "tests_test_agentic_answering_scriptedllmclient",
       "confidence_score": 1.0
     },
@@ -7367,7 +7627,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L45",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -7378,7 +7638,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -7389,7 +7649,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L56",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering",
+      "target": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -7400,7 +7671,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L10",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering",
+      "target": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering",
@@ -7412,7 +7694,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L33",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -7424,7 +7706,19 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L60",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "tests_test_agentic_answering_tool_call",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
@@ -7436,7 +7730,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L10",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_tool_call",
@@ -7448,7 +7742,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L14",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_message",
@@ -7460,7 +7754,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient_init",
@@ -7472,7 +7766,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool",
@@ -7484,7 +7778,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L33",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -7496,7 +7790,19 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L60",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "tests_test_agentic_answering_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
@@ -7507,7 +7813,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L22",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient",
@@ -7518,7 +7824,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_scriptedllmclient",
@@ -7530,7 +7836,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool",
@@ -7542,7 +7848,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L31",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers",
@@ -7554,7 +7860,19 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L61",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "tests_test_agentic_answering_scriptedllmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
@@ -7565,7 +7883,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L44",
+      "source_location": "L48",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -7577,7 +7895,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -7589,12 +7907,47 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_agentic_answering.py",
-      "source_location": "L55",
+      "source_location": "L90",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising",
+      "target": "tests_test_agentic_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L59",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
       "source": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap",
       "target": "tests_test_agentic_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_failingllmclient",
+      "target": "tests_test_agentic_answering_failingllmclient_complete_with_tools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_agentic_answering.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged",
+      "target": "tests_test_agentic_answering_failingllmclient",
       "confidence_score": 1.0
     },
     {
@@ -7612,7 +7965,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_answering.py",
-      "source_location": "L179",
+      "source_location": "L196",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_test_answering",
@@ -7694,6 +8047,17 @@
       "_origin": "ast",
       "source": "tests_test_answering",
       "target": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L181",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_answering",
+      "target": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index",
       "confidence_score": 1.0
     },
     {
@@ -7804,7 +8168,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_answering.py",
-      "source_location": "L178",
+      "source_location": "L195",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -7893,6 +8257,18 @@
       "context": "decorator",
       "_origin": "ast",
       "source": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested",
+      "target": "tests_test_answering_py_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_answering.py",
+      "source_location": "L180",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "source": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index",
       "target": "tests_test_answering_py_patch",
       "confidence_score": 1.0
     },
@@ -9555,5 +9931,5 @@
       "source_file": ".claude/commands/startup.md"
     }
   ],
-  "built_at_commit": "43a26c32dc2e7f70aa75720562d490505fed0a01"
+  "built_at_commit": "08b9d18d0c308daa2eaef2eb9d1b17c1ed59616a"
 }
