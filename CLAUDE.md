@@ -50,6 +50,18 @@ Rules:
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+- **`graphify update .` reverts part of the curated doc layer - check before
+  running it.** It re-extracts every file its structural extractor owns,
+  including Markdown, and drops all nodes carrying that `source_file` first.
+  The hand-curated concept nodes for `CONTEXT.md`, `.claude/commands/*.md`,
+  the agentic-RAG plan/spec and `docs/agents/triage-labels.md` are replaced
+  by heading-level nodes under different IDs, taking ~38 cross-file
+  `rationale_for` / `references` edges and the 21 curated community names
+  with them (308 nodes -> 307, 604 edges -> 577). It is not idempotent: this
+  happens on *every* run, not only when something changed.
+  It backs the curated graph up to `graphify-out/<YYYY-MM-DD>/` first
+  (gitignored), so restore `graph.json`, `GRAPH_REPORT.md` and
+  `manifest.json` from there, then re-run `graphify export html`.
 
 ## Agent skills
 

@@ -47,18 +47,6 @@
         "confidence": "INFERRED",
         "confidence_score": 0.95,
         "source_file": "README.md"
-      },
-      {
-        "id": "agent_skills_documentation_set",
-        "label": "Agent Skills Documentation Set",
-        "nodes": [
-          "claude_project_instructions",
-          "docs_agents_domain_domain_docs_consumption"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "CLAUDE.md"
       }
     ]
   },
@@ -73,7 +61,7 @@
       "version": "0.1.0",
       "_origin": "ast",
       "community": 15,
-      "community_name": "Project Root",
+      "community_name": "hybrid-search-api",
       "norm_label": "hybrid-search-api",
       "id": "pkg_hybrid_search_api"
     },
@@ -84,7 +72,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "seed_data.py",
       "id": "scripts_seed_data"
     },
@@ -96,7 +84,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "main()",
       "id": "scripts_seed_data_main"
     },
@@ -107,7 +95,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "utility script: indexes a small set of sample documents into elasticsearch,...",
       "id": "scripts_seed_data_rationale_1"
     },
@@ -118,7 +106,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "seed_nfcorpus.py",
       "id": "scripts_seed_nfcorpus"
     },
@@ -130,7 +118,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "download_and_extract()",
       "id": "scripts_seed_nfcorpus_download_and_extract"
     },
@@ -141,7 +129,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "path",
       "id": "path"
     },
@@ -153,7 +141,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "load_corpus()",
       "id": "scripts_seed_nfcorpus_load_corpus"
     },
@@ -165,7 +153,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "main()",
       "id": "scripts_seed_nfcorpus_main"
     },
@@ -176,7 +164,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "opt-in utility script: downloads the nfcorpus subset of the beir benchmark...",
       "id": "scripts_seed_nfcorpus_rationale_1"
     },
@@ -187,7 +175,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 18,
-      "community_name": "Package Root Init",
+      "community_name": "hybrid_search_api/__init__.py",
       "norm_label": "hybrid_search_api/__init__.py",
       "id": "src_hybrid_search_api_init"
     },
@@ -198,7 +186,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 16,
-      "community_name": "ai Package Init",
+      "community_name": "ai/__init__.py",
       "norm_label": "ai/__init__.py",
       "id": "src_hybrid_search_api_ai_init"
     },
@@ -209,7 +197,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "llm_client.py",
       "id": "src_hybrid_search_api_ai_llm_client"
     },
@@ -222,7 +210,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "llmclient",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient"
     },
@@ -234,7 +222,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": ".__init__()",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_init"
     },
@@ -245,7 +233,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "retry",
       "id": "retry"
     },
@@ -257,7 +245,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": ".complete()",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete"
     },
@@ -269,7 +257,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": ".complete_with_tools()",
       "id": "src_hybrid_search_api_ai_llm_client_llmclient_complete_with_tools"
     },
@@ -280,7 +268,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "thin wrapper around an openai-compatible chat completions endpoint. works...",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_1"
     },
@@ -291,7 +279,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "single non-streaming completion, with automatic retry on transient api errors.",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_31"
     },
@@ -302,7 +290,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "multi-turn completion with optional tool-calling. returns the raw response...",
       "id": "src_hybrid_search_api_ai_llm_client_rationale_55"
     },
@@ -313,7 +301,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "prompts.py",
       "id": "src_hybrid_search_api_ai_prompts"
     },
@@ -325,7 +313,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "build_agentic_system_prompt()",
       "id": "src_hybrid_search_api_ai_prompts_build_agentic_system_prompt"
     },
@@ -337,7 +325,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "build_rag_prompt()",
       "id": "src_hybrid_search_api_ai_prompts_build_rag_prompt"
     },
@@ -348,7 +336,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "prompt templates for the rag layer. keeping them versioned in one place makes...",
       "id": "src_hybrid_search_api_ai_prompts_rationale_1"
     },
@@ -359,7 +347,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "returns (system_prompt, user_prompt) for the given prompt version and language.",
       "id": "src_hybrid_search_api_ai_prompts_rationale_62"
     },
@@ -370,7 +358,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 17,
-      "community_name": "api Package Init",
+      "community_name": "api/__init__.py",
       "norm_label": "api/__init__.py",
       "id": "src_hybrid_search_api_api_init"
     },
@@ -381,7 +369,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "index_routes.py",
       "id": "src_hybrid_search_api_api_index_routes"
     },
@@ -392,7 +380,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "get",
       "id": "src_hybrid_search_api_api_index_routes_py_get"
     },
@@ -404,7 +392,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearch_health()",
       "id": "src_hybrid_search_api_api_index_routes_elasticsearch_health"
     },
@@ -416,7 +404,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "index_info()",
       "id": "src_hybrid_search_api_api_index_routes_index_info"
     },
@@ -428,7 +416,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "list_documents()",
       "id": "src_hybrid_search_api_api_index_routes_list_documents"
     },
@@ -439,7 +427,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "introspection endpoints: elasticsearch cluster health, index info, and a way to...",
       "id": "src_hybrid_search_api_api_index_routes_rationale_1"
     },
@@ -450,7 +438,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "routes.py",
       "id": "src_hybrid_search_api_api_routes"
     },
@@ -461,7 +449,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "get",
       "id": "src_hybrid_search_api_api_routes_py_get"
     },
@@ -473,7 +461,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "health()",
       "id": "src_hybrid_search_api_api_routes_health"
     },
@@ -484,7 +472,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "post",
       "id": "post"
     },
@@ -496,7 +484,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "search()",
       "id": "src_hybrid_search_api_api_routes_search"
     },
@@ -507,7 +495,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "ui_routes.py",
       "id": "src_hybrid_search_api_api_ui_routes"
     },
@@ -518,7 +506,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "get",
       "id": "src_hybrid_search_api_api_ui_routes_py_get"
     },
@@ -530,7 +518,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "search_ui()",
       "id": "src_hybrid_search_api_api_ui_routes_search_ui"
     },
@@ -541,7 +529,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "fileresponse",
       "id": "fileresponse"
     },
@@ -552,7 +540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "config.py",
       "id": "src_hybrid_search_api_config"
     },
@@ -565,7 +553,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "settings",
       "id": "src_hybrid_search_api_config_settings"
     },
@@ -576,7 +564,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "basesettings",
       "id": "basesettings"
     },
@@ -588,7 +576,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "get_settings()",
       "id": "src_hybrid_search_api_config_get_settings"
     },
@@ -600,7 +588,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "resolve_index()",
       "id": "src_hybrid_search_api_config_resolve_index"
     },
@@ -611,7 +599,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "central application configuration, populated from environment variables / .env.",
       "id": "src_hybrid_search_api_config_rationale_7"
     },
@@ -622,7 +610,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "maps a `dataset` selector (\"demo\"/\"nfcorpus\") to its es index name. mirrors the...",
       "id": "src_hybrid_search_api_config_rationale_30"
     },
@@ -633,7 +621,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "main.py",
       "id": "src_hybrid_search_api_main"
     },
@@ -646,7 +634,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "utf8jsonresponse",
       "id": "src_hybrid_search_api_main_utf8jsonresponse"
     },
@@ -657,7 +645,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "jsonresponse",
       "id": "jsonresponse"
     },
@@ -668,7 +656,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "exception_handler",
       "id": "exception_handler"
     },
@@ -680,7 +668,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "es_connection_error_handler()",
       "id": "src_hybrid_search_api_main_es_connection_error_handler"
     },
@@ -691,7 +679,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "request",
       "id": "request"
     },
@@ -702,7 +690,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "esconnectionerror",
       "id": "esconnectionerror"
     },
@@ -713,7 +701,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "json response with an explicit charset for older http clients.",
       "id": "src_hybrid_search_api_main_rationale_15"
     },
@@ -724,7 +712,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "applies to every route: if elasticsearch itself is unreachable, return a clear...",
       "id": "src_hybrid_search_api_main_rationale_44"
     },
@@ -735,7 +723,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "mcp_server.py",
       "id": "src_hybrid_search_api_mcp_server"
     },
@@ -746,7 +734,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "tool",
       "id": "tool"
     },
@@ -758,7 +746,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "search()",
       "id": "src_hybrid_search_api_mcp_server_search"
     },
@@ -769,7 +757,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "mcp server exposing this project's hybrid search as a tool for mcp clients...",
       "id": "src_hybrid_search_api_mcp_server_rationale_1"
     },
@@ -780,7 +768,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "run hybrid (bm25 + knn) search against the configured elasticsearch index,...",
       "id": "src_hybrid_search_api_mcp_server_rationale_19"
     },
@@ -791,7 +779,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "models.py",
       "id": "src_hybrid_search_api_models"
     },
@@ -804,7 +792,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "searchrequest",
       "id": "src_hybrid_search_api_models_searchrequest"
     },
@@ -815,7 +803,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "basemodel",
       "id": "basemodel"
     },
@@ -828,7 +816,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "searchhit",
       "id": "src_hybrid_search_api_models_searchhit"
     },
@@ -841,7 +829,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "searchresponse",
       "id": "src_hybrid_search_api_models_searchresponse"
     },
@@ -854,7 +842,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearchhealth",
       "id": "src_hybrid_search_api_models_elasticsearchhealth"
     },
@@ -867,7 +855,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "indexinfo",
       "id": "src_hybrid_search_api_models_indexinfo"
     },
@@ -880,7 +868,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "documentpreview",
       "id": "src_hybrid_search_api_models_documentpreview"
     },
@@ -893,7 +881,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "documentlistresponse",
       "id": "src_hybrid_search_api_models_documentlistresponse"
     },
@@ -904,7 +892,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 19,
-      "community_name": "search Package Init",
+      "community_name": "search/__init__.py",
       "norm_label": "search/__init__.py",
       "id": "src_hybrid_search_api_search_init"
     },
@@ -915,7 +903,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "agentic_answering.py",
       "id": "src_hybrid_search_api_search_agentic_answering"
     },
@@ -927,7 +915,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "_mcp_tools_to_openai_schema()",
       "id": "src_hybrid_search_api_search_agentic_answering_mcp_tools_to_openai_schema"
     },
@@ -939,7 +927,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "_assistant_message_from()",
       "id": "src_hybrid_search_api_search_agentic_answering_assistant_message_from"
     },
@@ -951,7 +939,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "_execute_tool_call()",
       "id": "src_hybrid_search_api_search_agentic_answering_execute_tool_call"
     },
@@ -962,7 +950,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "clientsession",
       "id": "clientsession"
     },
@@ -974,7 +962,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "_run_agentic_loop()",
       "id": "src_hybrid_search_api_search_agentic_answering_run_agentic_loop"
     },
@@ -986,7 +974,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "agentic_answer_search()",
       "id": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search"
     },
@@ -997,7 +985,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "opt-in agentic search mode: instead of the fixed embed -> search -> answer...",
       "id": "src_hybrid_search_api_search_agentic_answering_rationale_1"
     },
@@ -1008,7 +996,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "answering.py",
       "id": "src_hybrid_search_api_search_answering"
     },
@@ -1020,7 +1008,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "_extract_score()",
       "id": "src_hybrid_search_api_search_answering_extract_score"
     },
@@ -1032,7 +1020,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "answer_search()",
       "id": "src_hybrid_search_api_search_answering_answer_search"
     },
@@ -1043,7 +1031,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "owns the /search request end to end: builds the es client, embeds the query...",
       "id": "src_hybrid_search_api_search_answering_rationale_1"
     },
@@ -1054,7 +1042,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearch_client.py",
       "id": "src_hybrid_search_api_search_elasticsearch_client"
     },
@@ -1066,7 +1054,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "build_client()",
       "id": "src_hybrid_search_api_search_elasticsearch_client_build_client"
     },
@@ -1077,7 +1065,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearch",
       "id": "src_hybrid_search_api_search_elasticsearch_client_py_elasticsearch"
     },
@@ -1089,7 +1077,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "ensure_index()",
       "id": "src_hybrid_search_api_search_elasticsearch_client_ensure_index"
     },
@@ -1100,7 +1088,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "create an elasticsearch client from settings. supports both no-auth (local dev)...",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_8"
     },
@@ -1111,7 +1099,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "create the index with the configured analyzers/mappings if it doesn't exist...",
       "id": "src_hybrid_search_api_search_elasticsearch_client_rationale_16"
     },
@@ -1122,7 +1110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embeddings.py",
       "id": "src_hybrid_search_api_search_embeddings"
     },
@@ -1134,7 +1122,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "_get_model()",
       "id": "src_hybrid_search_api_search_embeddings_get_model"
     },
@@ -1145,7 +1133,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "sentencetransformer",
       "id": "sentencetransformer"
     },
@@ -1157,7 +1145,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embed()",
       "id": "src_hybrid_search_api_search_embeddings_embed"
     },
@@ -1169,7 +1157,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "embed_many()",
       "id": "src_hybrid_search_api_search_embeddings_embed_many"
     },
@@ -1180,7 +1168,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "sentence-embedding helper for the knn side of hybrid search. uses a small local...",
       "id": "src_hybrid_search_api_search_embeddings_rationale_1"
     },
@@ -1191,7 +1179,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "returns the embedding vector for a single piece of text.",
       "id": "src_hybrid_search_api_search_embeddings_rationale_23"
     },
@@ -1202,7 +1190,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "batched embedding - more efficient than calling embed() in a loop.",
       "id": "src_hybrid_search_api_search_embeddings_rationale_28"
     },
@@ -1213,7 +1201,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "hybrid_search.py",
       "id": "src_hybrid_search_api_search_hybrid_search"
     },
@@ -1225,7 +1213,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "_bm25_search()",
       "id": "src_hybrid_search_api_search_hybrid_search_bm25_search"
     },
@@ -1236,7 +1224,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "elasticsearch",
       "id": "src_hybrid_search_api_search_hybrid_search_py_elasticsearch"
     },
@@ -1248,7 +1236,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "_knn_search()",
       "id": "src_hybrid_search_api_search_hybrid_search_knn_search"
     },
@@ -1260,7 +1248,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "_reciprocal_rank_fusion()",
       "id": "src_hybrid_search_api_search_hybrid_search_reciprocal_rank_fusion"
     },
@@ -1272,7 +1260,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "hybrid_search()",
       "id": "src_hybrid_search_api_search_hybrid_search_hybrid_search"
     },
@@ -1283,7 +1271,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "hybrid search: combines classic bm25 full-text search with knn vector search...",
       "id": "src_hybrid_search_api_search_hybrid_search_rationale_1"
     },
@@ -1294,7 +1282,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "run bm25 (+ optionally knn) search and fuse the results with rrf. falls back to...",
       "id": "src_hybrid_search_api_search_hybrid_search_rationale_47"
     },
@@ -1305,7 +1293,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "index_config.py",
       "id": "src_hybrid_search_api_search_index_config"
     },
@@ -1317,7 +1305,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "build_index_body()",
       "id": "src_hybrid_search_api_search_index_config_build_index_body"
     },
@@ -1328,7 +1316,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "elasticsearch index configuration: analyzers, filters, and field mappings. this...",
       "id": "src_hybrid_search_api_search_index_config_rationale_1"
     },
@@ -1339,7 +1327,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "full index creation body: analysis settings + field mappings.",
       "id": "src_hybrid_search_api_search_index_config_rationale_68"
     },
@@ -1350,7 +1338,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "queries.py",
       "id": "src_hybrid_search_api_search_queries"
     },
@@ -1362,7 +1350,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "bm25_query()",
       "id": "src_hybrid_search_api_search_queries_bm25_query"
     },
@@ -1374,7 +1362,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "knn_query()",
       "id": "src_hybrid_search_api_search_queries_knn_query"
     },
@@ -1385,7 +1373,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "elasticsearch query templates - the \"prepared statements\" for search. every...",
       "id": "src_hybrid_search_api_search_queries_rationale_1"
     },
@@ -1396,7 +1384,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "classic full-text query: multi_match across title (boosted) and content....",
       "id": "src_hybrid_search_api_search_queries_rationale_20"
     },
@@ -1407,7 +1395,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "knn vector search against the 'embedding' field.",
       "id": "src_hybrid_search_api_search_queries_rationale_35"
     },
@@ -1418,7 +1406,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 20,
-      "community_name": "tests Package Init",
+      "community_name": "tests/__init__.py",
       "norm_label": "tests/__init__.py",
       "id": "tests_init"
     },
@@ -1429,7 +1417,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "Test Environment Fixtures",
+      "community_name": "_test_env",
       "norm_label": "conftest.py",
       "id": "tests_conftest"
     },
@@ -1440,7 +1428,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 13,
-      "community_name": "Test Environment Fixtures",
+      "community_name": "_test_env",
       "norm_label": "fixture",
       "id": "fixture"
     },
@@ -1452,7 +1440,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Test Environment Fixtures",
+      "community_name": "_test_env",
       "norm_label": "_test_env()",
       "id": "tests_conftest_test_env"
     },
@@ -1463,7 +1451,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "community": 13,
-      "community_name": "Test Environment Fixtures",
+      "community_name": "_test_env",
       "norm_label": "ensure settings() can be instantiated in tests without a real .env file.",
       "id": "tests_conftest_rationale_6"
     },
@@ -1474,7 +1462,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "test_agentic_answering.py",
       "id": "tests_test_agentic_answering"
     },
@@ -1486,7 +1474,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "_tool_call()",
       "id": "tests_test_agentic_answering_tool_call"
     },
@@ -1497,7 +1485,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "simplenamespace",
       "id": "simplenamespace"
     },
@@ -1509,7 +1497,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "_message()",
       "id": "tests_test_agentic_answering_message"
     },
@@ -1522,7 +1510,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "_scriptedllmclient",
       "id": "tests_test_agentic_answering_scriptedllmclient"
     },
@@ -1534,7 +1522,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": ".__init__()",
       "id": "tests_test_agentic_answering_scriptedllmclient_init"
     },
@@ -1546,7 +1534,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": ".complete_with_tools()",
       "id": "tests_test_agentic_answering_scriptedllmclient_complete_with_tools"
     },
@@ -1557,7 +1545,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "patch",
       "id": "tests_test_agentic_answering_py_patch"
     },
@@ -1569,7 +1557,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "test_agentic_loop_calls_search_then_answers()",
       "id": "tests_test_agentic_answering_test_agentic_loop_calls_search_then_answers"
     },
@@ -1581,7 +1569,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "test_agentic_loop_answers_without_calling_tool()",
       "id": "tests_test_agentic_answering_test_agentic_loop_answers_without_calling_tool"
     },
@@ -1593,7 +1581,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "test_agentic_loop_forces_final_answer_after_round_cap()",
       "id": "tests_test_agentic_answering_test_agentic_loop_forces_final_answer_after_round_cap"
     },
@@ -1606,7 +1594,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "_failingllmclient",
       "id": "tests_test_agentic_answering_failingllmclient"
     },
@@ -1618,7 +1606,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": ".complete_with_tools()",
       "id": "tests_test_agentic_answering_failingllmclient_complete_with_tools"
     },
@@ -1630,7 +1618,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "test_agentic_loop_propagates_llm_sdk_errors_unchanged()",
       "id": "tests_test_agentic_answering_test_agentic_loop_propagates_llm_sdk_errors_unchanged"
     },
@@ -1642,7 +1630,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "Agentic Loop Tests",
+      "community_name": "answering.py",
       "norm_label": "test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising()",
       "id": "tests_test_agentic_answering_test_agentic_loop_feeds_tool_error_back_to_llm_instead_of_raising"
     },
@@ -1653,7 +1641,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answering.py",
       "id": "tests_test_answering"
     },
@@ -1665,7 +1653,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_search_request_agentic_defaults_to_false()",
       "id": "tests_test_answering_test_search_request_agentic_defaults_to_false"
     },
@@ -1678,7 +1666,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "_fakellmclient",
       "id": "tests_test_answering_fakellmclient"
     },
@@ -1690,7 +1678,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": ".__init__()",
       "id": "tests_test_answering_fakellmclient_init"
     },
@@ -1702,7 +1690,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": ".complete()",
       "id": "tests_test_answering_fakellmclient_complete"
     },
@@ -1713,7 +1701,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "patch",
       "id": "tests_test_answering_py_patch"
     },
@@ -1725,7 +1713,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_prefers_rrf_score_over_original_score()",
       "id": "tests_test_answering_test_answer_search_prefers_rrf_score_over_original_score"
     },
@@ -1737,7 +1725,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_without_llm_answer()",
       "id": "tests_test_answering_test_answer_search_without_llm_answer"
     },
@@ -1749,7 +1737,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_returns_llm_answer_when_requested()",
       "id": "tests_test_answering_test_answer_search_returns_llm_answer_when_requested"
     },
@@ -1761,7 +1749,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_propagates_authentication_error()",
       "id": "tests_test_answering_test_answer_search_propagates_authentication_error"
     },
@@ -1773,7 +1761,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_propagates_not_found_error()",
       "id": "tests_test_answering_test_answer_search_propagates_not_found_error"
     },
@@ -1785,7 +1773,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_propagates_rate_limit_error()",
       "id": "tests_test_answering_test_answer_search_propagates_rate_limit_error"
     },
@@ -1797,7 +1785,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_propagates_connection_error()",
       "id": "tests_test_answering_test_answer_search_propagates_connection_error"
     },
@@ -1809,7 +1797,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_falls_back_to_bm25_when_embedding_fails()",
       "id": "tests_test_answering_test_answer_search_falls_back_to_bm25_when_embedding_fails"
     },
@@ -1821,7 +1809,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_routes_nfcorpus_dataset_to_suffixed_index()",
       "id": "tests_test_answering_test_answer_search_routes_nfcorpus_dataset_to_suffixed_index"
     },
@@ -1833,7 +1821,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_answer_search_dispatches_to_agentic_when_requested()",
       "id": "tests_test_answering_test_answer_search_dispatches_to_agentic_when_requested"
     },
@@ -1844,7 +1832,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_api.py",
       "id": "tests_test_api"
     },
@@ -1856,7 +1844,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_health()",
       "id": "tests_test_api_test_health"
     },
@@ -1867,7 +1855,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "patch",
       "id": "tests_test_api_py_patch"
     },
@@ -1879,7 +1867,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_200_with_hits()",
       "id": "tests_test_api_test_search_returns_200_with_hits"
     },
@@ -1891,7 +1879,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_bad_api_key()",
       "id": "tests_test_api_test_search_returns_502_on_bad_api_key"
     },
@@ -1903,7 +1891,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_german_error_when_lang_de()",
       "id": "tests_test_api_test_search_returns_german_error_when_lang_de"
     },
@@ -1915,7 +1903,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_unknown_model()",
       "id": "tests_test_api_test_search_returns_502_on_unknown_model"
     },
@@ -1927,7 +1915,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_rate_limit()",
       "id": "tests_test_api_test_search_returns_502_on_rate_limit"
     },
@@ -1939,7 +1927,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_on_connection_error()",
       "id": "tests_test_api_test_search_returns_502_on_connection_error"
     },
@@ -1951,7 +1939,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_search_returns_502_when_elasticsearch_unreachable()",
       "id": "tests_test_api_test_search_returns_502_when_elasticsearch_unreachable"
     },
@@ -1962,7 +1950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "test_elasticsearch_client.py",
       "id": "tests_test_elasticsearch_client"
     },
@@ -1974,7 +1962,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "test_ensure_index_creates_when_missing()",
       "id": "tests_test_elasticsearch_client_test_ensure_index_creates_when_missing"
     },
@@ -1986,7 +1974,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "test_ensure_index_skips_when_already_present()",
       "id": "tests_test_elasticsearch_client_test_ensure_index_skips_when_already_present"
     },
@@ -1997,7 +1985,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embeddings.py",
       "id": "tests_test_embeddings"
     },
@@ -2008,7 +1996,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "patch",
       "id": "tests_test_embeddings_py_patch"
     },
@@ -2020,7 +2008,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embed_returns_list_of_floats()",
       "id": "tests_test_embeddings_test_embed_returns_list_of_floats"
     },
@@ -2032,7 +2020,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "Embeddings and Corpus Loading",
+      "community_name": "elasticsearch_client.py",
       "norm_label": "test_embed_many_batches_multiple_texts()",
       "id": "tests_test_embeddings_test_embed_many_batches_multiple_texts"
     },
@@ -2043,7 +2031,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_hybrid_search.py",
       "id": "tests_test_hybrid_search"
     },
@@ -2055,7 +2043,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_rrf_favors_docs_ranked_high_in_both_lists()",
       "id": "tests_test_hybrid_search_test_rrf_favors_docs_ranked_high_in_both_lists"
     },
@@ -2066,7 +2054,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "test_index_config.py",
       "id": "tests_test_index_config"
     },
@@ -2078,7 +2066,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
+      "community_name": "index_routes.py",
       "norm_label": "test_build_index_body_has_settings_and_mappings()",
       "id": "tests_test_index_config_test_build_index_body_has_settings_and_mappings"
     },
@@ -2089,7 +2077,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_index_routes.py",
       "id": "tests_test_index_routes"
     },
@@ -2100,7 +2088,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "patch",
       "id": "tests_test_index_routes_py_patch"
     },
@@ -2112,7 +2100,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_elasticsearch_health()",
       "id": "tests_test_index_routes_test_elasticsearch_health"
     },
@@ -2124,7 +2112,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_elasticsearch_health_returns_502_when_unreachable()",
       "id": "tests_test_index_routes_test_elasticsearch_health_returns_502_when_unreachable"
     },
@@ -2136,7 +2124,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_index_info_when_missing()",
       "id": "tests_test_index_routes_test_index_info_when_missing"
     },
@@ -2148,7 +2136,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_index_info_when_present()",
       "id": "tests_test_index_routes_test_index_info_when_present"
     },
@@ -2160,7 +2148,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_list_documents_excludes_embedding_field()",
       "id": "tests_test_index_routes_test_list_documents_excludes_embedding_field"
     },
@@ -2171,7 +2159,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "test_llm_client.py",
       "id": "tests_test_llm_client"
     },
@@ -2182,7 +2170,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "patch",
       "id": "tests_test_llm_client_py_patch"
     },
@@ -2194,7 +2182,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "test_complete_returns_text_from_response()",
       "id": "tests_test_llm_client_test_complete_returns_text_from_response"
     },
@@ -2206,7 +2194,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "test_complete_with_tools_returns_raw_message()",
       "id": "tests_test_llm_client_test_complete_with_tools_returns_raw_message"
     },
@@ -2218,7 +2206,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "LLM Client and Retry",
+      "community_name": "LLMClient",
       "norm_label": "test_complete_with_tools_omits_tools_kwarg_when_none()",
       "id": "tests_test_llm_client_test_complete_with_tools_omits_tools_kwarg_when_none"
     },
@@ -2229,7 +2217,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_mcp_server.py",
       "id": "tests_test_mcp_server"
     },
@@ -2240,7 +2228,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "patch",
       "id": "tests_test_mcp_server_py_patch"
     },
@@ -2252,7 +2240,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Search Routing and Settings",
+      "community_name": "Settings",
       "norm_label": "test_search_tool_builds_request_and_returns_dict()",
       "id": "tests_test_mcp_server_test_search_tool_builds_request_and_returns_dict"
     },
@@ -2263,7 +2251,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "test_prompts.py",
       "id": "tests_test_prompts"
     },
@@ -2275,7 +2263,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "test_system_prompt_instructs_plain_text_answer_en()",
       "id": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_en"
     },
@@ -2287,7 +2275,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "test_system_prompt_instructs_plain_text_answer_de()",
       "id": "tests_test_prompts_test_system_prompt_instructs_plain_text_answer_de"
     },
@@ -2299,7 +2287,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "test_agentic_system_prompt_instructs_no_nested_llm_answer_en()",
       "id": "tests_test_prompts_test_agentic_system_prompt_instructs_no_nested_llm_answer_en"
     },
@@ -2311,7 +2299,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "Prompts and Agentic Loop",
+      "community_name": "agentic_answering.py",
       "norm_label": "test_agentic_system_prompt_instructs_no_nested_llm_answer_de()",
       "id": "tests_test_prompts_test_agentic_system_prompt_instructs_no_nested_llm_answer_de"
     },
@@ -2322,7 +2310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_queries.py",
       "id": "tests_test_queries"
     },
@@ -2334,7 +2322,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_bm25_query_boosts_title_and_allows_typos()",
       "id": "tests_test_queries_test_bm25_query_boosts_title_and_allows_typos"
     },
@@ -2346,7 +2334,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "Hybrid Search and RRF Fusion",
+      "community_name": "hybrid_search.py",
       "norm_label": "test_knn_query_scales_candidate_pool_with_k()",
       "id": "tests_test_queries_test_knn_query_scales_candidate_pool_with_k"
     },
@@ -2357,7 +2345,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_ui_routes.py",
       "id": "tests_test_ui_routes"
     },
@@ -2369,24 +2357,9 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "App Bootstrap and Error Handling",
+      "community_name": "test_api.py",
       "norm_label": "test_root_serves_search_ui_html()",
       "id": "tests_test_ui_routes_test_root_serves_search_ui_html"
-    },
-    {
-      "label": "hybrid-search-api CLAUDE.md",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "hybrid-search-api claude.md",
-      "_origin": "semantic",
-      "id": "claude_project_instructions"
     },
     {
       "label": "Architecture (German)",
@@ -2398,7 +2371,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "architecture (german)",
       "_origin": "semantic",
       "id": "docs_architecture_de_architecture_de"
@@ -2413,7 +2386,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "architecture (english)",
       "_origin": "semantic",
       "id": "docs_architecture_architecture_en"
@@ -2428,7 +2401,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "hybrid search (bm25 + knn + rrf)",
       "_origin": "semantic",
       "id": "docs_architecture_hybrid_search"
@@ -2443,7 +2416,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "reciprocal rank fusion (rrf)",
       "_origin": "semantic",
       "id": "docs_architecture_reciprocal_rank_fusion"
@@ -2458,7 +2431,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "why rrf rationale",
       "_origin": "semantic",
       "id": "docs_architecture_why_rrf"
@@ -2473,7 +2446,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "rag answer synthesis pattern",
       "_origin": "semantic",
       "id": "docs_architecture_rag_pattern"
@@ -2488,7 +2461,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "sentence-transformers all-minilm-l6-v2 embeddings",
       "_origin": "semantic",
       "id": "docs_architecture_embeddings_model"
@@ -2503,7 +2476,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "hybrid search (bm25 + knn + rrf) [de]",
       "_origin": "semantic",
       "id": "docs_architecture_de_hybrid_search"
@@ -2518,7 +2491,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "reciprocal rank fusion (rrf) [de]",
       "_origin": "semantic",
       "id": "docs_architecture_de_reciprocal_rank_fusion"
@@ -2533,55 +2506,10 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "why rrf rationale [de]",
       "_origin": "semantic",
       "id": "docs_architecture_de_why_rrf"
-    },
-    {
-      "label": "Graphify Knowledge Graph Workflow",
-      "file_type": "concept",
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "graphify knowledge graph workflow",
-      "_origin": "semantic",
-      "id": "claude_graphify_workflow"
-    },
-    {
-      "label": "Handoff Document Workflow",
-      "file_type": "concept",
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "handoff document workflow",
-      "_origin": "semantic",
-      "id": "claude_handoff_doc_workflow"
-    },
-    {
-      "label": "search/index_config.py",
-      "file_type": "code",
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 9,
-      "community_name": "Architecture Documentation",
-      "norm_label": "search/index_config.py",
-      "_origin": "semantic",
-      "id": "src_hybrid_search_api_search_index_config_module"
     },
     {
       "label": "search/queries.py",
@@ -2593,7 +2521,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "search/queries.py",
       "_origin": "semantic",
       "id": "search_queries_module"
@@ -2608,7 +2536,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "hybrid_search.py",
       "_origin": "semantic",
       "id": "hybrid_search_module"
@@ -2623,7 +2551,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "ai/prompts.py",
       "_origin": "semantic",
       "id": "ai_prompts_module"
@@ -2638,7 +2566,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "api/routes.py",
       "_origin": "semantic",
       "id": "api_routes_module"
@@ -2653,7 +2581,7 @@
       "author": null,
       "contributor": null,
       "community": 9,
-      "community_name": "Architecture Documentation",
+      "community_name": "Architecture (English)",
       "norm_label": "main.py",
       "_origin": "semantic",
       "id": "main_module"
@@ -2668,7 +2596,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "swagger ui screenshot",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_swaggeruiscreen"
@@ -2683,7 +2611,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "post /search endpoint",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_searchendpoint"
@@ -2698,7 +2626,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "get /index endpoint",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_indexendpoint"
@@ -2713,7 +2641,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "get /index/documents endpoint",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_indexdocumentsendpoint"
@@ -2728,7 +2656,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "get /health endpoint",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_healthendpoint"
@@ -2743,7 +2671,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "get /health/elasticsearch endpoint",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_healthelasticsearchendpoint"
@@ -2758,7 +2686,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "documentlistresponse schema",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_documentlistresponseschema"
@@ -2773,7 +2701,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "documentpreview schema",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_documentpreviewschema"
@@ -2788,7 +2716,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "elasticsearchhealth schema",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_elasticsearchhealthschema"
@@ -2803,7 +2731,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "httpvalidationerror schema",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_httpvalidationerrorschema"
@@ -2818,7 +2746,7 @@
       "author": null,
       "contributor": null,
       "community": 12,
-      "community_name": "OpenAPI Surface",
+      "community_name": "Swagger UI Screenshot",
       "norm_label": "indexinfo schema",
       "_origin": "semantic",
       "id": "docs_images_swagger_ui_indexinfoschema"
@@ -2832,10 +2760,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_hybrid_search_api",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "hybrid search api (readme)"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "hybrid search api (readme)",
+      "_origin": "ast",
+      "id": "readme_hybrid_search_api"
     },
     {
       "label": "RAG Answer Token Cost",
@@ -2847,10 +2776,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Averaged over 10 topically matched queries: ~417 prompt + ~343 completion = ~760 tokens per LLM answer. Reported in tokens rather than euros/dollars because the monetary cost depends on the chosen provider's pricing, while the token count is provider-independent and converts directly.",
-      "id": "readme_rag_answer_token_cost",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "rag answer token cost"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "rag answer token cost",
+      "_origin": "ast",
+      "id": "readme_rag_answer_token_cost"
     },
     {
       "label": "Data-Sovereignty Deployment Mode",
@@ -2862,10 +2792,11 @@
       "author": null,
       "contributor": null,
       "rationale": "For GDPR/regulated scenarios where data must never leave controlled infrastructure, `docker compose --profile local-llm up` runs a local llama.cpp server so the RAG step makes no external call. The app is provider-agnostic: the same LLM_BASE_URL swap works with Ollama, vLLM or TGI.",
-      "id": "readme_data_sovereignty_mode",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "data-sovereignty deployment mode"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "data-sovereignty deployment mode",
+      "_origin": "ast",
+      "id": "readme_data_sovereignty_mode"
     },
     {
       "label": "Dataset Selection (demo / nfcorpus)",
@@ -2877,10 +2808,11 @@
       "author": null,
       "contributor": null,
       "rationale": "The 10 sample docs are self-referentially about search/RAG, which demos cleanly but proves nothing about scale. NFCorpus is indexed into a separate suffixed index so both corpora stay searchable side by side with no restart or env var.",
-      "id": "readme_dataset_toggle",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "dataset selection (demo / nfcorpus)"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "dataset selection (demo / nfcorpus)",
+      "_origin": "ast",
+      "id": "readme_dataset_toggle"
     },
     {
       "label": "NFCorpus Benchmark Corpus",
@@ -2891,10 +2823,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_nfcorpus_corpus",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "nfcorpus benchmark corpus"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "nfcorpus benchmark corpus",
+      "_origin": "ast",
+      "id": "readme_nfcorpus_corpus"
     },
     {
       "label": "Search Exposed as an MCP Tool",
@@ -2906,10 +2839,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Offered as an addition alongside the REST API, not a replacement; exposes one `search` tool wrapping the same answer_search() logic the REST endpoint uses.",
-      "id": "readme_mcp_tool_exposure",
       "community": 0,
-      "community_name": "Search Routing and Settings",
-      "norm_label": "search exposed as an mcp tool"
+      "community_name": "Settings",
+      "norm_label": "search exposed as an mcp tool",
+      "_origin": "ast",
+      "id": "readme_mcp_tool_exposure"
     },
     {
       "label": "Agentic Search Mode",
@@ -2921,10 +2855,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Opt-in via \"agentic\": true. Useful for vague queries needing a refined follow-up search. use_llm_answer does not apply \u2014 the agentic loop always uses the LLM both to decide and to answer.",
-      "id": "readme_agentic_mode",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "agentic search mode"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "agentic search mode",
+      "_origin": "ast",
+      "id": "readme_agentic_mode"
     },
     {
       "label": "Roadmap (reranking, caching, auth)",
@@ -2935,10 +2870,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_roadmap",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "roadmap (reranking, caching, auth)"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "roadmap (reranking, caching, auth)",
+      "_origin": "ast",
+      "id": "readme_roadmap"
     },
     {
       "label": "Hybrid Search API (README, German)",
@@ -2950,10 +2886,11 @@
       "author": null,
       "contributor": null,
       "rationale": "German-language mirror of the English README, kept in sync section for section; the project targets German-market roles, so the bilingual pair is itself a portfolio signal.",
-      "id": "readme_de_hybrid_search_api",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "hybrid search api (readme, german)"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "hybrid search api (readme, german)",
+      "_origin": "ast",
+      "id": "readme_de_hybrid_search_api"
     },
     {
       "label": "Ubiquitous Language Glossary",
@@ -2965,10 +2902,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Deliberately lean \u2014 a term is added only once actually resolved, filled in lazily by the domain-modeling skill. An empty glossary is considered fine for a fresh project.",
-      "id": "context_ubiquitous_language",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "ubiquitous language glossary"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "ubiquitous language glossary",
+      "_origin": "ast",
+      "id": "context_ubiquitous_language"
     },
     {
       "label": "Search Answering (deep module)",
@@ -2980,10 +2918,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Owns the /search request end to end and stays framework-agnostic: raises the LLM SDK's own exceptions rather than HTTPException, leaving HTTP translation to the route. Named 'Search Answering', not 'search orchestration' or 'search service' \u2014 there is one function, not a service layer.",
-      "id": "context_search_answering",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "search answering (deep module)"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "search answering (deep module)",
+      "_origin": "ast",
+      "id": "context_search_answering"
     },
     {
       "label": "Contribution Workflow",
@@ -2994,10 +2933,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "contributing_contribution_workflow",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "contribution workflow"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "contribution workflow",
+      "_origin": "ast",
+      "id": "contributing_contribution_workflow"
     },
     {
       "label": "api Compose Service",
@@ -3008,10 +2948,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docker_compose_api_service",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
-      "norm_label": "api compose service"
+      "community_name": "index_routes.py",
+      "norm_label": "api compose service",
+      "_origin": "ast",
+      "id": "docker_compose_api_service"
     },
     {
       "label": "elasticsearch Compose Service",
@@ -3023,10 +2964,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Single-node with xpack.security disabled and a 512m heap \u2014 demo-scale defaults, not production hardening.",
-      "id": "docker_compose_elasticsearch_service",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
-      "norm_label": "elasticsearch compose service"
+      "community_name": "index_routes.py",
+      "norm_label": "elasticsearch compose service",
+      "_origin": "ast",
+      "id": "docker_compose_elasticsearch_service"
     },
     {
       "label": "local-llm Compose Profile",
@@ -3038,10 +2980,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Gated behind a Compose profile so the fast default path (bring your own cloud key) stays untouched; runs llama.cpp's server with Qwen2.5-1.5B-Instruct GGUF and an enforced --api-key.",
-      "id": "docker_compose_local_llm_profile",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "local-llm compose profile"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "local-llm compose profile",
+      "_origin": "ast",
+      "id": "docker_compose_local_llm_profile"
     },
     {
       "label": "Ruff Pre-commit Hooks",
@@ -3052,10 +2995,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "_pre_commit_config_ruff_hooks",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "ruff pre-commit hooks"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "ruff pre-commit hooks",
+      "_origin": "ast",
+      "id": "_pre_commit_config_ruff_hooks"
     },
     {
       "label": "CI Pipeline (lint + test)",
@@ -3067,10 +3011,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Runs ruff check then pytest on push to main and on every pull request, pinned to Python 3.12 on ubuntu-latest.",
-      "id": "_github_workflows_ci_pipeline",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "ci pipeline (lint + test)"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "ci pipeline (lint + test)",
+      "_origin": "ast",
+      "id": "_github_workflows_ci_pipeline"
     },
     {
       "label": "/rebuild Command",
@@ -3082,10 +3027,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Exists because the api container does not pick up code changes automatically; also checks whether index_config.py changed recently, since that requires deleting and reseeding the Elasticsearch index before search is testable.",
-      "id": "_claude_commands_rebuild_command",
       "community": 1,
-      "community_name": "Index Introspection and Seeding",
-      "norm_label": "/rebuild command"
+      "community_name": "index_routes.py",
+      "norm_label": "/rebuild command",
+      "_origin": "ast",
+      "id": "_claude_commands_rebuild_command"
     },
     {
       "label": "/verify Command",
@@ -3096,10 +3042,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "_claude_commands_verify_command",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "/verify command"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "/verify command",
+      "_origin": "ast",
+      "id": "_claude_commands_verify_command"
     },
     {
       "label": "/startup Command",
@@ -3111,10 +3058,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Session-start routine: verify the graphify graph exists, confirm the agent-skills docs are current, then print the newest handoff doc for this repo. Handoffs deliberately live outside the repo and are never auto-loaded.",
-      "id": "_claude_commands_startup_command",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "/startup command"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "/startup command",
+      "_origin": "ast",
+      "id": "_claude_commands_startup_command"
     },
     {
       "label": "ADR-0001: Local sentence-transformers, not Ollama",
@@ -3126,10 +3074,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Keeps embeddings in-process via all-MiniLM-L6-v2 (384 dims). Ollama would add a service the demo depends on being up and warmed, with no functional payoff at this corpus size, and swapping models changes vector dimensionality \u2014 forcing an index delete and reseed. MODEL_NAME stays hardcoded as a deliberate simplicity choice; the LLM-client config seam does not generalize because embeddings.py has no equivalent SDK abstraction.",
-      "id": "docs_adr_0001_local_embeddings_over_ollama_decision",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "adr-0001: local sentence-transformers, not ollama"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "adr-0001: local sentence-transformers, not ollama",
+      "_origin": "ast",
+      "id": "docs_adr_0001_local_embeddings_over_ollama_decision"
     },
     {
       "label": "ADR-0002: llama-server, not Ollama, for local LLM mode",
@@ -3141,10 +3090,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Ollama does not enforce API-key auth by default, so the AuthenticationError branch this project showcases would be silently dead code against it. llama-server genuinely 401s on a wrong key and is CPU-first/GGUF, fitting 'runs on a laptop'. vLLM is the most spec-faithful but assumes a GPU; TGI's compat layer is least mature; LocalAI is redundant with Ollama. Mirror image of ADR-0001: there is no in-process equivalent for chat generation, so the question is which server, not whether.",
-      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "adr-0002: llama-server, not ollama, for local llm mode"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "adr-0002: llama-server, not ollama, for local llm mode",
+      "_origin": "ast",
+      "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision"
     },
     {
       "label": "ADR Index and Authoring Rules",
@@ -3156,10 +3106,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Write an ADR when a decision is hard to reverse, spans services, had a serious alternative, or will prompt a 'why did we do it this way' in six months. Never overwrite one \u2014 mark it Superseded and write a new one, because the old reasoning is the context the new decision makes sense in.",
-      "id": "docs_adr_readme_adr_index",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "adr index and authoring rules"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "adr index and authoring rules",
+      "_origin": "ast",
+      "id": "docs_adr_readme_adr_index"
     },
     {
       "label": "Domain Docs Reading Protocol",
@@ -3171,10 +3122,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Single-context layout: CONTEXT.md plus docs/adr/ at the root. Missing files are passed over silently rather than flagged, because the domain-modeling skill creates them lazily once terms actually get resolved.",
-      "id": "docs_agents_domain_domain_docs_protocol",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "domain docs reading protocol"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "domain docs reading protocol",
+      "_origin": "ast",
+      "id": "docs_agents_domain_domain_docs_protocol"
     },
     {
       "label": "GitHub Issue Tracker Conventions",
@@ -3186,10 +3138,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Issues and specs live as GitHub issues driven through the gh CLI. PRs are explicitly not treated as a request surface for this repo. Wayfinding uses one map issue with native GitHub issue dependencies for blocking.",
-      "id": "docs_agents_issue_tracker_github_issue_tracker",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "github issue tracker conventions"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "github issue tracker conventions",
+      "_origin": "ast",
+      "id": "docs_agents_issue_tracker_github_issue_tracker"
     },
     {
       "label": "Triage Label Mapping",
@@ -3200,10 +3153,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_agents_triage_labels_triage_label_map",
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
-      "norm_label": "triage label mapping"
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "triage label mapping",
+      "_origin": "ast",
+      "id": "docs_agents_triage_labels_triage_label_map"
     },
     {
       "label": "Agentic RAG Implementation Plan",
@@ -3215,10 +3169,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Eight sequenced tasks from adding anyio through live end-to-end verification, each with its own verification step.",
-      "id": "docs_superpowers_plans_2026_08_17_agentic_rag_plan",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
-      "norm_label": "agentic rag implementation plan"
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
+      "norm_label": "agentic rag implementation plan",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_17_agentic_rag_plan"
     },
     {
       "label": "Agentic RAG via In-Process MCP Dogfooding",
@@ -3230,10 +3185,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Additive by design: agentic defaults to False so the fixed pipeline is byte-identical to before. Explicitly not a general-purpose agent framework \u2014 one tool, one bounded loop, no planning or memory beyond a single request.",
-      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
-      "norm_label": "agentic rag via in-process mcp dogfooding"
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
+      "norm_label": "agentic rag via in-process mcp dogfooding",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec"
     },
     {
       "label": "In-Memory MCP Transport",
@@ -3245,10 +3201,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Uses create_client_server_memory_streams rather than stdio/subprocess: an anyio task group runs the existing MCP server against one end while a ClientSession talks to the other, in-process. Avoids a subprocess spawn and reloading the embedding model per request \u2014 a protocol-shaped call, not a process boundary.",
-      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_in_memory_mcp_transport",
       "community": 0,
-      "community_name": "Search Routing and Settings",
-      "norm_label": "in-memory mcp transport"
+      "community_name": "Settings",
+      "norm_label": "in-memory mcp transport",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_in_memory_mcp_transport"
     },
     {
       "label": "Three-Round Tool-Calling Loop",
@@ -3260,10 +3217,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Capped at 3 rounds; after the cap the tools argument is dropped to force a text-only response. Marked in-code as a ponytail shortcut \u2014 fixed cap, made configurable only if real usage needs deeper loops.",
-      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_tool_calling_loop",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
-      "norm_label": "three-round tool-calling loop"
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
+      "norm_label": "three-round tool-calling loop",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_tool_calling_loop"
     },
     {
       "label": "Live MCP Tool-Schema Discovery",
@@ -3275,10 +3233,11 @@
       "author": null,
       "contributor": null,
       "rationale": "session.list_tools() returns the real search tool schema, converted to OpenAI tool-calling format. Discovered from the live server rather than hand-duplicated, so a parameter change is picked up automatically.",
-      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_schema_discovery",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
-      "norm_label": "live mcp tool-schema discovery"
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
+      "norm_label": "live mcp tool-schema discovery",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_schema_discovery"
     },
     {
       "label": "Built-in Search UI",
@@ -3290,10 +3249,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Single self-contained HTML page served at / \u2014 no build step, no framework, no external assets, so the demo needs nothing beyond the running container.",
-      "id": "src_hybrid_search_api_static_index_search_ui",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "built-in search ui"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "built-in search ui",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_static_index_search_ui"
     },
     {
       "label": "Dataset Toggle Control",
@@ -3305,10 +3265,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Two buttons above the query box; switching datasets also swaps the description line and the example query, so the user sees what each corpus contains instead of guessing.",
-      "id": "src_hybrid_search_api_static_index_dataset_toggle_control",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "dataset toggle control"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "dataset toggle control",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_static_index_dataset_toggle_control"
     },
     {
       "label": "Language Toggle (EN/DE)",
@@ -3319,10 +3280,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "src_hybrid_search_api_static_index_language_toggle_control",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "language toggle (en/de)"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "language toggle (en/de)",
+      "_origin": "ast",
+      "id": "src_hybrid_search_api_static_index_language_toggle_control"
     },
     {
       "label": "Search UI Screenshot",
@@ -3334,10 +3296,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Centred single-column layout on a pale blue gradient. Top to bottom: title and tagline, a card holding the Demo/NFCorpus dataset toggle with its description line, the query input, a 'Generate answer' checkbox with the EN/DE toggle, and a right-aligned Search button. Below the card, the RAG answer sits in a tinted panel labelled ANSWER, followed by white result cards each showing a document title with its RRF score and body text. Demonstrates that the answer is visually separated from the ranked hits that grounded it.",
-      "id": "docs_images_search_ui_screenshot",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "search ui screenshot"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "search ui screenshot",
+      "_origin": "semantic",
+      "id": "docs_images_search_ui_screenshot"
     },
     {
       "label": "Search UI Demo Recording",
@@ -3349,10 +3312,11 @@
       "author": null,
       "contributor": null,
       "rationale": "Animated walkthrough of the same UI: a search on the Demo corpus resolving from a 'Searching\u2026' state to an answer plus ranked hits, then a switch to NFCorpus which swaps both the description line and the example query, a second search against the medical corpus, and a scroll through the results. Shows the two corpora are live side by side with no restart.",
-      "id": "docs_images_search_ui_demo_recording",
       "community": 3,
-      "community_name": "Architecture Decision Records",
-      "norm_label": "search ui demo recording"
+      "community_name": "Hybrid Search API (README)",
+      "norm_label": "search ui demo recording",
+      "_origin": "semantic",
+      "id": "docs_images_search_ui_demo_recording"
     },
     {
       "label": "0001-local-embeddings-over-ollama.md",
@@ -3361,7 +3325,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "0001-local-embeddings-over-ollama.md",
       "id": "docs_adr_0001_local_embeddings_over_ollama"
     },
@@ -3372,7 +3336,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "adr-0001: local sentence-transformers for embeddings, not ollama",
       "id": "docs_adr_0001_local_embeddings_over_ollama_adr_0001_local_sentence_transformers_for_embeddings_not_ollama"
     },
@@ -3383,7 +3347,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "context",
       "id": "docs_adr_0001_local_embeddings_over_ollama_context"
     },
@@ -3394,7 +3358,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "options considered",
       "id": "docs_adr_0001_local_embeddings_over_ollama_options_considered"
     },
@@ -3405,7 +3369,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "consequences",
       "id": "docs_adr_0001_local_embeddings_over_ollama_consequences"
     },
@@ -3416,7 +3380,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "0002-llama-server-for-data-sovereignty-deployments.md",
       "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments"
     },
@@ -3427,7 +3391,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "adr-0002: llama-server (not ollama) for the local/data-sovereignty llm deployment mode",
       "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_adr_0002_llama_server_not_ollama_for_the_local_data_sovereignty_llm_deployment_mode"
     },
@@ -3438,7 +3402,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "context",
       "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_context"
     },
@@ -3449,7 +3413,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "options considered",
       "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_options_considered"
     },
@@ -3460,7 +3424,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "community": 3,
-      "community_name": "Architecture Decision Records",
+      "community_name": "Hybrid Search API (README)",
       "norm_label": "consequences",
       "id": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_consequences"
     },
@@ -3471,7 +3435,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "2026-08-17-agentic-rag.md",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag"
     },
@@ -3482,7 +3446,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "global constraints",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_global_constraints"
     },
@@ -3493,7 +3457,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 1: add `anyio` as an explicit dependency",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_1_add_anyio_as_an_explicit_dependency"
     },
@@ -3504,7 +3468,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 2: add `agentic` field to `searchrequest`",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_2_add_agentic_field_to_searchrequest"
     },
@@ -3515,7 +3479,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 3: add `llmclient.complete_with_tools()`",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_3_add_llmclient_complete_with_tools"
     },
@@ -3526,7 +3490,7 @@
       "source_location": "L194",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 4: add agentic system prompt",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_4_add_agentic_system_prompt"
     },
@@ -3537,7 +3501,7 @@
       "source_location": "L278",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 5: `search/agentic_answering.py` - the tool-calling loop",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_5_search_agentic_answering_py_the_tool_calling_loop"
     },
@@ -3548,7 +3512,7 @@
       "source_location": "L529",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 6: wire `answer_search()` to branch on `request.agentic`",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_6_wire_answer_search_to_branch_on_request_agentic"
     },
@@ -3559,7 +3523,7 @@
       "source_location": "L606",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 7: lint, full verification, readme docs",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_7_lint_full_verification_readme_docs"
     },
@@ -3570,7 +3534,7 @@
       "source_location": "L654",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "task 8: live end-to-end verification",
       "id": "docs_superpowers_plans_2026_08_17_agentic_rag_task_8_live_end_to_end_verification"
     },
@@ -3581,7 +3545,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "2026-08-17-agentic-rag-mcp-design.md",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design"
     },
@@ -3592,7 +3556,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "context",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_context"
     },
@@ -3603,7 +3567,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "goals",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_goals"
     },
@@ -3614,7 +3578,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "non-goals",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_non_goals"
     },
@@ -3625,7 +3589,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "approach",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_approach"
     },
@@ -3636,7 +3600,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "request shape",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_request_shape"
     },
@@ -3647,7 +3611,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "new module: `search/agentic_answering.py`",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_new_module_search_agentic_answering_py"
     },
@@ -3658,7 +3622,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "`llmclient` addition",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_llmclient_addition"
     },
@@ -3669,7 +3633,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "error handling",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_error_handling"
     },
@@ -3680,7 +3644,7 @@
       "source_location": "L118",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "testing",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_testing"
     },
@@ -3691,7 +3655,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "community": 4,
-      "community_name": "Agentic RAG Plan and Spec",
+      "community_name": "Agentic RAG via in-process MCP dogfooding",
       "norm_label": "open questions / deferred",
       "id": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_open_questions_deferred"
     },
@@ -3705,7 +3669,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "ci github actions workflow",
       "_origin": "semantic",
       "id": "github_workflows_ci_ci_workflow"
@@ -3720,7 +3684,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "pre-commit hooks config",
       "_origin": "semantic",
       "id": "pre_commit_config_pre_commit_hooks"
@@ -3735,7 +3699,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "contributing guide",
       "_origin": "semantic",
       "id": "contributing_contributing_guide"
@@ -3750,7 +3714,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "readme (german)",
       "_origin": "semantic",
       "id": "readme_de_readme_de"
@@ -3765,7 +3729,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "readme (english)",
       "_origin": "semantic",
       "id": "readme_readme_en"
@@ -3795,7 +3759,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "adr process",
       "_origin": "semantic",
       "id": "docs_adr_readme_adr_process"
@@ -3810,7 +3774,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "domain docs consumption rules",
       "_origin": "semantic",
       "id": "docs_agents_domain_domain_docs_consumption"
@@ -3825,7 +3789,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "wayfinder map/child ticket pattern",
       "_origin": "semantic",
       "id": "docs_agents_issue_tracker_wayfinder_pattern"
@@ -3840,7 +3804,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "rag grounding example (readme)",
       "_origin": "semantic",
       "id": "readme_rag_example"
@@ -3855,7 +3819,7 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "rag grounding example (readme, de)",
       "_origin": "semantic",
       "id": "readme_de_rag_example"
@@ -3870,10 +3834,80 @@
       "author": null,
       "contributor": null,
       "community": 5,
-      "community_name": "Repo Conventions and Agent Docs",
+      "community_name": "hybrid-search-api CLAUDE.md",
       "norm_label": "scripts/seed_data.py",
       "_origin": "semantic",
       "id": "scripts_seed_data_module"
+    },
+    {
+      "label": "hybrid-search-api CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 5,
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "hybrid-search-api claude.md",
+      "_origin": "semantic",
+      "id": "claude_project_instructions"
+    },
+    {
+      "label": "Graphify Knowledge Graph Workflow",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 5,
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "graphify knowledge graph workflow",
+      "_origin": "semantic",
+      "id": "claude_graphify_workflow"
+    },
+    {
+      "label": "Handoff Document Workflow",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 5,
+      "community_name": "hybrid-search-api CLAUDE.md",
+      "norm_label": "handoff document workflow",
+      "_origin": "semantic",
+      "id": "claude_handoff_doc_workflow"
+    },
+    {
+      "label": "search/index_config.py",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "community_name": "Architecture (English)",
+      "norm_label": "search/index_config.py",
+      "_origin": "semantic",
+      "id": "src_hybrid_search_api_search_index_config_module"
+    },
+    {
+      "label": "graphify update reverts the curated doc layer",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "L53",
+      "rationale": "`graphify update .` re-extracts every file its structural extractor owns, Markdown included, and drops all nodes carrying that source_file first. Hand-curated concept nodes are replaced by heading-level nodes under different IDs, taking ~38 cross-file rationale_for/references edges and the 21 curated community names with them (308->307 nodes, 604->577 edges). Not idempotent: every run, not only on change. Backs the curated graph up to graphify-out/<YYYY-MM-DD>/ first.",
+      "id": "claude_graphify_update_not_idempotent",
+      "community": null,
+      "norm_label": "graphify update reverts the curated doc layer"
     }
   ],
   "links": [
@@ -4248,6 +4282,7 @@
       "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
       "source_location": "L27",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_0001_local_embeddings_over_ollama_decision",
       "target": "src_hybrid_search_api_ai_llm_client_llmclient"
     },
@@ -4258,6 +4293,7 @@
       "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
       "source_location": "L45",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision",
       "target": "src_hybrid_search_api_ai_llm_client_llmclient"
     },
@@ -4268,6 +4304,7 @@
       "source_file": "README.md",
       "source_location": "L57",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_rag_answer_token_cost",
       "target": "src_hybrid_search_api_ai_llm_client_llmclient"
     },
@@ -4465,6 +4502,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L102",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "src_hybrid_search_api_ai_llm_client_llmclient_complete_with_tools"
     },
@@ -5949,6 +5987,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L62",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_in_memory_mcp_transport",
       "target": "src_hybrid_search_api_mcp_server"
     },
@@ -5959,6 +5998,7 @@
       "source_file": "README.md",
       "source_location": "L167",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_mcp_tool_exposure",
       "target": "src_hybrid_search_api_mcp_server"
     },
@@ -6247,6 +6287,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L39",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "src_hybrid_search_api_models_searchrequest"
     },
@@ -6257,6 +6298,7 @@
       "source_file": "README.md",
       "source_location": "L154",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_dataset_toggle",
       "target": "src_hybrid_search_api_models_searchrequest"
     },
@@ -6326,6 +6368,7 @@
       "source_file": "src/hybrid_search_api/static/index.html",
       "source_location": "L383",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "src_hybrid_search_api_static_index_search_ui",
       "target": "src_hybrid_search_api_models_searchrequest"
     },
@@ -7024,6 +7067,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L55",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search"
     },
@@ -7034,6 +7078,7 @@
       "source_file": "README.md",
       "source_location": "L158",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_agentic_mode",
       "target": "src_hybrid_search_api_search_agentic_answering_agentic_answer_search"
     },
@@ -7128,6 +7173,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L73",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_tool_calling_loop",
       "target": "src_hybrid_search_api_search_agentic_answering_rationale_1"
     },
@@ -7267,6 +7313,7 @@
       "source_file": "CONTEXT.md",
       "source_location": "L16",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "context_search_answering",
       "target": "src_hybrid_search_api_search_answering_answer_search"
     },
@@ -7277,6 +7324,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L49",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "src_hybrid_search_api_search_answering_answer_search"
     },
@@ -7287,6 +7335,7 @@
       "source_file": "README.md",
       "source_location": "L186",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_mcp_tool_exposure",
       "target": "src_hybrid_search_api_search_answering_answer_search"
     },
@@ -7453,6 +7502,7 @@
       "source_file": "CONTEXT.md",
       "source_location": "L12",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "context_search_answering",
       "target": "src_hybrid_search_api_search_answering_rationale_1"
     },
@@ -7533,6 +7583,7 @@
       "source_file": "docker-compose.yml",
       "source_location": "L7",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docker_compose_elasticsearch_service",
       "target": "src_hybrid_search_api_search_elasticsearch_client_build_client"
     },
@@ -7625,6 +7676,7 @@
       "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
       "source_location": "L14",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_0001_local_embeddings_over_ollama_decision",
       "target": "src_hybrid_search_api_search_embeddings"
     },
@@ -7727,6 +7779,7 @@
       "source_file": "docs/adr/0001-local-embeddings-over-ollama.md",
       "source_location": "L8",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_0001_local_embeddings_over_ollama_decision",
       "target": "src_hybrid_search_api_search_embeddings_embed"
     },
@@ -8017,6 +8070,7 @@
       "source_file": ".claude/commands/rebuild.md",
       "source_location": "L11",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "_claude_commands_rebuild_command",
       "target": "src_hybrid_search_api_search_index_config"
     },
@@ -9446,94 +9500,6 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "_claude_commands_verify_command"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "claude_graphify_workflow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "claude_handoff_doc_workflow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "docs_agents_domain_domain_docs_consumption"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "docs_agents_issue_tracker_github_issue_tracker"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "docs_agents_triage_labels_triage_label_map"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "docs_architecture_architecture_en"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "semantic",
-      "source": "claude_project_instructions",
-      "target": "readme_readme_en"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "docs/architecture.md",
       "source_location": null,
       "weight": 1.0,
@@ -9562,6 +9528,17 @@
       "_origin": "semantic",
       "source": "docs_architecture_de_architecture_de",
       "target": "docs_architecture_de_reciprocal_rank_fusion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "docs_architecture_architecture_en"
     },
     {
       "relation": "references",
@@ -9889,6 +9866,7 @@
       "source_file": "README.de.md",
       "source_location": "L7",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_de_hybrid_search_api",
       "target": "readme_hybrid_search_api"
     },
@@ -9899,6 +9877,7 @@
       "source_file": "README.md",
       "source_location": "L106",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision"
     },
@@ -9909,6 +9888,7 @@
       "source_file": "README.md",
       "source_location": "L16",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "docs_images_search_ui_demo_recording"
     },
@@ -9919,6 +9899,7 @@
       "source_file": "README.md",
       "source_location": "L14",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "docs_images_search_ui_screenshot"
     },
@@ -9929,6 +9910,7 @@
       "source_file": "README.md",
       "source_location": "L158",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "readme_agentic_mode"
     },
@@ -9939,6 +9921,7 @@
       "source_file": "README.md",
       "source_location": "L99",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "readme_data_sovereignty_mode"
     },
@@ -9949,6 +9932,7 @@
       "source_file": "README.md",
       "source_location": "L128",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "readme_dataset_toggle"
     },
@@ -9959,6 +9943,7 @@
       "source_file": "README.md",
       "source_location": "L167",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "readme_mcp_tool_exposure"
     },
@@ -9969,6 +9954,7 @@
       "source_file": "README.md",
       "source_location": "L57",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "readme_rag_answer_token_cost"
     },
@@ -9979,6 +9965,7 @@
       "source_file": "README.md",
       "source_location": "L199",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_hybrid_search_api",
       "target": "readme_roadmap"
     },
@@ -9989,6 +9976,7 @@
       "source_file": "README.md",
       "source_location": "L111",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_data_sovereignty_mode",
       "target": "docker_compose_local_llm_profile"
     },
@@ -9999,6 +9987,7 @@
       "source_file": "README.md",
       "source_location": "L132",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_dataset_toggle",
       "target": "readme_nfcorpus_corpus"
     },
@@ -10009,6 +9998,7 @@
       "source_file": "src/hybrid_search_api/static/index.html",
       "source_location": "L227",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "src_hybrid_search_api_static_index_dataset_toggle_control",
       "target": "readme_dataset_toggle"
     },
@@ -10019,6 +10009,7 @@
       "source_file": "docs/images/search-ui-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_search_ui_demo_recording",
       "target": "readme_nfcorpus_corpus"
     },
@@ -10029,6 +10020,7 @@
       "source_file": "README.md",
       "source_location": "L158",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "readme_agentic_mode",
       "target": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec"
     },
@@ -10039,6 +10031,7 @@
       "source_file": "CONTEXT.md",
       "source_location": "L12",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "context_ubiquitous_language",
       "target": "context_search_answering"
     },
@@ -10060,6 +10053,7 @@
       "source_file": "docs/agents/domain.md",
       "source_location": "L7",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_agents_domain_domain_docs_protocol",
       "target": "context_ubiquitous_language"
     },
@@ -10070,6 +10064,7 @@
       "source_file": "CONTRIBUTING.md",
       "source_location": "L4",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "contributing_contribution_workflow",
       "target": "_github_workflows_ci_pipeline"
     },
@@ -10080,6 +10075,7 @@
       "source_file": "CONTRIBUTING.md",
       "source_location": "L3",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "contributing_contribution_workflow",
       "target": "_pre_commit_config_ruff_hooks"
     },
@@ -10090,6 +10086,7 @@
       "source_file": ".claude/commands/rebuild.md",
       "source_location": "L8",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "_claude_commands_rebuild_command",
       "target": "docker_compose_api_service"
     },
@@ -10100,6 +10097,7 @@
       "source_file": "docker-compose.yml",
       "source_location": "L11",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docker_compose_api_service",
       "target": "docker_compose_elasticsearch_service"
     },
@@ -10110,6 +10108,7 @@
       "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
       "source_location": "L27",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision",
       "target": "docker_compose_local_llm_profile"
     },
@@ -10120,6 +10119,7 @@
       "source_file": ".github/workflows/ci.yml",
       "source_location": "L18",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "_github_workflows_ci_pipeline",
       "target": "_pre_commit_config_ruff_hooks"
     },
@@ -10130,6 +10130,7 @@
       "source_file": ".claude/commands/verify.md",
       "source_location": "L10",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "_claude_commands_verify_command",
       "target": "_github_workflows_ci_pipeline"
     },
@@ -10143,6 +10144,17 @@
       "_origin": "semantic",
       "source": "_claude_commands_verify_command",
       "target": "contributing_contributing_guide"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "_claude_commands_verify_command"
     },
     {
       "relation": "references",
@@ -10162,6 +10174,7 @@
       "source_file": ".claude/commands/startup.md",
       "source_location": "L7",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "_claude_commands_startup_command",
       "target": "docs_agents_domain_domain_docs_protocol"
     },
@@ -10194,6 +10207,7 @@
       "source_file": "docs/adr/0002-llama-server-for-data-sovereignty-deployments.md",
       "source_location": "L18",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision",
       "target": "docs_adr_0001_local_embeddings_over_ollama_decision"
     },
@@ -10204,6 +10218,7 @@
       "source_file": "docs/adr/README.md",
       "source_location": "L8",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_readme_adr_index",
       "target": "docs_adr_0001_local_embeddings_over_ollama_decision"
     },
@@ -10225,6 +10240,7 @@
       "source_file": "docs/adr/README.md",
       "source_location": "L9",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_adr_readme_adr_index",
       "target": "docs_adr_0002_llama_server_for_data_sovereignty_deployments_decision"
     },
@@ -10235,8 +10251,20 @@
       "source_file": "docs/agents/domain.md",
       "source_location": "L9",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_agents_domain_domain_docs_protocol",
       "target": "docs_adr_readme_adr_index"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "docs_agents_issue_tracker_github_issue_tracker"
     },
     {
       "relation": "references",
@@ -10256,7 +10284,19 @@
       "source_file": "docs/agents/triage-labels.md",
       "source_location": "L3",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_agents_issue_tracker_github_issue_tracker",
+      "target": "docs_agents_triage_labels_triage_label_map"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
       "target": "docs_agents_triage_labels_triage_label_map"
     },
     {
@@ -10288,6 +10328,7 @@
       "source_file": "docs/superpowers/plans/2026-08-17-agentic-rag.md",
       "source_location": "L1",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "docs_superpowers_plans_2026_08_17_agentic_rag_plan"
     },
@@ -10342,6 +10383,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L59",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_in_memory_mcp_transport"
     },
@@ -10374,6 +10416,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L67",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_schema_discovery"
     },
@@ -10384,6 +10427,7 @@
       "source_file": "docs/superpowers/specs/2026-08-17-agentic-rag-mcp-design.md",
       "source_location": "L73",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_spec",
       "target": "docs_superpowers_specs_2026_08_17_agentic_rag_mcp_design_tool_calling_loop"
     },
@@ -10394,6 +10438,7 @@
       "source_file": "docs/images/search-ui.jpg",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_search_ui_screenshot",
       "target": "src_hybrid_search_api_static_index_search_ui"
     },
@@ -10404,6 +10449,7 @@
       "source_file": "src/hybrid_search_api/static/index.html",
       "source_location": "L227",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "src_hybrid_search_api_static_index_search_ui",
       "target": "src_hybrid_search_api_static_index_dataset_toggle_control"
     },
@@ -10414,6 +10460,7 @@
       "source_file": "src/hybrid_search_api/static/index.html",
       "source_location": "L239",
       "weight": 1.0,
+      "_origin": "ast",
       "source": "src_hybrid_search_api_static_index_search_ui",
       "target": "src_hybrid_search_api_static_index_language_toggle_control"
     },
@@ -10424,6 +10471,7 @@
       "source_file": "docs/images/search-ui-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_search_ui_demo_recording",
       "target": "src_hybrid_search_api_static_index_dataset_toggle_control"
     },
@@ -10434,6 +10482,7 @@
       "source_file": "docs/images/search-ui-demo.gif",
       "source_location": null,
       "weight": 1.0,
+      "_origin": "semantic",
       "source": "docs_images_search_ui_demo_recording",
       "target": "docs_images_search_ui_screenshot"
     },
@@ -10727,6 +10776,17 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "readme_readme_en"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
@@ -10757,6 +10817,17 @@
       "target": "docs_adr_readme_adr_process"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "docs_agents_domain_domain_docs_consumption"
+    },
+    {
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
@@ -10766,6 +10837,38 @@
       "_origin": "semantic",
       "source": "readme_de_rag_example",
       "target": "readme_rag_example"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "claude_graphify_workflow"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic",
+      "source": "claude_project_instructions",
+      "target": "claude_handoff_doc_workflow"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "claude_graphify_workflow",
+      "target": "claude_graphify_update_not_idempotent"
     }
   ],
   "hyperedges": [
@@ -10813,19 +10916,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "README.md"
-    },
-    {
-      "id": "agent_skills_documentation_set",
-      "label": "Agent Skills Documentation Set",
-      "nodes": [
-        "claude_project_instructions",
-        "docs_agents_domain_domain_docs_consumption"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md"
     }
   ],
-  "built_at_commit": "3eab0df0665186142addf258d70df05e81a57ea4"
+  "built_at_commit": "4c80818c1ad2b68388ec6702b0f0ad94e8114575"
 }
