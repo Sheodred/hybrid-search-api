@@ -93,6 +93,33 @@
     background: var(--accent);
     color: #fff;
   }
+  .dataset-toggle {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .dataset-toggle button {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+  }
+  .dataset-toggle button.active {
+    border-color: var(--accent);
+    background: #eff6ff;
+    color: var(--accent);
+  }
+  #dataset-description {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
   button[type="submit"] {
     align-self: flex-start;
     background: var(--accent);
@@ -169,6 +196,11 @@
   </header>
 
   <form id="search-form">
+    <div class="dataset-toggle" role="group" aria-label="Dataset">
+      <button type="button" id="dataset-demo" class="active"></button>
+      <button type="button" id="dataset-nfcorpus"></button>
+    </div>
+    <p id="dataset-description"></p>
     <input type="text" id="query" name="query" required minlength="1" placeholder="Search…" autofocus />
     <div class="row">
       <div class="options">
@@ -213,7 +245,41 @@
     },
   };
 
+  // Two indexed corpora to search against. "nfcorpus" only has results if
+  // scripts/seed_nfcorpus.py has been run - see README.
+  const DATASETS = {
+    demo: {
+      en: {
+        label: "Demo (10 docs)",
+        description:
+          "10 curated documents about this project's own search/RAG concepts (BM25, RRF, embeddings, …) — a clean, self-referential demo set.",
+        exampleQuery: "How does the RRF fusion algorithm combine BM25 and kNN results?",
+      },
+      de: {
+        label: "Demo (10 Dokumente)",
+        description:
+          "10 kuratierte Dokumente über die Search-/RAG-Konzepte dieses Projekts selbst (BM25, RRF, Embeddings, …) – ein sauberes, selbstreferenzielles Demo-Set.",
+        exampleQuery: "Wie kombiniert der RRF-Fusionsalgorithmus BM25- und kNN-Ergebnisse?",
+      },
+    },
+    nfcorpus: {
+      en: {
+        label: "NFCorpus (~3.6K docs)",
+        description:
+          "~3,600 medical documents from NFCorpus (a recognized BEIR IR benchmark) — topically unrelated content at realistic scale, not just the self-referential demo set.",
+        exampleQuery: "What are the effects of statin therapy on cardiovascular risk?",
+      },
+      de: {
+        label: "NFCorpus (~3.600 Dokumente)",
+        description:
+          "~3.600 medizinische Dokumente aus NFCorpus (ein anerkannter BEIR-IR-Benchmark) – thematisch fremder Inhalt in realistischem Umfang, nicht nur das selbstreferenzielle Demo-Set.",
+        exampleQuery: "Welche Auswirkungen hat eine Statintherapie auf das kardiovaskuläre Risiko?",
+      },
+    },
+  };
+
   let lang = "en";
+  let dataset = "demo";
 
   const form = document.getElementById("search-form");
   const queryInput = document.getElementById("query");
@@ -222,6 +288,25 @@
   const statusEl = document.getElementById("status");
   const resultsEl = document.getElementById("results");
   const langButtons = { en: document.getElementById("lang-en"), de: document.getElementById("lang-de") };
+  const datasetDescriptionEl = document.getElementById("dataset-description");
+  const datasetButtons = {
+    demo: document.getElementById("dataset-demo"),
+    nfcorpus: document.getElementById("dataset-nfcorpus"),
+  };
+
+  // Prefills the query field with a ready-to-submit example instead of
+  // leaving it empty - but only while it still holds a previous example,
+  // never overwriting something the user actually typed.
+  function applyExampleQuery(previousExamples) {
+    const current = queryInput.value.trim();
+    if (current === "" || previousExamples.includes(current)) {
+      queryInput.value = DATASETS[dataset][lang].exampleQuery;
+    }
+  }
+
+  function allExampleQueries() {
+    return Object.values(DATASETS).flatMap((d) => Object.values(d).map((s) => s.exampleQuery));
+  }
 
   function applyLanguage() {
     const s = STRINGS[lang];
@@ -231,10 +316,23 @@
     searchButton.textContent = s.searchButton;
     langButtons.en.classList.toggle("active", lang === "en");
     langButtons.de.classList.toggle("active", lang === "de");
+    applyDataset();
+  }
+
+  function applyDataset() {
+    const previousExamples = allExampleQueries();
+    for (const key of Object.keys(DATASETS)) {
+      datasetButtons[key].textContent = DATASETS[key][lang].label;
+      datasetButtons[key].classList.toggle("active", key === dataset);
+    }
+    datasetDescriptionEl.textContent = DATASETS[dataset][lang].description;
+    applyExampleQuery(previousExamples);
   }
 
   langButtons.en.addEventListener("click", () => { lang = "en"; applyLanguage(); });
   langButtons.de.addEventListener("click", () => { lang = "de"; applyLanguage(); });
+  datasetButtons.demo.addEventListener("click", () => { dataset = "demo"; applyDataset(); });
+  datasetButtons.nfcorpus.addEventListener("click", () => { dataset = "nfcorpus"; applyDataset(); });
 
   function renderResults(data) {
     resultsEl.innerHTML = "";
@@ -291,6 +389,7 @@
           query,
           use_llm_answer: useLlmAnswerInput.checked,
           lang,
+          dataset,
         }),
       });
       const data = await response.json();

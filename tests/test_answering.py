@@ -175,6 +175,23 @@ def test_answer_search_falls_back_to_bm25_when_embedding_fails(
     assert kwargs["query_vector"] is None
 
 
+@patch("hybrid_search_api.search.answering.hybrid_search")
+@patch("hybrid_search_api.search.answering.embed")
+@patch("hybrid_search_api.search.answering.build_client")
+def test_answer_search_routes_nfcorpus_dataset_to_suffixed_index(
+    mock_build_client, mock_embed, mock_hybrid_search
+):
+    mock_embed.return_value = [0.1, 0.2, 0.3]
+    mock_hybrid_search.return_value = [_RAW_HIT]
+
+    answer_search(
+        SearchRequest(query="test", use_llm_answer=False, dataset="nfcorpus"), Settings()
+    )
+
+    _, kwargs = mock_hybrid_search.call_args
+    assert kwargs["index"] == "documents_nfcorpus"
+
+
 @patch("hybrid_search_api.search.answering.agentic_answer_search")
 def test_answer_search_dispatches_to_agentic_when_requested(mock_agentic_answer_search):
     expected = SearchResponse(query="test", hits=[], answer="agentic answer")

@@ -127,13 +127,20 @@ Die 10 Beispieldokumente in `seed_data.py` handeln bewusst von Such-/RAG-Konzept
 selbst - gut fuer eine saubere Demo, zeigt aber nichts ueber Skalierung.
 Dafuer laedt `scripts/seed_nfcorpus.py`
 [NFCorpus](https://github.com/beir-cellar/beir) (~3.600 medizinische
-Dokumente, ein anerkannter IR-Benchmark) in einen eigenen Index, ohne den
-Standard-Index anzuruehren:
+Dokumente, ein anerkannter IR-Benchmark) in einen eigenen Index
+(standardmaessig `<ELASTICSEARCH_INDEX>_nfcorpus`), ohne den Standard-Index
+anzuruehren:
 
 ```bash
 python scripts/seed_nfcorpus.py            # indexiert in '<ELASTICSEARCH_INDEX>_nfcorpus'
-ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 ```
+
+Einmal indexiert, sind beide Korpora gleichzeitig durchsuchbar - kein Neustart
+und keine Env-Var noetig. Die Such-UI (`/`) hat oberhalb des Suchfelds einen
+Datenquellen-Umschalter ("Demo" / "NFCorpus"), der erklaert, was jede
+Datenquelle enthaelt, und die Beispielanfrage entsprechend anpasst. Die API
+nimmt dieselbe Auswahl ueber das Feld `"dataset"` im Request-Body entgegen
+(`"demo"` (Standard) oder `"nfcorpus"`).
 
 ## Nutzung
 
@@ -141,6 +148,10 @@ ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 `lang` ist `"en"` (Standard) oder `"de"` und steuert die Sprache der RAG-Antwort
 sowie der Fehlermeldungen. Ein echtes Beispiel inkl. Antwort steht oben unter
 "Beispiel (echter Output)".
+
+`"dataset"` waehlt mit `"demo"` (Standard) oder `"nfcorpus"` die zu
+durchsuchende Datenquelle - siehe "Test mit einem groesseren, fachfremden
+Korpus" oben.
 
 Mit `"agentic": true` entscheidet das LLM selbst, wann/wie es die Suche
 aufruft (ueber das projekteigene MCP-Tool `search`, in-process aufgerufen)

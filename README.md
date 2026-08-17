@@ -131,12 +131,18 @@ the other end.
 themselves, which makes for a clean demo but doesn't prove much about scale.
 For that, `scripts/seed_nfcorpus.py` downloads
 [NFCorpus](https://github.com/beir-cellar/beir) (~3.6K medical documents, a
-recognized IR benchmark) into its own index, leaving the default one alone:
+recognized IR benchmark) into its own index (`<ELASTICSEARCH_INDEX>_nfcorpus`
+by default), leaving the default index alone:
 
 ```bash
 python scripts/seed_nfcorpus.py            # indexes into '<ELASTICSEARCH_INDEX>_nfcorpus'
-ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 ```
+
+Once seeded, both corpora are searchable side by side - no restart or env var
+needed. The search UI (`/`) has a dataset toggle ("Demo" / "NFCorpus") above
+the query box that explains what each corpus contains and switches the
+example query accordingly; the API takes the same choice via the request
+body's `"dataset"` field (`"demo"` (default) or `"nfcorpus"`).
 
 ## Usage
 
@@ -144,6 +150,10 @@ ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 `lang` is `"en"` (default) or `"de"` and controls the language of the RAG
 answer as well as error messages. A real example including the answer is
 shown above under "Example (real output)".
+
+Set `"dataset"` to `"demo"` (default) or `"nfcorpus"` to choose which
+indexed corpus to search - see "Trying it against a larger, unrelated
+corpus" above.
 
 Set `"agentic": true` to let the LLM decide when/how to call search itself
 (via this project's own MCP `search` tool, called in-process) instead of

@@ -29,6 +29,14 @@ class SearchRequest(BaseModel):
             "running a fixed pipeline"
         ),
     )
+    dataset: Literal["demo", "nfcorpus"] = Field(
+        default="demo",
+        description=(
+            "Which indexed corpus to search: 'demo' (10 curated docs about this "
+            "project's own search/RAG concepts) or 'nfcorpus' (~3.6K medical "
+            "documents from the NFCorpus IR benchmark)"
+        ),
+    )
 
 
 class SearchHit(BaseModel):
