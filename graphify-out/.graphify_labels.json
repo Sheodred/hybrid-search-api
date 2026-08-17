@@ -1,14 +1,15 @@
 {
-  "0": "LLMClient",
+  "0": "answering.py",
   "1": "index_routes.py",
   "2": "Architecture (English)",
   "3": "hybrid_search.py",
-  "4": "hybrid-search-api CLAUDE.md",
-  "5": "main.py",
+  "4": "SearchResponse",
+  "5": "test_api.py",
   "6": "Swagger UI Screenshot",
   "7": "ADR-0001: Local sentence-transformers for embeddings, not Ollama",
-  "8": "test_api.py",
+  "8": "Agentic RAG via in-process MCP dogfooding",
   "9": "config.py",
+  "10": "embeddings.py",
   "11": "_test_env",
   "12": "hybrid-search-api",
   "13": "ai/__init__.py",
@@ -17,5 +18,5 @@
   "16": "search/__init__.py",
   "17": "tests/__init__.py",
   "18": "Settings",
-  "19": "build_rag_prompt"
+  "19": "Global Constraints"
 }

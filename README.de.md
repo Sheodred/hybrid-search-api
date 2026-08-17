@@ -142,6 +142,12 @@ ELASTICSEARCH_INDEX=documents_nfcorpus docker compose up -d --build api
 sowie der Fehlermeldungen. Ein echtes Beispiel inkl. Antwort steht oben unter
 "Beispiel (echter Output)".
 
+Mit `"agentic": true` entscheidet das LLM selbst, wann/wie es die Suche
+aufruft (ueber das projekteigene MCP-Tool `search`, in-process aufgerufen)
+statt der festen Suche-dann-Antwort-Pipeline zu folgen - sinnvoll bei
+vagen Anfragen, die eine verfeinerte Nachsuche brauchen koennten. Standard
+ist `false` (feste Pipeline, wie oben).
+
 Interaktive API-Doku (Swagger): http://localhost:8000/docs
 
 ### MCP-Server
