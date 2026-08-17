@@ -5,7 +5,7 @@ from hybrid_search_api.mcp_server import search
 _RAW_HIT = {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
 
 
-@patch("hybrid_search_api.mcp_server.answer_search")
+@patch("hybrid_search_api.search.answering.answer_search")
 def test_search_tool_builds_request_and_returns_dict(mock_answer_search):
     from hybrid_search_api.models import SearchHit, SearchResponse
 

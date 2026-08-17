@@ -5,7 +5,7 @@ import pytest
 from openai import APIConnectionError, AuthenticationError, NotFoundError, RateLimitError
 
 from hybrid_search_api.config import Settings
-from hybrid_search_api.models import SearchRequest
+from hybrid_search_api.models import SearchRequest, SearchResponse
 from hybrid_search_api.search.answering import answer_search
 
 _RAW_HIT = {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
@@ -173,3 +173,14 @@ def test_answer_search_falls_back_to_bm25_when_embedding_fails(
 
     _, kwargs = mock_hybrid_search.call_args
     assert kwargs["query_vector"] is None
+
+
+@patch("hybrid_search_api.search.answering.agentic_answer_search")
+def test_answer_search_dispatches_to_agentic_when_requested(mock_agentic_answer_search):
+    expected = SearchResponse(query="test", hits=[], answer="agentic answer")
+    mock_agentic_answer_search.return_value = expected
+
+    response = answer_search(SearchRequest(query="test", agentic=True), Settings())
+
+    assert response is expected
+    mock_agentic_answer_search.assert_called_once()

@@ -23,7 +23,7 @@ class _ScriptedLLMClient:
         return self._responses.pop(0)
 
 
-@patch("hybrid_search_api.mcp_server.answer_search")
+@patch("hybrid_search_api.search.answering.answer_search")
 def test_agentic_loop_calls_search_then_answers(mock_answer_search):
     mock_answer_search.return_value = SearchResponse(
         query="test", hits=[SearchHit(id="1", score=1.0, title="T", content="C")], answer=None
@@ -41,7 +41,7 @@ def test_agentic_loop_calls_search_then_answers(mock_answer_search):
     assert response.hits[0].title == "T"
 
 
-@patch("hybrid_search_api.mcp_server.answer_search")
+@patch("hybrid_search_api.search.answering.answer_search")
 def test_agentic_loop_answers_without_calling_tool(mock_answer_search):
     llm = _ScriptedLLMClient([_message(content="I already know this.")])
 
@@ -52,7 +52,7 @@ def test_agentic_loop_answers_without_calling_tool(mock_answer_search):
     mock_answer_search.assert_not_called()
 
 
-@patch("hybrid_search_api.mcp_server.answer_search")
+@patch("hybrid_search_api.search.answering.answer_search")
 def test_agentic_loop_forces_final_answer_after_round_cap(mock_answer_search):
     mock_answer_search.return_value = SearchResponse(
         query="test", hits=[SearchHit(id="1", score=1.0, title="T", content="C")], answer=None
