@@ -1,0 +1,10 @@
+{
+  "multi_match": {
+    "query": "Vektorsuche",
+    "fields": [
+      "title^2",
+      "content"
+    ],
+    "fuzziness": "AUTO"
+  }
+}

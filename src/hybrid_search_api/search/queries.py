@@ -4,6 +4,9 @@ Every function here returns a plain query-DSL dict: the actual phrasing of
 a search request against Elasticsearch. This is the one place to tune how
 a query is built (field boosts, fuzziness, candidate-pool size, ...) without
 touching the RRF/orchestration logic in hybrid_search.py.
+
+Rendered examples of these query bodies live in docs/search/example_query_*.json,
+kept in sync by tests/test_config_snapshots.py.
 """
 
 # Boost title matches over content matches (2x weight). Raise/lower to shift
