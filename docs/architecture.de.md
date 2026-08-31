@@ -75,3 +75,8 @@ anderen.
 RRF kombiniert zwei Ranglisten, ohne dass man BM25- und Vektor-Scores (die auf
 komplett unterschiedlichen Skalen liegen) von Hand gegeneinander gewichten
 muss. Das macht es zu einem robusten Standardverfahren fuer Hybrid Search.
+
+Die Fusion laeuft in `search/hybrid_search.py` und nicht ueber den nativen
+`rrf`-Retriever von Elasticsearch, weil dieser lizenzpflichtig ist und auf
+einer `basic`-Lizenz mit 403 antwortet - siehe
+[ADR-0003](adr/0003-elasticsearch-9-upgrade.md).

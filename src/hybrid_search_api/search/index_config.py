@@ -61,7 +61,9 @@ INDEX_MAPPING = {
         "embedding": {
             "type": "dense_vector",
             "dims": EMBEDDING_DIMS,
-            "index": True,
+            # "index": true is the 9.x default and therefore omitted. "similarity"
+            # also defaults to cosine, but stays explicit - it decides how vectors
+            # are compared, which is worth reading off the mapping directly.
             "similarity": "cosine",
         },
     }

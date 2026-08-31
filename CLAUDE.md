@@ -7,7 +7,7 @@ docs/architecture.md for architecture/setup - please read before making
 larger changes.
 
 ## Stack
-- Python 3.11+ (tested locally on 3.14), FastAPI, Elasticsearch 8.x
+- Python 3.11+ (tested locally on 3.14), FastAPI, Elasticsearch 9.x
 - LLM via an OpenAI-compatible endpoint (LLM_* env vars in .env) - no direct
   Anthropic API call
 - Docker Compose for Elasticsearch + API container
