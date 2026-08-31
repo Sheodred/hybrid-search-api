@@ -1,8 +1,32 @@
 # Rich index & query showcase
 
-Status: approved, not yet implemented
+Status: approved, not yet implemented - **revised 2026-08-31 after the ES-9
+upgrade**, see "Revision note" below
 Date: 2026-08-31
-Follows: PR #18 (JSON snapshots of the index body / query DSL, merged to `main` at `e8eab2d`)
+Follows: PR #19 (Elasticsearch 9.5.2 upgrade, merged to `main` at `4ed8cdf`),
+which in turn followed PR #18 (JSON snapshots of the index body / query DSL)
+
+## Revision note (2026-08-31, after PR #19)
+
+This spec was originally written against Elasticsearch 8.x and assumed the
+native `rrf` retriever would be available after the upgrade. It is not:
+verified against the running 9.5.2 container, the `rrf` and `linear`
+retrievers are license-gated and return
+`403 security_exception: current license is non-compliant` on a `basic`
+license. Only the `standard` and `knn` retrievers are free, and neither
+fuses anything - so the entire retriever API is off the table for this
+project. See [ADR-0003](../../adr/0003-elasticsearch-9-upgrade.md).
+
+Everything built on `retriever` has been re-planned onto the plain `_search`
+API: `query` with `bool`/`filter`, top-level `knn`, `highlight` and `aggs`,
+fused by the existing `_reciprocal_rank_fusion()`. Concretely this removed
+the `hybrid_retriever()` builder, the `use_native_rrf` request field and its
+dual code path, and `example_retriever_rrf.json`. **This makes the spec
+smaller, not larger** - there is now one search path instead of two.
+
+Also carried over from PR #19: the stack is on 9.5.2 with client
+`elasticsearch>=9,<10`, and `"index": true` is already gone from the
+`embedding` mapping.
 
 ## Context
 
@@ -22,7 +46,8 @@ answer. The concept works. The depth does not match the project's framing
   row and discards everything but title and text.
 - **Queries** = one `multi_match` (default `best_fields`) and one flat
   `knn`. No `bool`/`filter` context, no phrase matching, no aggregations,
-  no highlighting. RRF is Python, not the native ES 8.x `rrf` retriever.
+  no highlighting. RRF is Python - and stays Python, since the native
+  retriever is licensed (see the revision note).
 
 This spec deliberately broadens the mapping and the query DSL so a reviewer
 reading `search/index_config.py`, `search/queries.py`, and
@@ -55,8 +80,7 @@ Decisions taken during brainstorming:
 - The query DSL demonstrates: `bool` (must / should / filter),
   `most_fields` `multi_match`, `minimum_should_match`, `match_phrase` with
   `slop` on a `.exact` sub-field, a shared filter context, **kNN
-  pre-filter**, the **native `rrf` retriever** (with the Python RRF kept as
-  a fallback), the `unified` highlighter, `terms` / `date_histogram` /
+  pre-filter**, the `unified` highlighter, `terms` / `date_histogram` /
   `stats` aggregations, `source_excludes`, and a `function_score`
   `gauss`-decay variant (reference-only).
 - `/search` gains working `filters`, `facets`, `word_count_stats`, and
@@ -129,7 +153,7 @@ stemmed consistently.
 | `title` | `text`, `analyzer: en_index`, `search_analyzer: en_search` | `fields`: `keyword` (`keyword`, `ignore_above: 256`), `exact` (`text`, `analyzer: exact`) |
 | `content` | `text`, `analyzer: en_index`, `search_analyzer: en_search`, `term_vector: with_positions_offsets` | `fields`: `exact` (`text`, `analyzer: exact`) |
 | `all_text` | `text`, `analyzer: en_index`, `search_analyzer: en_search` | populated by `copy_to` from `title`, `content`, `tags` |
-| `embedding` | `dense_vector`, `dims: 384`, `index: true`, `similarity: cosine` | `index_options: { type: int8_hnsw, m: 16, ef_construction: 100 }` |
+| `embedding` | `dense_vector`, `dims: 384`, `similarity: cosine` | `index_options: { type: int8_hnsw, m: 16, ef_construction: 100 }`. `index: true` is omitted - it is the 9.x default (dropped in PR #19). The explicit `index_options` is the point of the demo: without it 9.5.2 would pick `bbq_hnsw` at 384 dims, so this both shows the tuning knob and pins a stable value for the snapshot test. |
 | `category` | `keyword`, `normalizer: keyword_lower` | terms agg + filter |
 | `tags` | `keyword` (array), `normalizer: keyword_lower` | terms agg + filter; `copy_to: all_text` |
 | `published` | `date`, `format: strict_date_optional_time\|\|epoch_millis` | `date_histogram` + range filter |
@@ -196,7 +220,8 @@ holds at 3.6K docs.
 
 Constants: `TITLE_BOOST = 3`, `KNN_CANDIDATE_MULTIPLIER = 5`,
 `PHRASE_BOOST = 2`, `PHRASE_SLOP = 2`, `MIN_SHOULD_MATCH = "75%"`,
-`RRF_RANK_CONSTANT = 60`.
+`RRF_RANK_CONSTANT = 60` (moved here from `hybrid_search.RRF_K`, so the
+constants have one home even though the fusion stays in Python).
 
 | Builder | Returns / demonstrates |
 |---|---|
@@ -204,7 +229,6 @@ Constants: `TITLE_BOOST = 3`, `KNN_CANDIDATE_MULTIPLIER = 5`,
 | `filter_clauses(filters)` | Pure filter context shared by BM25 and kNN: `terms` (category / tags / source), `range` (published gte/lte, word_count gte/lte). Returns `[]` when `filters` is `None` or empty. |
 | `bm25_query(query_text, filters=None)` | `text_query(query_text)` bool merged with `"filter": filter_clauses(filters)`. |
 | `knn_query(query_vector, k, filters=None)` | `{ field: embedding, query_vector, k, num_candidates: k * KNN_CANDIDATE_MULTIPLIER, filter: { bool: { filter: filter_clauses(filters) } } }`. The filter is a **kNN pre-filter** - applied before the ANN search; `num_candidates` is drawn from the filtered set. |
-| `hybrid_retriever(query_text, query_vector, k, filters=None)` | `{ retriever: { rrf: { retrievers: [ { standard: { query: bm25_query(query_text, filters) } }, { knn: knn_query(query_vector, k, filters) } ], rank_window_size: k * KNN_CANDIDATE_MULTIPLIER, rank_constant: RRF_RANK_CONSTANT } } }`. The `knn` sub-retriever takes the same body shape as the top-level `knn` param, so `knn_query` output plugs straight in. |
 | `highlight_config()` | `{ fields: { content: { type: unified, fragment_size: 150, number_of_fragments: 2, pre_tags: ["<em>"], post_tags: ["</em>"] } } }`. Uses the `term_vector` on `content`. |
 | `facet_aggs()` | `{ categories: terms(category, size 20), tags: terms(tags, size 20), by_month: date_histogram(published, calendar_interval month, min_doc_count 1), word_count: stats(word_count) }`. |
 | `recency_boosted_query(query_text)` | **Reference only, not called by the running search path.** `function_score` wrapping `bm25_query(query_text)` with a `gauss` decay on `published`. Docstring says so explicitly. Demonstrates score shaping / recency bias. |
@@ -214,23 +238,50 @@ Constants: `TITLE_BOOST = 3`, `KNN_CANDIDATE_MULTIPLIER = 5`,
 **`search/hybrid_search.py`**
 
 - `RRF_K` moves to `queries.RRF_RANK_CONSTANT` (single source).
-  `_reciprocal_rank_fusion` stays (fallback + already unit-tested).
+  `_reciprocal_rank_fusion` stays - it is now the only fusion path, not a
+  fallback.
 - `@dataclass class HybridResult: hits: list[dict]; facets: dict[str, list[FacetBucket]]; word_count_stats: WordCountStats | None`
-- `hybrid_search(client, index, query, query_vector=None, size=10, filters=None, use_native_rrf=True) -> HybridResult`
-  - **native path** (`use_native_rrf` and `query_vector is not None`): one
-    `client.search(index=index, retriever=hybrid_retriever(query, query_vector, size, filters), size=size, highlight=highlight_config(), aggs=facet_aggs(), source_excludes=["embedding"])`.
-    Read `resp["hits"]["hits"]` (each carries the fused `_score` and a
-    `highlight` block) and `resp["aggregations"]`.
-  - **fallback path** (no vector, or `use_native_rrf is False`): today's
-    two-query BM25 + kNN path with `_reciprocal_rank_fusion`; the BM25 call
-    additionally passes `highlight=` and `aggs=`, the kNN call passes
-    `filter=`. Kept minimal - existing code plus those kwargs.
+- `hybrid_search(client, index, query, query_vector=None, size=10, filters=None) -> HybridResult`
+  - **BM25 call** (always made):
+    `client.search(index=index, query=bm25_query(query, filters), size=size, highlight=highlight_config(), aggs=facet_aggs(), source_excludes=["embedding"])`.
+  - **kNN call** (only when `query_vector is not None`):
+    `client.search(index=index, knn=knn_query(query_vector, size, filters), size=size, source_excludes=["embedding"])`.
+    No `highlight`/`aggs` here - see the two notes below.
+  - Fuse with `_reciprocal_rank_fusion(bm25_hits, knn_hits)[:size]`, or
+    return the BM25 hits directly when there is no vector.
   - `_parse_facets(aggregations) -> dict[str, list[FacetBucket]]` maps
     `categories` / `tags` / `by_month`; the `stats` agg is parsed
     separately into `WordCountStats`. Both are carried on `HybridResult`;
     `answering.py` copies them onto the `SearchResponse`.
 - `source_excludes=["embedding"]` on every search call - the 384-float
   vector never appears in a response.
+
+**Two consequences of fusing in Python that the spec must handle explicitly:**
+
+1. **Aggregations ride on the BM25 call only.** Running them on both would
+   double the work and produce two bucket sets to reconcile. ES computes
+   aggregations over everything matching the query (not just the returned
+   page), and both calls share the same filter context, so the counts are
+   well-defined - but they describe *the BM25 match set under the active
+   filters*, not the fused result set. State this in
+   `docs/search/README.md`; it is a real distinction a reviewer may probe,
+   and "the facets describe the lexical match set" is a defensible answer
+   only if it is written down.
+
+2. **`_reciprocal_rank_fusion` must not drop the `highlight` block.** Its
+   current merge is `docs[doc_id] = hit` while walking each list in turn, so
+   for a document present in *both* lists the kNN hit (no `highlight`, since
+   only the BM25 call requests one) overwrites the BM25 hit that had it.
+   Every doc ranking well on both sides - exactly the ones RRF promotes to
+   the top - would silently lose its snippet. Fix by merging rather than
+   replacing, keeping the first-seen (BM25) fields:
+   `docs[doc_id] = {**hit, **docs.get(doc_id, {})}`, or by explicitly
+   carrying `highlight` across. Needs its own unit test: a doc in both lists
+   keeps its highlight.
+
+   Documents that appear *only* in the kNN list legitimately have no
+   snippet - `SearchHit.highlights` is `| None` and `answering.py` already
+   falls back to full `content` for the RAG context.
 
 **`models.py`**
 
@@ -245,9 +296,7 @@ class SearchFilters(BaseModel):
     max_word_count: int | None = None
 ```
 
-- `SearchRequest` gains `filters: SearchFilters | None = None` and
-  `use_native_rrf: bool = True` (a learning lever - flip it to compare
-  native RRF against the Python fusion).
+- `SearchRequest` gains `filters: SearchFilters | None = None`.
 - `SearchHit` gains `highlights: list[str] | None = None`.
 - `class FacetBucket(BaseModel): key: str | int; doc_count: int`
 - `class WordCountStats(BaseModel): count: int; min: float | None; max: float | None; avg: float | None`
@@ -256,12 +305,12 @@ class SearchFilters(BaseModel):
 
 **`search/answering.py`**
 
-- Pass `request.filters` and `request.use_native_rrf` into `hybrid_search`;
-  unpack `HybridResult` into hits + facets.
+- Pass `request.filters` into `hybrid_search`; unpack `HybridResult` into
+  hits + facets.
 - Build each `SearchHit` with
   `highlights=hit.get("highlight", {}).get("content")`.
-- `_extract_score` unchanged: it already prefers `_rrf_score` (fallback
-  path sets it) then `_score` (native path's fused score).
+- `_extract_score` unchanged: it prefers `_rrf_score` (set by the fusion)
+  and falls back to `_score` (the BM25-only path).
 - RAG context: for each hit pass
   `content = " ... ".join(highlights) if highlights else full_content`
   to `build_rag_prompt` - shorter, focused context window
@@ -294,7 +343,6 @@ scenario: query `"approximate nearest neighbor search"`, `k = 10`,
 | `example_query_text.json` | `text_query(q)` |
 | `example_query_bm25_filtered.json` | `bm25_query(q, filters)` |
 | `example_query_knn_prefiltered.json` | `knn_query(vec, k, filters)` |
-| `example_retriever_rrf.json` | `hybrid_retriever(q, vec, k, filters)` |
 | `example_highlight.json` | `highlight_config()` |
 | `example_aggs_facets.json` | `facet_aggs()` |
 | `example_function_score_recency.json` | `recency_boosted_query(q)` |
@@ -304,7 +352,7 @@ by the filtered variants (not accumulated). The plain (`filters=None`) form
 is described in `docs/search/README.md`.
 
 **`tests/test_config_snapshots.py`** - keeps the PR #18 mechanism (render
--> compare -> rewrite + fail on drift). All 9 entries added, plus a few
+-> compare -> rewrite + fail on drift). All 8 entries added, plus a few
 cross-cutting invariants (mapping <-> analyzer split, `dynamic: strict`,
 `int8_hnsw`, `url.index is False`).
 
@@ -317,8 +365,6 @@ cross-cutting invariants (mapping <-> analyzer split, `dynamic: strict`,
   and a `range` on `published`.
 - `knn_query(vec, k, filters)`: top-level `filter` present;
   `num_candidates == k * KNN_CANDIDATE_MULTIPLIER`.
-- `hybrid_retriever`: exactly two retrievers, one `standard` and one
-  `knn`; `rank_constant == RRF_RANK_CONSTANT`.
 - `facet_aggs()`: keys `{categories, tags, by_month, word_count}`;
   `by_month` is a `date_histogram`, `word_count` is `stats`.
 - `filter_clauses(SearchFilters())` -> `[]`.
@@ -333,11 +379,12 @@ cross-cutting invariants (mapping <-> analyzer split, `dynamic: strict`,
   hand-built dict with `hits.hits` (2 docs, one carrying
   `highlight.content`) and `aggregations` (all four). Assert `hybrid_search`
   returns a `HybridResult` with parsed `facets` (FacetBucket lists),
-  `word_count_stats`, and per-hit `highlights`. Native vs fallback:
-  `use_native_rrf=False` -> two `.search` calls + Python RRF ordering
-  holds; `use_native_rrf=True` -> one `.search` call with a `retriever=`
-  kwarg. The existing `test_rrf_favors_docs_ranked_high_in_both_lists`
-  stays.
+  `word_count_stats`, and per-hit `highlights`. With a vector: two `.search`
+  calls (one `query=`, one `knn=`) and the RRF ordering holds; without a
+  vector: one `.search` call and the BM25 hits come back unfused. Plus the
+  merge test from section 4: **a document present in both lists keeps the
+  `highlight` block the BM25 call gave it.** The existing
+  `test_rrf_favors_docs_ranked_high_in_both_lists` stays.
 - `test_answering.py`: a stubbed `hybrid_search` returning hits with
   `highlights` -> the RAG prompt receives the joined snippet text as
   context, not the full `content`; `SearchResponse.facets` is populated.
@@ -364,17 +411,18 @@ python scripts/run_examples.py
   ES concept, which mapping field makes it work, what to try changing.
   Plus the manual runbook above and the plain-vs-filtered note.
 - **`docs/architecture.md`** + **`docs/architecture.de.md`** - update the
-  flow diagram (BM25 + kNN -> native `rrf` retriever, Python RRF as
-  fallback, + highlight + facets in the response), the "Adjustable search
-  configuration" section (new builders), the endpoints table (`/search`
-  response now carries `facets`, `word_count_stats`, per-hit
-  `highlights`), and the Embeddings section (`int8_hnsw` quantization).
-  Add a short "what demonstrates what" table pointing at `docs/search/`.
+  flow diagram (BM25 + kNN -> RRF, + highlight + facets in the response),
+  the "Adjustable search configuration" section (new builders), the
+  endpoints table (`/search` response now carries `facets`,
+  `word_count_stats`, per-hit `highlights`), and the Embeddings section
+  (`int8_hnsw` quantization). Add a short "what demonstrates what" table
+  pointing at `docs/search/`. The RRF licensing paragraph added in PR #19
+  stays as-is.
 - **`README.md`** + **`README.de.md`** - feature list gains filters,
-  facets, highlighting, native RRF, structured metadata. Add the reindex
-  note when pulling this change. Keep both READMEs structurally
-  identical.
-- **`docs/adr/0003-rich-index-and-query-showcase.md`** (new, ~30 lines) -
+  facets, highlighting, structured metadata. Add the reindex note when
+  pulling this change. Keep both READMEs structurally identical.
+- **`docs/adr/0004-rich-index-and-query-showcase.md`** (new, ~30 lines;
+  `0003` is taken by the ES-9 upgrade) -
   records *why* the mapping and queries are deliberately broader than a
   minimal service needs (portfolio / teaching), so a later reader or a
   `ponytail-audit` does not "simplify" it away.
@@ -382,7 +430,7 @@ python scripts/run_examples.py
   `dynamic: strict` (unknown-field rejection) and the `--recreate` flag.
   One line.
 - **`CONTEXT.md`** - only if it carries a glossary: add facet, filter
-  context, pre-filter, native RRF retriever, passage-based RAG. Check at
+  context, pre-filter, reciprocal rank fusion, passage-based RAG. Check at
   implementation time.
 
 ## Concept coverage map
@@ -404,7 +452,7 @@ python scripts/run_examples.py
 | `match_phrase` + `slop` on `.exact` | `queries.py` | `example_query_text.json` |
 | Shared filter context | `queries.py` | `example_query_bm25_filtered.json`, `example_query_knn_prefiltered.json` |
 | kNN pre-filter | `queries.py` | `example_query_knn_prefiltered.json` |
-| Native `rrf` retriever (+ Python fallback) | `queries.py`, `hybrid_search.py` | `example_retriever_rrf.json` |
+| Reciprocal Rank Fusion (in-process; the native retriever is licensed) | `hybrid_search.py` | `_reciprocal_rank_fusion()` + its tests, [ADR-0003](../../adr/0003-elasticsearch-9-upgrade.md) |
 | `unified` highlighter | `queries.py` | `example_highlight.json` |
 | `terms` / `date_histogram` / `stats` aggregations | `queries.py` | `example_aggs_facets.json` |
 | `source_excludes` | `hybrid_search.py` | code + `docs/search/README.md` |
@@ -418,7 +466,7 @@ No live Elasticsearch. Three layers:
    file fails once, is rewritten, and gets committed (PR #18 mechanism).
 2. **Structural invariants** - assertions on builder output shape that
    catch a builder producing valid-looking but wrong DSL (missing filter,
-   wrong retriever count, wrong agg type).
+   wrong agg type, missing kNN pre-filter).
 3. **Response parsing** - `hybrid_search`'s aggregation -> facet and
    highlight-extraction logic tested against hand-built ES response
    fixtures with a `Mock` client; both the native and fallback paths
@@ -429,11 +477,10 @@ documented command (`scripts/run_examples.py` against a compose cluster).
 
 ## Deliberate simplifications (ponytail ledger)
 
-- `hybrid_search` has two code paths (native retriever / Python fallback).
-  Justified as the compatibility floor - the native `rrf` retriever needs
-  a recent ES and can hit licensing edges; the fallback keeps the app and
-  the existing `_reciprocal_rank_fusion` test meaningful. Fallback stays
-  minimal: existing code plus `highlight=` / `aggs=` / `filter=` kwargs.
+- Aggregations are computed on the BM25 call only, so the facet counts
+  describe the lexical match set under the active filters rather than the
+  fused result set. Documented rather than engineered around; reconciling
+  two bucket sets would cost more than the distinction is worth here.
 - `all_text` in the `most_fields` query is partly redundant with
   `title` + `content`. Kept as the `copy_to` demo and a single-field
   fallback.
@@ -453,10 +500,11 @@ documented command (`scripts/run_examples.py` against a compose cluster).
 - `light_english` vs `english` (Porter) stemmer - `light_english` chosen to
   match the prior `light_german` choice and be less aggressive for search.
   Revisit only if recall suffers.
-- The native `rrf` retriever's exact request key names and any licence
-  gate are pinned against the Elasticsearch 8.x the compose file provides
-  during implementation; the builder shape here matches the 8.x
-  `retriever` / `rrf` API.
+- ~~The native `rrf` retriever's exact request key names and any licence
+  gate~~ - **resolved in PR #19: it is license-gated and unavailable on this
+  stack.** See the revision note. This was the question that reshaped the
+  spec; it should have been answered before the design was written, not
+  deferred to implementation.
 - `graphify update .` is not run. The graph goes stale for the touched
   files. If a later session needs it fresh, follow the backup/restore
   runbook in CLAUDE.md - do not run the bare update.
@@ -467,4 +515,4 @@ documented command (`scripts/run_examples.py` against a compose cluster).
 2. `queries.py` builders + structural-invariant tests.
 3. `hybrid_search.py` + `models.py` + `answering.py` + unit tests.
 4. Snapshot test + `docs/search/*.json` + `run_examples.py`.
-5. Docs + ADR 0003.
+5. Docs + ADR 0004.
