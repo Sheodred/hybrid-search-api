@@ -5,8 +5,9 @@ import pytest
 from openai import APIConnectionError, AuthenticationError, NotFoundError, RateLimitError
 
 from hybrid_search_api.config import Settings
-from hybrid_search_api.models import SearchRequest, SearchResponse
+from hybrid_search_api.models import FacetBucket, SearchFilters, SearchRequest, SearchResponse
 from hybrid_search_api.search.answering import answer_search
+from hybrid_search_api.search.hybrid_search import HybridResult
 
 _RAW_HIT = {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "C"}}
 
@@ -45,7 +46,7 @@ def test_answer_search_prefers_rrf_score_over_original_score(
         "_source": {"title": "T", "content": "C"},
     }
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [fused_hit]
+    mock_hybrid_search.return_value = HybridResult(hits=[fused_hit])
 
     response = answer_search(
         SearchRequest(query="test", use_llm_answer=False), Settings()
@@ -59,7 +60,7 @@ def test_answer_search_prefers_rrf_score_over_original_score(
 @patch("hybrid_search_api.search.answering.build_client")
 def test_answer_search_without_llm_answer(mock_build_client, mock_embed, mock_hybrid_search):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
 
     response = answer_search(
         SearchRequest(query="test", use_llm_answer=False), Settings()
@@ -76,7 +77,7 @@ def test_answer_search_returns_llm_answer_when_requested(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
     fake_llm = _FakeLLMClient(answer="Here is the answer.")
 
     response = answer_search(
@@ -93,7 +94,7 @@ def test_answer_search_propagates_authentication_error(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
     fake_response = httpx.Response(401, request=httpx.Request("POST", "https://llm.example.com"))
     fake_llm = _FakeLLMClient(
         error=AuthenticationError(message="invalid x-api-key", response=fake_response, body=None)
@@ -112,7 +113,7 @@ def test_answer_search_propagates_not_found_error(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
     fake_response = httpx.Response(404, request=httpx.Request("POST", "https://llm.example.com"))
     fake_llm = _FakeLLMClient(
         error=NotFoundError(message="model not found", response=fake_response, body=None)
@@ -131,7 +132,7 @@ def test_answer_search_propagates_rate_limit_error(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
     fake_response = httpx.Response(429, request=httpx.Request("POST", "https://llm.example.com"))
     fake_llm = _FakeLLMClient(
         error=RateLimitError(message="rate limit exceeded", response=fake_response, body=None)
@@ -150,7 +151,7 @@ def test_answer_search_propagates_connection_error(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
     fake_request = httpx.Request("POST", "https://llm.example.com")
     fake_llm = _FakeLLMClient(error=APIConnectionError(request=fake_request))
 
@@ -167,7 +168,7 @@ def test_answer_search_falls_back_to_bm25_when_embedding_fails(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.side_effect = RuntimeError("model unavailable")
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
 
     answer_search(SearchRequest(query="test", use_llm_answer=False), Settings())
 
@@ -182,7 +183,7 @@ def test_answer_search_routes_nfcorpus_dataset_to_suffixed_index(
     mock_build_client, mock_embed, mock_hybrid_search
 ):
     mock_embed.return_value = [0.1, 0.2, 0.3]
-    mock_hybrid_search.return_value = [_RAW_HIT]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
 
     answer_search(
         SearchRequest(query="test", use_llm_answer=False, dataset="nfcorpus"), Settings()
@@ -190,6 +191,96 @@ def test_answer_search_routes_nfcorpus_dataset_to_suffixed_index(
 
     _, kwargs = mock_hybrid_search.call_args
     assert kwargs["index"] == "documents_nfcorpus"
+
+
+@patch("hybrid_search_api.search.answering.hybrid_search")
+@patch("hybrid_search_api.search.answering.embed")
+@patch("hybrid_search_api.search.answering.build_client")
+def test_answer_search_passes_filters_through(mock_build_client, mock_embed, mock_hybrid_search):
+    mock_embed.return_value = [0.1, 0.2, 0.3]
+    mock_hybrid_search.return_value = HybridResult(hits=[_RAW_HIT])
+    filters = SearchFilters(category=["rag"])
+
+    answer_search(
+        SearchRequest(query="test", use_llm_answer=False, filters=filters), Settings()
+    )
+
+    _, kwargs = mock_hybrid_search.call_args
+    assert kwargs["filters"] == filters
+
+
+@patch("hybrid_search_api.search.answering.hybrid_search")
+@patch("hybrid_search_api.search.answering.embed")
+@patch("hybrid_search_api.search.answering.build_client")
+def test_answer_search_surfaces_highlights_and_facets(
+    mock_build_client, mock_embed, mock_hybrid_search
+):
+    mock_embed.return_value = [0.1, 0.2, 0.3]
+    hit = {**_RAW_HIT, "highlight": {"content": ["a <em>match</em>"]}}
+    mock_hybrid_search.return_value = HybridResult(
+        hits=[hit], facets={"categories": [FacetBucket(key="rag", doc_count=3)]}
+    )
+
+    response = answer_search(
+        SearchRequest(query="test", use_llm_answer=False), Settings()
+    )
+
+    assert response.hits[0].highlights == ["a <em>match</em>"]
+    assert response.facets["categories"][0].key == "rag"
+
+
+@patch("hybrid_search_api.search.answering.hybrid_search")
+@patch("hybrid_search_api.search.answering.embed")
+@patch("hybrid_search_api.search.answering.build_client")
+def test_rag_context_uses_snippets_when_highlights_exist(
+    mock_build_client, mock_embed, mock_hybrid_search
+):
+    # Passage-based RAG: the model should get the matching snippets, not the
+    # whole document, when highlighting found something.
+    mock_embed.return_value = [0.1, 0.2, 0.3]
+    hit = {
+        "_id": "1",
+        "_score": 1.0,
+        "_source": {"title": "T", "content": "the full document body"},
+        "highlight": {"content": ["first <em>snippet</em>", "second one"]},
+    }
+    mock_hybrid_search.return_value = HybridResult(hits=[hit])
+    captured = {}
+
+    class _CapturingLLM:
+        def complete(self, system: str, prompt: str, max_tokens: int = 1024) -> str:
+            captured["prompt"] = prompt
+            return "answer"
+
+    answer_search(
+        SearchRequest(query="test", use_llm_answer=True), Settings(), llm_client=_CapturingLLM()
+    )
+
+    assert "first <em>snippet</em> ... second one" in captured["prompt"]
+    assert "the full document body" not in captured["prompt"]
+
+
+@patch("hybrid_search_api.search.answering.hybrid_search")
+@patch("hybrid_search_api.search.answering.embed")
+@patch("hybrid_search_api.search.answering.build_client")
+def test_rag_context_falls_back_to_full_content_without_highlights(
+    mock_build_client, mock_embed, mock_hybrid_search
+):
+    mock_embed.return_value = [0.1, 0.2, 0.3]
+    hit = {"_id": "1", "_score": 1.0, "_source": {"title": "T", "content": "the full body"}}
+    mock_hybrid_search.return_value = HybridResult(hits=[hit])
+    captured = {}
+
+    class _CapturingLLM:
+        def complete(self, system: str, prompt: str, max_tokens: int = 1024) -> str:
+            captured["prompt"] = prompt
+            return "answer"
+
+    answer_search(
+        SearchRequest(query="test", use_llm_answer=True), Settings(), llm_client=_CapturingLLM()
+    )
+
+    assert "the full body" in captured["prompt"]
 
 
 @patch("hybrid_search_api.search.answering.agentic_answer_search")

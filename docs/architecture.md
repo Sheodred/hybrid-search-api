@@ -8,10 +8,12 @@ Client
   v
 FastAPI (/search)
   |
-  +--> Elasticsearch: BM25 search + kNN search -> Reciprocal Rank Fusion
+  +--> Elasticsearch: BM25 search (+ highlight + facet aggs)
+  |                 + kNN search      -> Reciprocal Rank Fusion
+  |    both narrowed by the same filter context
   |
   +--> LLM (OpenAI-compatible endpoint): query understanding / RAG answer
-        synthesis based on the top search results
+        synthesis based on the matching passages of the top results
 ```
 
 ## Endpoints
@@ -20,7 +22,7 @@ FastAPI (/search)
 |---|---|---|
 | GET | `/health` | Liveness of the API itself |
 | GET | `/health/elasticsearch` | Elasticsearch cluster status |
-| POST | `/search` | Hybrid search + optional RAG answer |
+| POST | `/search` | Hybrid search + optional RAG answer. Accepts `filters`; returns per-hit `highlights` plus `facets` and `word_count_stats` |
 | GET | `/index` | Mapping and document count of the index |
 | GET | `/index/documents` | Browse indexed documents (paginated, `limit`/`offset`) |
 
@@ -37,9 +39,15 @@ bare 500 - see the global exception handler in `main.py`.
    a query embedding is available (see the "Embeddings" section for the
    fallback). If both result lists are present, they are fused via
    Reciprocal Rank Fusion (RRF) - otherwise the BM25 ranking alone decides.
+   Any `filters` on the request become a shared filter context applied to
+   both halves - as a kNN **pre-filter** on the vector side, so the candidate
+   pool is drawn from the filtered subset rather than trimmed afterwards.
 3. Optionally (`use_llm_answer=true` **and** at least one hit present), the
    top hits are passed as context to the configured LLM endpoint, which
-   synthesizes a short, source-grounded answer (RAG pattern). The `lang`
+   synthesizes a short, source-grounded answer (RAG pattern). What gets
+   passed is the *highlighted passages* rather than whole documents when
+   highlighting matched something - fewer tokens, and the model's attention
+   stays on the part that actually matched. The `lang`
    field (`"en"` default or `"de"`) controls both the language of this
    answer and the language of the error messages below. Errors from the LLM
    call (wrong key, unknown model, endpoint unreachable, ...) are passed
@@ -54,6 +62,11 @@ Query and documents are embedded with a local `sentence-transformers` model
 per search. If loading the model fails, `/search` automatically falls back
 to BM25-only search (see `api/routes.py`).
 
+The vectors are stored with explicit `int8_hnsw` quantization: roughly a
+quarter of the size of raw float32 at essentially unchanged recall. Stating it
+explicitly also pins the behaviour - ES 9.x otherwise picks `bbq_hnsw` at 384
+dimensions.
+
 ## Adjustable search configuration
 
 Two places are deliberately separated and independently editable:
@@ -62,11 +75,35 @@ Two places are deliberately separated and independently editable:
   and field mappings. This is where you switch to a different language,
   adjust the embedding dimension, or add synonyms.
 - **`search/queries.py`** - the actual search query DSL (field boosts,
-  fuzziness, size of the kNN candidate pool). This is where you tune *how*
+  fuzziness, phrase slop, filter clauses, highlight config, facet
+  aggregations, size of the kNN candidate pool). This is where you tune *how*
   the search runs, independent of the fusion logic in `hybrid_search.py`.
 
 This split mirrors the split in the prompts (`ai/prompts.py`):
 configuration/template in one place, usage/orchestration in another.
+
+Both builders are rendered to JSON under [`docs/search/`](search/), one file
+per concept, each with a short explanation of what it demonstrates, which
+mapping field makes it work, and what to try changing.
+`tests/test_config_snapshots.py` keeps those files in sync - edit the Python,
+not the JSON. `python scripts/run_examples.py` runs every example against a
+local cluster.
+
+### What demonstrates what
+
+| Concept | Where |
+|---|---|
+| Index vs. search analyzer split, `synonym_graph` | `index_config.py` -> `index_settings.json` |
+| `.exact` / `.keyword` multi-fields, `normalizer` | `index_config.py` -> `index_settings.json` |
+| `copy_to` catch-all, `index: false`, `dynamic: strict` | `index_config.py` -> `index_settings.json` |
+| `dense_vector` + `int8_hnsw` + HNSW params | `index_config.py` -> `index_settings.json` |
+| `bool` must/should/filter, `most_fields`, `match_phrase` + `slop` | `queries.py` -> `example_query_text.json` |
+| Shared filter context | `queries.py` -> `example_query_bm25_filtered.json` |
+| kNN pre-filter | `queries.py` -> `example_query_knn_prefiltered.json` |
+| `unified` highlighter (+ passage-based RAG) | `queries.py` -> `example_highlight.json` |
+| `terms` / `date_histogram` / `stats` aggregations | `queries.py` -> `example_aggs_facets.json` |
+| `function_score` `gauss` decay (reference only) | `queries.py` -> `example_function_score_recency.json` |
+| Reciprocal Rank Fusion, `source_excludes` | `hybrid_search.py` |
 
 ## Why Reciprocal Rank Fusion?
 

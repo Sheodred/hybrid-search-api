@@ -22,6 +22,10 @@ def test_search_tool_builds_request_and_returns_dict(mock_answer_search):
     assert request.lang == "de"
     assert result == {
         "query": "test",
-        "hits": [{"id": "1", "score": 1.0, "title": "T", "content": "C"}],
+        "hits": [
+            {"id": "1", "score": 1.0, "title": "T", "content": "C", "highlights": None}
+        ],
         "answer": "A",
+        "facets": None,
+        "word_count_stats": None,
     }

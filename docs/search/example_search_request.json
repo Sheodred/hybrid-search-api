@@ -4,5 +4,16 @@
   "use_llm_answer": true,
   "lang": "en",
   "agentic": false,
-  "dataset": "demo"
+  "dataset": "demo",
+  "filters": {
+    "category": [
+      "vector-search"
+    ],
+    "tags": null,
+    "source": null,
+    "published_after": "2024-01-01",
+    "published_before": null,
+    "min_word_count": 30,
+    "max_word_count": null
+  }
 }

@@ -1,0 +1,30 @@
+{
+  "bool": {
+    "must": [
+      {
+        "multi_match": {
+          "query": "approximate nearest neighbor search",
+          "type": "most_fields",
+          "fields": [
+            "title^3",
+            "content",
+            "all_text"
+          ],
+          "minimum_should_match": "75%",
+          "fuzziness": "AUTO"
+        }
+      }
+    ],
+    "should": [
+      {
+        "match_phrase": {
+          "content.exact": {
+            "query": "approximate nearest neighbor search",
+            "slop": 2,
+            "boost": 2
+          }
+        }
+      }
+    ]
+  }
+}

@@ -55,11 +55,32 @@ def download_and_extract() -> Path:
 
 
 def load_corpus(corpus_path: Path, limit: int | None) -> list[dict]:
+    """Map BEIR rows onto this project's mapping (see search/index_config.py).
+
+    NFCorpus rows carry `_id`, `title`, `text` and a `metadata` dict that holds
+    only a `url` - no MeSH terms, so `tags` is left off. `published` isn't in
+    the dataset either. Both are fine to omit: `dynamic: strict` rejects
+    *unknown* fields, not missing known ones, so these documents validate
+    against the same mapping as the richer demo set - just sparser.
+    """
     docs = []
     with corpus_path.open(encoding="utf-8") as f:
         for line in f:
             row = json.loads(line)
-            docs.append({"title": row.get("title") or "Untitled", "content": row["text"]})
+            text = row["text"]
+            doc = {
+                # the real BEIR id, so a hit traces back to the dataset
+                "_id": row["_id"],
+                "title": row.get("title") or "Untitled",
+                "content": text,
+                "category": "medical",
+                "source": "nfcorpus",
+                "word_count": len(text.split()),
+            }
+            url = (row.get("metadata") or {}).get("url")
+            if url:
+                doc["url"] = url
+            docs.append(doc)
             if limit and len(docs) >= limit:
                 break
     return docs
@@ -91,8 +112,9 @@ def main() -> None:
     for start in range(0, len(docs), BATCH_SIZE):
         batch = docs[start : start + BATCH_SIZE]
         vectors = embed_many([doc["content"] for doc in batch])
-        for i, (doc, vector) in enumerate(zip(batch, vectors, strict=True), start=start + 1):
-            client.index(index=index_name, id=str(i), document={**doc, "embedding": vector})
+        for doc, vector in zip(batch, vectors, strict=True):
+            body = {k: v for k, v in doc.items() if k != "_id"}
+            client.index(index=index_name, id=doc["_id"], document={**body, "embedding": vector})
         print(f"  indexed {min(start + BATCH_SIZE, len(docs))}/{len(docs)}")
 
     client.indices.refresh(index=index_name)
