@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "content": {
+      "type": "unified",
+      "fragment_size": 150,
+      "number_of_fragments": 2,
+      "pre_tags": [
+        "<em>"
+      ],
+      "post_tags": [
+        "</em>"
+      ]
+    }
+  }
+}

@@ -75,7 +75,7 @@ whichever model is in use.
 
 Demonstrates three core competencies in one coherent project:
 - **Backend engineering** - cleanly structured FastAPI application, tested, containerized, CI.
-- **Search specialization** - Elasticsearch mapping, custom analyzers (stemming, stopwords), BM25, kNN vector search, ranking fusion.
+- **Search specialization** - Elasticsearch mapping with an index/search analyzer split, search-time `synonym_graph`, unstemmed `.exact` multi-fields, `copy_to` catch-all and `dynamic: strict`; BM25 with filter context and phrase boosting, quantized kNN with pre-filtering, ranking fusion, highlighting and facet aggregations. Every query body is rendered to [docs/search/](docs/search/) with an explanation per file.
 - **AI integration** - production-style LLM integration (retry logic, versioned prompts, RAG), an agentic mode where the LLM drives search itself via this project's own MCP tool, and a fully on-prem/data-sovereignty deployment mode for regulated environments (see below).
 
 ## Architecture
@@ -95,6 +95,10 @@ pip install -e ".[dev]"
 python scripts/seed_data.py  # indexes sample data - downloads the embedding
                               # model once on the very first run (~80MB)
 ```
+
+> **Upgrading an existing checkout:** the index mapping changed and is now
+> `dynamic: strict`, so an index created by an older version has to be
+> rebuilt: `python scripts/seed_data.py --recreate`.
 
 ### Data-sovereignty deployment mode
 

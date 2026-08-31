@@ -22,9 +22,10 @@ larger changes.
   build keeps running unnoticed.
 - After changes to `search/index_config.py` (analyzer/mapping), the ES index
   must be deleted and reseeded, otherwise the new mapping doesn't take
-  effect:
-  `Invoke-RestMethod -Method Delete -Uri http://localhost:9200/documents`
-  then `python scripts/seed_data.py`.
+  effect: `python scripts/seed_data.py --recreate`. The mapping is
+  `dynamic: strict`, so a document carrying a field the mapping doesn't
+  declare is rejected outright - add the field in `index_config.py` before
+  the seed scripts start emitting it.
 - PowerShell: use `Invoke-RestMethod`, not curl syntax.
 - Git author consistently "Adrian K. <92444350+Sheodred@users.noreply.github.com>".
 - Before every `git push`: briefly check `git log --oneline -5` and

@@ -27,6 +27,19 @@ def _extract_score(hit: dict) -> float:
     return score if score is not None else hit.get("_score", 0.0)
 
 
+def _rag_context(hit: SearchHit) -> dict:
+    """Passage-based RAG: feed the model the matching snippets rather than the
+    whole document when highlighting found any.
+
+    Shorter, better-targeted context costs fewer tokens and keeps the model's
+    attention on the part that actually matched. Hits found only by the vector
+    side have no highlights and fall back to full content."""
+    context = hit.model_dump()
+    if hit.highlights:
+        context["content"] = " ... ".join(hit.highlights)
+    return context
+
+
 def answer_search(
     request: SearchRequest, settings: Settings, llm_client: LLMClient | None = None
 ) -> SearchResponse:
@@ -41,12 +54,13 @@ def answer_search(
         logger.exception("Embedding model unavailable, falling back to BM25-only search")
         query_vector = None
 
-    raw_hits = hybrid_search(
+    result = hybrid_search(
         client=es_client,
         index=resolve_index(settings, request.dataset),
         query=request.query,
         query_vector=query_vector,
         size=request.top_k,
+        filters=request.filters,
     )
     hits = [
         SearchHit(
@@ -54,16 +68,23 @@ def answer_search(
             score=_extract_score(h),
             title=h["_source"].get("title", ""),
             content=h["_source"].get("content", ""),
+            highlights=h.get("highlight", {}).get("content"),
         )
-        for h in raw_hits
+        for h in result.hits
     ]
 
     answer = None
     if request.use_llm_answer and hits:
         llm = llm_client if llm_client is not None else LLMClient(settings)
         system, prompt = build_rag_prompt(
-            request.query, [h.model_dump() for h in hits], lang=request.lang
+            request.query, [_rag_context(h) for h in hits], lang=request.lang
         )
         answer = llm.complete(system=system, prompt=prompt)
 
-    return SearchResponse(query=request.query, hits=hits, answer=answer)
+    return SearchResponse(
+        query=request.query,
+        hits=hits,
+        answer=answer,
+        facets=result.facets,
+        word_count_stats=result.word_count_stats,
+    )

@@ -1,0 +1,26 @@
+{
+  "categories": {
+    "terms": {
+      "field": "category",
+      "size": 20
+    }
+  },
+  "tags": {
+    "terms": {
+      "field": "tags",
+      "size": 20
+    }
+  },
+  "by_month": {
+    "date_histogram": {
+      "field": "published",
+      "calendar_interval": "month",
+      "min_doc_count": 1
+    }
+  },
+  "word_count": {
+    "stats": {
+      "field": "word_count"
+    }
+  }
+}

@@ -71,7 +71,7 @@ Token des jeweils eingesetzten Modells direkt umrechnen.
 
 Zeigt in einem zusammenhaengenden Projekt drei Kernkompetenzen:
 - **Backend-Engineering** - sauber strukturierte FastAPI-Anwendung, getestet, containerisiert, CI.
-- **Such-Spezialisierung** - Elasticsearch-Mapping, custom Analyzer (Stemming, Stoppwoerter), BM25, kNN-Vektorsuche, Ranking-Fusion.
+- **Such-Spezialisierung** - Elasticsearch-Mapping mit getrennten Index-/Such-Analyzern, `synonym_graph` zur Suchzeit, ungestemmten `.exact`-Multi-Fields, `copy_to`-Sammelfeld und `dynamic: strict`; BM25 mit Filter-Kontext und Phrasen-Boost, quantisierte kNN-Suche mit Pre-Filter, Ranking-Fusion, Highlighting und Facetten-Aggregationen. Jeder Query-Body ist nach [docs/search/](docs/search/) gerendert und dort einzeln erklaert.
 - **KI-Integration** - produktionsnahe LLM-Anbindung (Retry-Logik, versionierte Prompts, RAG), ein agentischer Modus, in dem das LLM die Suche selbst ueber das projekteigene MCP-Tool steuert, sowie ein vollstaendig on-prem betreibbarer Datenschutz-Modus fuer regulierte Umgebungen (siehe unten).
 
 ## Architektur
@@ -91,6 +91,11 @@ pip install -e ".[dev]"
 python scripts/seed_data.py  # Beispieldaten indexieren - laedt beim allerersten
                               # Lauf einmalig das Embedding-Modell (~80MB)
 ```
+
+> **Bestehende Installation aktualisieren:** Das Index-Mapping hat sich
+> geaendert und ist jetzt `dynamic: strict`. Ein mit einer aelteren Version
+> angelegter Index muss neu aufgebaut werden:
+> `python scripts/seed_data.py --recreate`.
 
 ### Datenschutz-Betriebsmodus (Data Sovereignty)
 

@@ -2,49 +2,143 @@
   "settings": {
     "analysis": {
       "filter": {
-        "de_stop": {
+        "en_stop": {
           "type": "stop",
-          "stopwords": "_german_"
+          "stopwords": "_english_"
         },
-        "de_stemmer": {
+        "en_stemmer": {
           "type": "stemmer",
-          "language": "light_german"
+          "language": "light_english"
+        },
+        "en_possessive": {
+          "type": "stemmer",
+          "language": "possessive_english"
+        },
+        "domain_synonyms": {
+          "type": "synonym_graph",
+          "synonyms": [
+            "knn, k nearest neighbor, k-nearest-neighbor, ann, approximate nearest neighbor",
+            "rag, retrieval augmented generation, retrieval-augmented generation",
+            "bm25, okapi bm25, best match 25",
+            "vector search, semantic search, dense retrieval, embedding search",
+            "hnsw, hierarchical navigable small world",
+            "nlp, natural language processing"
+          ]
         }
       },
       "analyzer": {
-        "de_search_analyzer": {
+        "en_index": {
           "type": "custom",
           "tokenizer": "standard",
           "filter": [
             "lowercase",
-            "german_normalization",
-            "de_stop",
-            "de_stemmer"
+            "en_possessive",
+            "en_stop",
+            "en_stemmer",
+            "asciifolding"
+          ]
+        },
+        "en_search": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "en_possessive",
+            "domain_synonyms",
+            "en_stop",
+            "en_stemmer",
+            "asciifolding"
+          ]
+        },
+        "exact": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        }
+      },
+      "normalizer": {
+        "keyword_lower": {
+          "type": "custom",
+          "filter": [
+            "lowercase",
+            "asciifolding"
           ]
         }
       }
     }
   },
   "mappings": {
+    "dynamic": "strict",
     "properties": {
       "title": {
         "type": "text",
-        "analyzer": "de_search_analyzer",
+        "analyzer": "en_index",
+        "search_analyzer": "en_search",
+        "copy_to": "all_text",
         "fields": {
           "keyword": {
             "type": "keyword",
             "ignore_above": 256
+          },
+          "exact": {
+            "type": "text",
+            "analyzer": "exact"
           }
         }
       },
       "content": {
         "type": "text",
-        "analyzer": "de_search_analyzer"
+        "analyzer": "en_index",
+        "search_analyzer": "en_search",
+        "copy_to": "all_text",
+        "term_vector": "with_positions_offsets",
+        "fields": {
+          "exact": {
+            "type": "text",
+            "analyzer": "exact"
+          }
+        }
+      },
+      "all_text": {
+        "type": "text",
+        "analyzer": "en_index",
+        "search_analyzer": "en_search"
       },
       "embedding": {
         "type": "dense_vector",
         "dims": 384,
-        "similarity": "cosine"
+        "similarity": "cosine",
+        "index_options": {
+          "type": "int8_hnsw",
+          "m": 16,
+          "ef_construction": 100
+        }
+      },
+      "category": {
+        "type": "keyword",
+        "normalizer": "keyword_lower"
+      },
+      "tags": {
+        "type": "keyword",
+        "normalizer": "keyword_lower",
+        "copy_to": "all_text"
+      },
+      "published": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "url": {
+        "type": "keyword",
+        "index": false
+      },
+      "word_count": {
+        "type": "integer"
       }
     }
   }

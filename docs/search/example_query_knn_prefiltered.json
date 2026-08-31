@@ -1,0 +1,37 @@
+{
+  "field": "embedding",
+  "query_vector": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "k": 10,
+  "num_candidates": 50,
+  "filter": {
+    "bool": {
+      "filter": [
+        {
+          "terms": {
+            "category": [
+              "vector-search"
+            ]
+          }
+        },
+        {
+          "range": {
+            "published": {
+              "gte": "2024-01-01"
+            }
+          }
+        },
+        {
+          "range": {
+            "word_count": {
+              "gte": 30
+            }
+          }
+        }
+      ]
+    }
+  }
+}
