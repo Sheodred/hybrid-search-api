@@ -18,6 +18,10 @@ analyzer's filter chain below:
         "type": "synonym",
         "synonyms": ["knn, k-nearest-neighbor, vektorsuche"],
     }
+
+A rendered copy of build_index_body()'s output lives in
+docs/search/index_settings.json, kept in sync by
+tests/test_config_snapshots.py - read it there instead of tracing the dicts.
 """
 
 EMBEDDING_DIMS = 384  # must match the model in search/embeddings.py

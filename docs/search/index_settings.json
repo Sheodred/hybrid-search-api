@@ -1,0 +1,52 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "de_stop": {
+          "type": "stop",
+          "stopwords": "_german_"
+        },
+        "de_stemmer": {
+          "type": "stemmer",
+          "language": "light_german"
+        }
+      },
+      "analyzer": {
+        "de_search_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "german_normalization",
+            "de_stop",
+            "de_stemmer"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "de_search_analyzer",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "content": {
+        "type": "text",
+        "analyzer": "de_search_analyzer"
+      },
+      "embedding": {
+        "type": "dense_vector",
+        "dims": 384,
+        "index": true,
+        "similarity": "cosine"
+      }
+    }
+  }
+}
