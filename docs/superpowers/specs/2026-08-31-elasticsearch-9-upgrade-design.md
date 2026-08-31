@@ -1,12 +1,47 @@
 # Elasticsearch 8.14 -> 9.5.2 upgrade + modernization sweep
 
-Status: approved, not yet implemented
+Status: **implemented with one section dropped** - see "Implementation
+outcome" directly below before reading the rest. The design text is kept as
+written; the outcome section records where reality diverged.
 Date: 2026-08-31
 Follows: PR #18 (JSON snapshots, merged at `e8eab2d`)
 Blocks: `docs/superpowers/specs/2026-08-31-rich-index-and-query-showcase-design.md`
 (that spec assumes a modern Elasticsearch and currently carries an open
 question about bumping the compose version - this lands first, on its own
 branch, then that spec rebases on top)
+
+## Implementation outcome (2026-08-31)
+
+**Approach section 2 (native `rrf` retriever) was dropped. Everything else
+shipped as designed.**
+
+The open question "`rrf` retriever licensing tier in 9.5.2 - expected to be
+free/basic" resolved against expectation. On the `basic` license the 9.5.2
+container returns `403 security_exception: current license is non-compliant
+for [Reciprocal Rank Fusion (RRF)]`; the `linear` retriever is gated the same
+way. Only `standard` and `knn` are free. Since that question was load-bearing
+for section 2, Goal 2, the "delete `_reciprocal_rank_fusion`" decision and the
+Coordination section, all of those are void.
+
+Decision taken (over a trial license or a try/except dual path):
+**keep `_reciprocal_rank_fusion()`**, so the demo keeps running on the free
+stack for anyone who clones the repo. Reasoning and the trade-off are in
+[ADR-0003](../../adr/0003-elasticsearch-9-upgrade.md).
+
+Consequently `hybrid_search.py`, `queries.py`, `tests/test_hybrid_search.py`
+and `tests/test_queries.py` are **unchanged** - no `hybrid_retriever()`
+builder, no `RRF_K` -> `RRF_RANK_CONSTANT` move, no deleted test.
+
+The other open questions, resolved against the live container:
+
+| Question | Answer |
+|---|---|
+| `similarity` still required on `dense_vector`? | No - optional, defaults to `cosine`. Kept explicit anyway, per the spec. |
+| Does dropping `index: true` change anything? | No - it is the 9.x default and is applied. |
+| `index_options` default at 384 dims | `bbq_hnsw`, **not** `int8_hnsw` as assumed during brainstorming - the default is dimension-dependent. Nothing here relies on it. |
+| `xpack.security.enabled=false` accepted in the 9.5 image? | Yes - unauthenticated requests work. |
+| `rank_window_size` / `rank_constant` key names | Moot - retriever not adopted. |
+| esdata volume name | `hybrid-search-api_esdata`, as expected. |
 
 ## Context
 
@@ -192,21 +227,27 @@ The audit result is in Context - only `hybrid_search.py` changes.
 
 ## Coordination with the rich-index/query spec
 
+> **Revised after implementation.** The original version of this section
+> assumed the native `rrf` retriever would exist after this PR. It does not -
+> see "Implementation outcome" above. The list below is the corrected one.
+
 After `feat/es9-upgrade` merges, rebase `feat/rich-index-query-showcase` and
 revise its spec:
 
-- Section 3 / 4: the native `rrf` retriever already exists - those sections
-  change from "introduce the retriever" to "extend the retriever's
-  `standard` sub-query with `bool` / `filter`, and add `highlight` + `aggs`
-  to the search call".
-- Drop the `use_native_rrf` request-field toggle and the "Python RRF as
-  fallback" framing entirely - `_reciprocal_rank_fusion` no longer exists
-  after this PR.
-- Delete the open question "pin against a newer compose version".
+- **The retriever API is not available on this stack** (licensed, 403 on
+  `basic`). Any section of that spec built on `retriever` - introducing it,
+  extending its `standard` sub-query, or the `use_native_rrf` toggle - has to
+  be re-planned against the plain `_search` API instead: `query` with
+  `bool`/`filter`, plus top-level `highlight` and `aggs`, fused by the
+  existing `_reciprocal_rank_fusion()`.
+- `_reciprocal_rank_fusion` **still exists** - keep the "Python RRF" framing
+  rather than deleting it.
+- Delete the open question "pin against a newer compose version" - done here
+  (9.5.2).
 - Renumber that spec's planned ADR from `0003` to
-  `0004-rich-index-and-query-showcase.md`.
-- Section 3's mapping already planned to drop nothing from `embedding`;
-  align it with the `index: true` removal done here.
+  `0004-rich-index-and-query-showcase.md` - `0003` is taken by this upgrade.
+- Section 3's mapping: align it with the `index: true` removal done here, and
+  note that 9.5.2 picks `bbq_hnsw` index options at 384 dims.
 
 ## Deliberate simplifications (ponytail ledger)
 

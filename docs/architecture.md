@@ -73,3 +73,8 @@ configuration/template in one place, usage/orchestration in another.
 RRF combines two ranked lists without having to manually weigh BM25 and
 vector scores (which live on completely different scales) against each
 other. That makes it a robust default choice for hybrid search.
+
+The fusion runs in `search/hybrid_search.py` rather than through
+Elasticsearch's native `rrf` retriever, because that retriever is licensed
+and returns a 403 on a `basic` license - see
+[ADR-0003](adr/0003-elasticsearch-9-upgrade.md).
